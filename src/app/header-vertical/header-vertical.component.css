@@ -1,0 +1,59 @@
+.logo{
+    padding-left: 33%;
+    padding-bottom: 20%;
+}
+
+.navbar-nav{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.onglet-menu ul{
+    display: block;
+    margin-bottom: 10%;
+   
+}
+
+
+.onglet-menu{
+    padding-bottom: 20%;
+}
+
+.nav-item a::after{
+    color: white;
+}
+
+.nav-item a::hover{
+    color: black;
+}
+.navbar{
+    padding: 0px;
+    margin: 0px;
+}
+
+.container-header{
+    padding-bottom: 100%;
+    background-color: teal;
+}
+
+.icon{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.icon-user{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px;
+}
+.icon-user a{
+    font-weight: bold;
+    margin: 0px;
+    color: white;
+}
+.icon button{
+    font-weight: bold;
+}

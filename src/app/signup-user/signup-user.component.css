@@ -1,0 +1,35 @@
+.connexion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bloc-connexion{
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px black;
+    padding: 20px;
+    width: 50%;
+}
+
+.bloc-connexion button {
+    margin-left: 20%;
+}
+
+.btn-inscription{
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid black;
+}
+
+.btn-inscription button{
+    border:1px solid black;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.btn-inscription button::after{
+    border:1px solid black;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px black;
+}
