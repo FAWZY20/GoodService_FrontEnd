@@ -1,10 +1,19 @@
-.connexion{
+.connexion {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.bloc-connexion{
+.form_span {
+    display: flex;
+    height: 15%;
+}
+
+.form_input {
+    padding-bottom: 5%;
+}
+
+.bloc-connexion {
     border: 1px solid black;
     border-radius: 20px;
     box-shadow: 10px 5px 5px black;
@@ -16,20 +25,20 @@
     margin-left: 20%;
 }
 
-.btn-inscription{
+.btn-inscription {
     margin-top: 10px;
     padding-top: 10px;
     border-top: 1px solid black;
 }
 
-.btn-inscription button{
-    border:1px solid black;
+.btn-inscription button {
+    border: 1px solid black;
     border-radius: 20px;
     box-shadow: 5px 5px 5px black;
 }
 
-.btn-inscription button::after{
-    border:1px solid black;
+.btn-inscription button::after {
+    border: 1px solid black;
     border-radius: 20px;
     box-shadow: 5px 5px 5px black;
 }

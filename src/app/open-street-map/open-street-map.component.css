@@ -2,12 +2,12 @@
     top: 0;
     bottom: 0;
     padding: 0;
-  }
-  
-  .map-border {
+}
+
+.map-border {
     height: 100%;
-  }
- 
-  #map {
+}
+
+#map {
     height: 100%;
-  }
+}

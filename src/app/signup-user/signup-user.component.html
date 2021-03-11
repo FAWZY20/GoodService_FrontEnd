@@ -1,33 +1,79 @@
-<div class="container-fluid">
-    <div class="row">
-        <app-header-horizontal></app-header-horizontal>
-        <div class="col-lg-4">
-            <img src="../../assets/img/back-connexion.PNG" class="img-fluid" alt="" />
-        </div>
-        <div class="col-lg-6 connexion">
-            <div class="col-lg-4 bloc-connexion">
-                <h2 class="section-title mb-4">Connexion</h2>
-                <form>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">@</span>
-                        <input type="email" class="form-control" placeholder="email" aria-label="email" aria-describedby="basic-addon1">
-                    </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">🔒</span>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
-                    </div>
-                    <div class="text-center mb-2">
-                        <a class="simple-link" href="...">Mot de passe oublié ?</a>
-                    </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Se souvenir de moi</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">ME CONNECTER</button>
-                </form>
-                <div class="btn-inscription">
-                    <button type="submit" class="btn btn-light">CREE UN COMPTE</button>
+<app-header-horizontal></app-header-horizontal>
+<section class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col form_span from_span-lg-6">
+                <img src="../../assets/img/istockphoto-1134958683-612x612.jpg" alt="" class="img-fluid" />
+            </div>
+            <div class="col form_span from_span-lg-6 bloc-inscription">
+                <div class="bloc-form-inscription">
+                    <h1>S'inscrire</h1>
+                    <form>
+                        <div class="row form_input form_input">
+                            <div class="col form_span from_span">
+                                <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/user.png"
+                                        width="24" height="24" alt="" class="img-fluid" /></span>
+                                <input type="text" class="form-control" placeholder="Nom" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="col form_span from_span">
+                                <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/user.png"
+                                        width="24" height="24" alt="" class="img-fluid" /></span>
+                                <input type="text" class="form-control" placeholder="Prenom" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+
+                        <div class="row form_input">
+                            <div class="col form_span from_span">
+                                <span class="input-group-text" id="basic-addon1"><img
+                                        src="../../assets/img/telephone.png" width="24" height="24" alt=""
+                                        class="img-fluid" /></span>
+                                <input type="text" class="form-control" placeholder="Téléphone" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="col form_span from_span">
+                                <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/mail.svg"
+                                        width="24" height="24" alt="" class="img-fluid" /></span>
+                                <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+
+                        <div class="row form_input">
+                            <div class="col form_span from_span">
+                                <span class="input-group-text" id="basic-addon1"><img
+                                        src="../../assets/img/localisateur.png" width="24" height="24" alt=""
+                                        class="img-fluid" /></span>
+                                <input type="text" class="form-control" placeholder="Adresse" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="col form_span from_span">
+                                <span class="input-group-text" id="basic-addon1"><img
+                                        src="../../assets/img/localisateur.png" width="24" height="24" alt=""
+                                        class="img-fluid" /></span>
+                                <input type="text" class="form-control" placeholder="Code postal" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="form_span form_input">
+                            <span class="input-group-text" id="basic-addon1"><img
+                                    src="../../assets/img/localisateur.png" width="24" height="24" alt=""
+                                    class="img-fluid" /></span>
+                            <input type="text" class="form-control" placeholder="Ville" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="row form_input">
+                            <div class="col form_span from_span">
+                                <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/lock.png"
+                                        width="24" height="24" alt="" class="img-fluid" /></span>
+                                <input type="text" class="form-control" placeholder="Mot de passe" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="col form_span from_span">
+                                <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/lock.png"
+                                        width="24" height="24" alt="" class="img-fluid" /></span>
+                                <input type="text" class="form-control" placeholder="Confirmer votre mot de passe" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="col form_span from_span-12">
+                            <button class="btn btn-primary" type="submit">Créer mon compte</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</section>

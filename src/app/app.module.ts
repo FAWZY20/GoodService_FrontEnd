@@ -8,7 +8,6 @@ import { HeaderVerticalComponent } from './header-vertical/header-vertical.compo
 import { SignupUserComponent } from './signup-user/signup-user.component';
 import { ConnectionComponent } from './connection/connection.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FooterComponent } from './footer/footer.component';
 import { OpenStreetMapComponent } from './open-street-map/open-street-map.component';
 import { HeaderHorizontalComponent } from './header-horizontal/header-horizontal.component';
 
@@ -18,7 +17,6 @@ import { HeaderHorizontalComponent } from './header-horizontal/header-horizontal
     HeaderVerticalComponent,
     SignupUserComponent,
     ConnectionComponent,
-    FooterComponent,
     OpenStreetMapComponent,
     HeaderHorizontalComponent
   ],
