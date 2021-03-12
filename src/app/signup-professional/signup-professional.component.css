@@ -1,0 +1,13 @@
+.signup-professional-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.link-connect {
+    border: 1px solid rgba(0, 0, 0, .125);
+    padding: 20px;
+    padding-left: 88px;
+    padding-right: 80px;
+    margin-bottom: 15px;
+}

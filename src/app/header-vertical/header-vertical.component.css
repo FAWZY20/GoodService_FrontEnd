@@ -1,59 +1,72 @@
-.logo{
+.logo {
     padding-left: 33%;
     padding-bottom: 20%;
 }
 
-.navbar-nav{
+.navbar-nav {
     font-weight: bold;
     font-size: 18px;
 }
 
-.onglet-menu ul{
+.onglet-menu ul {
     display: block;
     margin-bottom: 10%;
-   
 }
 
-
-.onglet-menu{
+.onglet-menu {
     padding-bottom: 20%;
 }
 
-.nav-item a::after{
+.nav-item a::after {
     color: white;
 }
 
-.nav-item a::hover{
+.nav-item a::hover {
     color: black;
 }
-.navbar{
+
+.navbar {
     padding: 0px;
     margin: 0px;
 }
 
-.container-header{
+.container-header {
     padding-bottom: 100%;
     background-color: teal;
 }
 
-.icon{
+.icon {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
 }
 
-.icon-user{
+.icon-user {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin: 0px;
 }
-.icon-user a{
+
+.icon-user a {
     font-weight: bold;
     margin: 0px;
     color: white;
 }
-.icon button{
+
+.icon button {
     font-weight: bold;
+}
+
+.signup-user {
+    text-align: center;
+}
+
+.signup-user a {
+    font-size: 12px;
+    font-weight: normal;
+    color: black;
+    display: flex;
+    flex-direction: column;
 }

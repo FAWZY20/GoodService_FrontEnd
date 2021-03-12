@@ -10,6 +10,8 @@ import { ConnectionComponent } from './connection/connection.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OpenStreetMapComponent } from './open-street-map/open-street-map.component';
 import { HeaderHorizontalComponent } from './header-horizontal/header-horizontal.component';
+import { SignupProfessionalComponent } from './signup-professional/signup-professional.component';
+import { ConnexionProfessionalComponent } from './connexion-professional/connexion-professional.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { HeaderHorizontalComponent } from './header-horizontal/header-horizontal
     SignupUserComponent,
     ConnectionComponent,
     OpenStreetMapComponent,
-    HeaderHorizontalComponent
+    HeaderHorizontalComponent,
+    SignupProfessionalComponent,
+    ConnexionProfessionalComponent
   ],
   imports: [
     BrowserModule,
