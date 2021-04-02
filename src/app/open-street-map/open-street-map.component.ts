@@ -7,8 +7,8 @@ import * as L from 'leaflet';
   styleUrls: ['./open-street-map.component.css']
 })
 export class OpenStreetMapComponent implements AfterViewInit {
-
-   /*map;
+/*
+   map;
 
   constructor() { }
 
@@ -36,11 +36,14 @@ export class OpenStreetMapComponent implements AfterViewInit {
     });
 
     mainLayer.addTo(this.map);
-  }*/
+  }
+
+  */
+
   constructor() { }
 
   ngAfterViewInit(): void {
-    this.setGeoLocation
+    this.ngOnInit()
   }
 
   ngOnInit(){
@@ -57,6 +60,8 @@ export class OpenStreetMapComponent implements AfterViewInit {
     const  map = L.map('map').setView([latitude, longitude], 3);
  
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      minZoom: 12,
+      maxZoom: 22,
      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>contributors'
      } ).addTo(map);
  }

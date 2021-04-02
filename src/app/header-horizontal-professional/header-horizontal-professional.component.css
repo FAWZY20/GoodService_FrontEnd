@@ -1,0 +1,42 @@
+.header_horizontal {
+    box-shadow: 0.5px 0.5px black;
+    margin-bottom: 3%;
+    background-color: teal;
+}
+
+.logo {
+    width: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.exit {
+    display: flex;
+    align-items: center;
+    padding-left: 37%;
+}
+
+a {
+    color: white !important;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    padding-left: 37%;
+}
+
+.menu-link-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    margin-right: 16px;
+    margin-top: 10px;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+}

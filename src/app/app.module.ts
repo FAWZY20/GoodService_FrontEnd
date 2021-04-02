@@ -15,6 +15,8 @@ import { ConnexionProfessionalComponent } from './connexion-professional/connexi
 import { FormsModule } from '@angular/forms';
 import { BackUserComponent } from './back-user/back-user.component';
 import { HeaderHorizontalUserComponent } from './header-horizontal-user/header-horizontal-user.component';
+import { ProfessionalDashboardHomeComponent } from './professional-dashboard-home/professional-dashboard-home.component';
+import { HeaderHorizontalProfessionalComponent } from './header-horizontal-professional/header-horizontal-professional.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { HeaderHorizontalUserComponent } from './header-horizontal-user/header-h
     SignupProfessionalComponent,
     ConnexionProfessionalComponent,
     BackUserComponent,
-    HeaderHorizontalUserComponent
+    HeaderHorizontalUserComponent,
+    ProfessionalDashboardHomeComponent,
+    HeaderHorizontalProfessionalComponent
   ],
   imports: [
     BrowserModule,

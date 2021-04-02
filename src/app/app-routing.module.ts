@@ -6,9 +6,11 @@ import { OpenStreetMapComponent } from './open-street-map/open-street-map.compon
 import { SignupProfessionalComponent } from './signup-professional/signup-professional.component';
 import { SignupUserComponent } from './signup-user/signup-user.component';
 import { BackUserComponent } from './back-user/back-user.component';
+import { ProfessionalDashboardHomeComponent } from './professional-dashboard-home/professional-dashboard-home.component';
 
 const routes: Routes = [
-  {path: 'back-user-home', component: BackUserComponent},
+  {path: 'DashboardUser', component: BackUserComponent},
+  {path: 'DashboardProfesionnal', component: ProfessionalDashboardHomeComponent},
   {path: 'home', component: OpenStreetMapComponent },
   {path: '', component: OpenStreetMapComponent },
   {path: 'signup-user', component: SignupUserComponent},
