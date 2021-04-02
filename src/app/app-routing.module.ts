@@ -8,6 +8,7 @@ import { SignupUserComponent } from './signup-user/signup-user.component';
 import { BackUserComponent } from './back-user/back-user.component';
 
 const routes: Routes = [
+  {path: 'back-user-home', component: BackUserComponent},
   {path: 'home', component: OpenStreetMapComponent },
   {path: '', component: OpenStreetMapComponent },
   {path: 'signup-user', component: SignupUserComponent},
