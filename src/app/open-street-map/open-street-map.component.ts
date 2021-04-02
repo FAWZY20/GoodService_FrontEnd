@@ -7,7 +7,7 @@ import * as L from 'leaflet';
   styleUrls: ['./open-street-map.component.css']
 })
 export class OpenStreetMapComponent implements AfterViewInit {
-/*
+
    map;
 
   constructor() { }
@@ -38,9 +38,9 @@ export class OpenStreetMapComponent implements AfterViewInit {
     mainLayer.addTo(this.map);
   }
 
-  */
+  
 
-  constructor() { }
+  /*constructor() { }
 
   ngAfterViewInit(): void {
     this.ngOnInit()
@@ -64,6 +64,6 @@ export class OpenStreetMapComponent implements AfterViewInit {
       maxZoom: 22,
      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>contributors'
      } ).addTo(map);
- }
+ }*/
 
 }
