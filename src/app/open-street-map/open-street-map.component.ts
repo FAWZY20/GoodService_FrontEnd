@@ -8,7 +8,7 @@ import * as L from 'leaflet';
 })
 export class OpenStreetMapComponent implements AfterViewInit {
 
-   map;
+    /* map;
 
   constructor() { }
 
@@ -38,7 +38,7 @@ export class OpenStreetMapComponent implements AfterViewInit {
     mainLayer.addTo(this.map);
   }
 
-  
+  */
 
   /*constructor() { }
 
@@ -65,5 +65,33 @@ export class OpenStreetMapComponent implements AfterViewInit {
      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>contributors'
      } ).addTo(map);
  }*/
+
+ 
+  constructor() { }
+
+  ngAfterViewInit(): void {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.setGeoLocation.bind(this));
+   }
+  }
+
+  
+ setGeoLocation(position: { coords: { latitude: any; longitude: any } }) {
+    const {
+       coords: { latitude, longitude },
+    } = position;
+ 
+
+    const  map = L.map('map').setView([latitude, longitude], 3);
+ 
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      minZoom: 15,
+      maxZoom: 22,
+     attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>contributors'
+     } ).addTo(map);
+
+
+ }
+ 
 
 }

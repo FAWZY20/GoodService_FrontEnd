@@ -11,6 +11,6 @@ export class RegistationService {
   constructor( private  _http : HttpClient) { }
 
   public loginUserFromRemote(user :User):Observable<any>{
-      return this._http.post<any>("localhost:8080/connexion", user)
+      return this._http.post<any>("localhost:8080/connexionUser", user)
   }
 }
