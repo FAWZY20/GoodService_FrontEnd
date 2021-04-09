@@ -3,6 +3,7 @@ import {NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegistationService } from '../registation.service';
 import {User} from '../user';
+import { connexion } from '../UserConnexion';
 
 @Component({
   selector: 'app-connection',
@@ -10,7 +11,7 @@ import {User} from '../user';
   styleUrls: ['./connection.component.css']
 })
 export class ConnectionComponent implements OnInit {
- user = new User();
+ user = new connexion();
  msg= '';
 
   constructor(private _service : RegistationService, private _router : Router) { }
@@ -19,6 +20,7 @@ export class ConnectionComponent implements OnInit {
   }
 
   loginUser(){
+    console.log(this.user);
     this._service.loginUserFromRemote(this.user).subscribe(
       data =>{
         console.log("response recieved");
