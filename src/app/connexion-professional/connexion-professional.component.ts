@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from '@angular/forms';
+import { Router } from '@angular/router';
+import { Professional } from '../professional';
+import { RegistationService } from '../registation.service';
 
 @Component({
   selector: 'app-connexion-professional',
@@ -7,9 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConnexionProfessionalComponent implements OnInit {
 
-  constructor() { }
+  user = new Professional();
+  msg = '';
 
-  ngOnInit(): void {
+  constructor(private _service: RegistationService, private _router:  Router) { }
+
+  ngOnInit(): void {}
+
+  loginProfessional(){
+    console.log(this.user);
+    this._service.loginProfessionalFromRemote(this.user).subscribe(
+      data => {
+        console.log("response recieved");
+        this._router.navigate(['/DashboardProfesionnal'])
+      },
+      error => {
+        console.log("exception occured");
+        this.msg = "Bad credentials, please enter valid email and password";
+      }
+    )
   }
 
 }

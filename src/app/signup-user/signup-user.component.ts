@@ -21,7 +21,7 @@ export class SignupUserComponent implements OnInit {
   }
 
   registerUser(){
-   /* this._service.loginUserFromRemote(this.user).subscribe(
+    this._service.registerUserFromRemote(this.user).subscribe(
       data =>{
         console.log("response recieved");
         this._router.navigate(['/connexion'])
@@ -31,7 +31,7 @@ export class SignupUserComponent implements OnInit {
         this.msg = error.error;
         
       }
-    ) */
+    ) 
   }
 
 }

@@ -11,3 +11,12 @@
     padding-right: 80px;
     margin-bottom: 15px;
 }
+
+input[type="date"]::before {
+    content: attr(placeholder)" Date de Naissance : ";
+    white-space: pre;
+}
+
+input[type="date"]:focus::before {
+    content: ""!important;
+}
