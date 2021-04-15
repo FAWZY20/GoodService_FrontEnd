@@ -4,6 +4,7 @@ import { User } from './user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { connexion } from './UserConnexion';
 import { Professional } from './professional';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class RegistationService {
   constructor(private _http: HttpClient) { }
 
   public loginUserFromRemote(user: connexion): Observable<any> {
-    return this._http.post<any>("http://localhost:8080/connexionUser", user)
+    return this._http.post<any>( environment.apiUrl + 'connexionUser', user)
   }
 
   public registerUserFromRemote(user: User): Observable<any> {
