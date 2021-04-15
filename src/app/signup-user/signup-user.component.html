@@ -66,12 +66,12 @@
                                         width="24" height="24" alt="" class="img-fluid" /></span>
                                 <input type="text" class="form-control" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon1" name="mdp" #mdp="ngModel" [(ngModel)]="user.mdp" [ngModelOptions]="{standalone: true}">
                             </div>
-                            <div class="col form_span from_span">
+                            <!--<div class="col form_span from_span">
                                 <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/lock.png"
                                         width="24" height="24" alt="" class="img-fluid" /></span>
-                                <input type="text" class="form-control" placeholder="Confirmer votre mot de passe" aria-label="Mot de passe" name="cmdp" #cmdp="ngModel" (ngModel)="user.mdp" aria-describedby="basic-addon1" [ngModelOptions]="{standalone: true}">
+                                <input type="text" class="form-control" placeholder="Confirmer votre mot de passe" aria-label="Mot de passe" name="cmdp" #cmdp="ngModel" (ngModel)="user.mdp" aria-describedby="basic-addon1">
                                 <small class="text-danger" [class.d-none]="(cmdp.value == mdp.value) || cmdp.untouched" )>Les mots de passe ne cooresponde pas</small>
-                            </div>
+                            </div>-->
                         </div>
 
                         <div class="col form_span from_span-12">
