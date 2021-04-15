@@ -61,6 +61,7 @@
 
 .signup-user {
     text-align: center;
+    padding-left: 10%;
 }
 
 .signup-user a {
@@ -85,4 +86,14 @@ li {
 .nav-item .img {
     margin-right: 10px;
     margin-right: 20px;
+}
+
+.dropdown-menu {
+    width: 220px;
+    text-align: center;
+}
+
+.btn-professional {
+    margin-left: 10%;
+    font-size: 15px;
 }

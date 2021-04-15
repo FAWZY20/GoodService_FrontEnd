@@ -20,3 +20,18 @@ input[type="date"]::before {
 input[type="date"]:focus::before {
     content: ""!important;
 }
+
+.form-select {
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.btn-create-account {
+    background-color: teal;
+    border-radius: 8px;
+}
+
+.btn-create-account:hover {
+    background-color: teal;
+    border-radius: 8px;
+}

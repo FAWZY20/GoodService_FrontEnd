@@ -75,12 +75,11 @@
                         </div>
 
                         <div class="col form_span from_span-12">
-                            <button [disabled]="Registerform.form.invalid" class="btn btn-primary" type="submit">Créer
+                            <button [disabled]="Registerform.form.invalid" class="btn btn-primary btn-create-account" type="submit">Créer
                                 mon compte</button>
                         </div>
                         <div>
-                            <small class="float-right btextual" [routerLink]="['/connexion']">Existing user ? Login
-                                here</small>
+                            <small class="float-right btextual" [routerLink]="['/connexion']">Utilisateur existant ? Connectez-vous ici</small>
                         </div>
 
                     </form>
@@ -89,3 +88,4 @@
         </div>
     </div>
 </section>
+<app-footer></app-footer>

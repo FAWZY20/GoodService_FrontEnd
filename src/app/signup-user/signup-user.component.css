@@ -21,6 +21,11 @@
     width: 50%;
 }
 
+.btn-create-account {
+    background-color: teal;
+    border-radius: 20px;
+}
+
 .bloc-connexion button {
     margin-left: 20%;
 }

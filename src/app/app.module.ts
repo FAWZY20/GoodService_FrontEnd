@@ -18,6 +18,7 @@ import { HeaderHorizontalUserComponent } from './header-horizontal-user/header-h
 import { ProfessionalDashboardHomeComponent } from './professional-dashboard-home/professional-dashboard-home.component';
 import { HeaderHorizontalProfessionalComponent } from './header-horizontal-professional/header-horizontal-professional.component';
 import { ProfileReglageProfessionalComponent } from './profile-reglage-professional/profile-reglage-professional.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ProfileReglageProfessionalComponent } from './profile-reglage-professio
     HeaderHorizontalUserComponent,
     ProfessionalDashboardHomeComponent,
     HeaderHorizontalProfessionalComponent,
-    ProfileReglageProfessionalComponent
+    ProfileReglageProfessionalComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
