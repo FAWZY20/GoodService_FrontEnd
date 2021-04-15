@@ -15,12 +15,12 @@
                             <div class="col form_span from_span">
                                 <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/user.png"
                                         width="24" height="24" alt="" class="img-fluid" /></span>
-                                <input type="text" class="form-control" placeholder="Nom" aria-label="Nom" aria-describedby="basic-addon1" [(ngModel)]="user.nom">
+                                <input type="text" class="form-control" placeholder="Nom" aria-label="Nom" aria-describedby="basic-addon1" [(ngModel)]="user.nom" [ngModelOptions]="{standalone: true}">
                             </div>
                             <div class="col form_span from_span">
                                 <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/user.png"
                                         width="24" height="24" alt="" class="img-fluid" /></span>
-                                <input type="text" class="form-control" placeholder="Prenom" aria-label="Prenom" aria-describedby="basic-addon1" [(ngModel)]="user.prenom">
+                                <input type="text" class="form-control" placeholder="Prenom" aria-label="Prenom" aria-describedby="basic-addon1" [(ngModel)]="user.prenom" [ngModelOptions]="{standalone: true}">
                             </div>
                         </div>
 
@@ -29,12 +29,12 @@
                                 <span class="input-group-text" id="basic-addon1"><img
                                         src="../../assets/img/telephone.png" width="24" height="24" alt=""
                                         class="img-fluid" /></span>
-                                <input type="text" class="form-control" placeholder="Téléphone" aria-label="Téléphone" aria-describedby="basic-addon1" [(ngModel)]="user.numero">
+                                <input type="text" class="form-control" placeholder="Téléphone" aria-label="Téléphone" aria-describedby="basic-addon1" [(ngModel)]="user.numero" [ngModelOptions]="{standalone: true}">
                             </div>
                             <div class="col form_span from_span">
                                 <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/mail.svg"
                                         width="24" height="24" alt="" class="img-fluid" /></span>
-                                <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" [(ngModel)]="user.email">
+                                <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}">
                             </div>
                         </div>
 
@@ -43,13 +43,13 @@
                                 <span class="input-group-text" id="basic-addon1"><img
                                         src="../../assets/img/localisateur.png" width="24" height="24" alt=""
                                         class="img-fluid" /></span>
-                                <input type="text" class="form-control" placeholder="Adresse" aria-label="Adresse" aria-describedby="basic-addon1" [(ngModel)]="user.adresse">
+                                <input type="text" class="form-control" placeholder="Adresse" aria-label="Adresse" aria-describedby="basic-addon1" [(ngModel)]="user.adresse" [ngModelOptions]="{standalone: true}">
                             </div>
                             <div class="col form_span from_span">
                                 <span class="input-group-text" id="basic-addon1"><img
                                         src="../../assets/img/localisateur.png" width="24" height="24" alt=""
                                         class="img-fluid" /></span>
-                                <input type="text" class="form-control" placeholder="Code postal" aria-label="Code postal" aria-describedby="basic-addon1" [(ngModel)]="user.code_postal">
+                                <input type="text" class="form-control" placeholder="Code postal" aria-label="Code postal" aria-describedby="basic-addon1" [(ngModel)]="user.code_postal" [ngModelOptions]="{standalone: true}">
                             </div>
                         </div>
 
@@ -57,21 +57,21 @@
                             <span class="input-group-text" id="basic-addon1"><img
                                     src="../../assets/img/localisateur.png" width="24" height="24" alt=""
                                     class="img-fluid" /></span>
-                            <input type="text" class="form-control" placeholder="Ville" aria-label="Ville" aria-describedby="basic-addon1" [(ngModel)]="user.ville">
+                            <input type="text" class="form-control" placeholder="Ville" aria-label="Ville" aria-describedby="basic-addon1" [(ngModel)]="user.ville" [ngModelOptions]="{standalone: true}">
                         </div>
 
                         <div class="row form_input">
                             <div class="col form_span from_span">
                                 <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/lock.png"
                                         width="24" height="24" alt="" class="img-fluid" /></span>
-                                <input type="text" class="form-control" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon1" name="mdp" #mdp="ngModel" [(ngModel)]="user.mdp">
+                                <input type="text" class="form-control" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon1" name="mdp" #mdp="ngModel" [(ngModel)]="user.mdp" [ngModelOptions]="{standalone: true}">
                             </div>
-                            <!--<div class="col form_span from_span">
+                            <div class="col form_span from_span">
                                 <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/lock.png"
                                         width="24" height="24" alt="" class="img-fluid" /></span>
-                                <input type="text" class="form-control" placeholder="Confirmer votre mot de passe" aria-label="Mot de passe" name="cmdp" #cmdp="ngModel" (ngModel)="user.mdp" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" placeholder="Confirmer votre mot de passe" aria-label="Mot de passe" name="cmdp" #cmdp="ngModel" (ngModel)="user.mdp" aria-describedby="basic-addon1" [ngModelOptions]="{standalone: true}">
                                 <small class="text-danger" [class.d-none]="(cmdp.value == mdp.value) || cmdp.untouched" )>Les mots de passe ne cooresponde pas</small>
-                            </div>-->
+                            </div>
                         </div>
 
                         <div class="col form_span from_span-12">
