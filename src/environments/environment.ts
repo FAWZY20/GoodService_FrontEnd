@@ -4,11 +4,7 @@
 
 export const environment = {
   production: false,
-  hostUrl: 'http://localhost',
-  username: 'user1',
-  token: 'abcxyz',
-  port: 8080,
-  envName: 'local'
+  apiUrl: 'http://localhost:8080'
 };
 
 /*
