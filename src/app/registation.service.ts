@@ -13,27 +13,19 @@ export class RegistationService {
 
   constructor(private _http: HttpClient) { }
 
- /* public loginUserFromRemote(user: connexion): Observable<any> {
-    return this._http.post<any>( environment.apiUrl + 'connexionUser', user)
-  }*/
-
- /* public registerUserFromRemote(user: User): Observable<any> {
-    return this._http.post<any>(environment.apiUrl + 'registerUser', user)
-  }*/
-
   public loginUserFromRemote(user: connexion): Observable<any> {
-    return this._http.post<any>("http://localhost:8080/connexionUser", user)
+    return this._http.post<any>( environment.apiUrl + '/connexionUser', user)
   }
 
   public registerUserFromRemote(user: User): Observable<any> {
-    return this._http.post<any>("http://localhost:8080/registerUser", user)
+    return this._http.post<any>(environment.apiUrl + '/registerUser', user)
   }
 
   public loginProfessionalFromRemote(user: Professional): Observable<any> {
-    return this._http.post<any>("http://localhost:8080/connexionProfessional", user)
+    return this._http.post<any>(environment.apiUrl + '/connexionProfessional', user)
   }
 
   public registerProfessionalFromRemote(user :Professional):Observable<any>{
-    return this._http.post<any>("http://localhost:8080/registerProfessional", user)
+    return this._http.post<any>(environment.apiUrl +'/registerProfessional', user)
   }
 }
