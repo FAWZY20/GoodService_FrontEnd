@@ -3,7 +3,7 @@ export class Professional {
     poste:string;
     nom:string;
     prenom:string;
-    date:Date;
+    date_naissance:Date;
     siret:string;
     adresse:string;
     code_postal:string;

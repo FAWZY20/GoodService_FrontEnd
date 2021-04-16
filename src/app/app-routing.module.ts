@@ -7,9 +7,13 @@ import { SignupProfessionalComponent } from './signup-professional/signup-profes
 import { SignupUserComponent } from './signup-user/signup-user.component';
 import { BackUserComponent } from './back-user/back-user.component';
 import { ProfessionalDashboardHomeComponent } from './professional-dashboard-home/professional-dashboard-home.component';
+import { UserReservationsComponent } from './user-reservations/user-reservations.component';
+import { HistoriquePaymentUserComponent } from './historique-payment-user/historique-payment-user.component';
 
 const routes: Routes = [
   {path: 'DashboardUser', component: BackUserComponent},
+  {path: 'ReservationUser', component: UserReservationsComponent},
+  {path: 'HistoriquePaymentUser', component: HistoriquePaymentUserComponent},
   {path: 'DashboardProfesionnal', component: ProfessionalDashboardHomeComponent},
   {path: 'home', component: OpenStreetMapComponent },
   {path: '', component: OpenStreetMapComponent },

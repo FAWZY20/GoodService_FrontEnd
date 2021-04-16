@@ -19,6 +19,8 @@ import { ProfessionalDashboardHomeComponent } from './professional-dashboard-hom
 import { HeaderHorizontalProfessionalComponent } from './header-horizontal-professional/header-horizontal-professional.component';
 import { ProfileReglageProfessionalComponent } from './profile-reglage-professional/profile-reglage-professional.component';
 import { FooterComponent } from './footer/footer.component';
+import { UserReservationsComponent } from './user-reservations/user-reservations.component';
+import { HistoriquePaymentUserComponent } from './historique-payment-user/historique-payment-user.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { FooterComponent } from './footer/footer.component';
     ProfessionalDashboardHomeComponent,
     HeaderHorizontalProfessionalComponent,
     ProfileReglageProfessionalComponent,
-    FooterComponent
+    FooterComponent,
+    UserReservationsComponent,
+    HistoriquePaymentUserComponent
   ],
   imports: [
     BrowserModule,

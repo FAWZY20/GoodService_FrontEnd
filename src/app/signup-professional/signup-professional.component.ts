@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from '@angular/forms';
+import { Professional } from '../professional';
+import { RegistationService } from '../registation.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-signup-professional',
@@ -7,9 +12,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupProfessionalComponent implements OnInit {
 
-  constructor() { }
+  professional = new Professional();
+  msg="";
+
+  constructor(private _service : RegistationService, private _router : Router) { }
 
   ngOnInit(): void {
+  }
+
+  registerProfessional(){
+    this._service.registerProfessionalFromRemote(this.professional).subscribe(
+      data =>{
+        console.log("response recieved");
+        this._router.navigate(['/connexion-professional'])
+      } ,
+      error => {
+        console.log("exception occured");
+        this.msg = error.error;
+        
+      }
+    ) 
   }
 
 }
