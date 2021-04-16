@@ -21,6 +21,8 @@ import { ProfileReglageProfessionalComponent } from './profile-reglage-professio
 import { FooterComponent } from './footer/footer.component';
 import { UserReservationsComponent } from './user-reservations/user-reservations.component';
 import { HistoriquePaymentUserComponent } from './historique-payment-user/historique-payment-user.component';
+import { MoyenPaimenetUserComponent } from './moyen-paimenet-user/moyen-paimenet-user.component';
+import { ProfilUserComponent } from './profil-user/profil-user.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { HistoriquePaymentUserComponent } from './historique-payment-user/histor
     ProfileReglageProfessionalComponent,
     FooterComponent,
     UserReservationsComponent,
-    HistoriquePaymentUserComponent
+    HistoriquePaymentUserComponent,
+    MoyenPaimenetUserComponent,
+    ProfilUserComponent
   ],
   imports: [
     BrowserModule,

@@ -412,15 +412,13 @@ input[type="radio"] {
     box-shadow: 0 10px 20px -5px rgba(20, 50, 64, 0.76);
 }
 
-.btn-reserved {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: teal;
+.btn-add-cart {
     border-radius: 200px;
-    font-size: 15px;
+    background-color: teal;
 }
 
-.btn-reserved:hover {
+.btn-add-cart::after {
+    border-radius: 200px;
     background-color: teal;
 }
 

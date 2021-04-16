@@ -9,9 +9,13 @@ import { BackUserComponent } from './back-user/back-user.component';
 import { ProfessionalDashboardHomeComponent } from './professional-dashboard-home/professional-dashboard-home.component';
 import { UserReservationsComponent } from './user-reservations/user-reservations.component';
 import { HistoriquePaymentUserComponent } from './historique-payment-user/historique-payment-user.component';
+import { MoyenPaimenetUserComponent } from './moyen-paimenet-user/moyen-paimenet-user.component';
+import { ProfilUserComponent } from './profil-user/profil-user.component';
 
 const routes: Routes = [
   {path: 'DashboardUser', component: BackUserComponent},
+  {path: 'mon-compte', component: ProfilUserComponent},
+  {path: 'MoyenDePaiment', component: MoyenPaimenetUserComponent},
   {path: 'ReservationUser', component: UserReservationsComponent},
   {path: 'HistoriquePaymentUser', component: HistoriquePaymentUserComponent},
   {path: 'DashboardProfesionnal', component: ProfessionalDashboardHomeComponent},
