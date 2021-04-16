@@ -4,7 +4,7 @@ import { User } from './user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { connexion } from './UserConnexion';
 import { Professional } from './professional';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
