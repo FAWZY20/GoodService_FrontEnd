@@ -11,6 +11,7 @@ import { UserReservationsComponent } from './user-reservations/user-reservations
 import { HistoriquePaymentUserComponent } from './historique-payment-user/historique-payment-user.component';
 import { MoyenPaimenetUserComponent } from './moyen-paimenet-user/moyen-paimenet-user.component';
 import { ProfilUserComponent } from './profil-user/profil-user.component';
+import { HomePAgeComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
   {path: 'DashboardUser', component: BackUserComponent},
@@ -19,8 +20,8 @@ const routes: Routes = [
   {path: 'ReservationUser', component: UserReservationsComponent},
   {path: 'HistoriquePaymentUser', component: HistoriquePaymentUserComponent},
   {path: 'DashboardProfesionnal', component: ProfessionalDashboardHomeComponent},
-  {path: 'home', component: OpenStreetMapComponent },
-  {path: '', component: OpenStreetMapComponent },
+  {path: 'Map', component: OpenStreetMapComponent },
+  {path: '', component: HomePAgeComponent },
   {path: 'signup-user', component: SignupUserComponent},
   {path: 'connexion', component:ConnectionComponent},
   {path: 'backuser', component:BackUserComponent},

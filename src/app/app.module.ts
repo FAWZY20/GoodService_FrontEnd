@@ -23,6 +23,8 @@ import { UserReservationsComponent } from './user-reservations/user-reservations
 import { HistoriquePaymentUserComponent } from './historique-payment-user/historique-payment-user.component';
 import { MoyenPaimenetUserComponent } from './moyen-paimenet-user/moyen-paimenet-user.component';
 import { ProfilUserComponent } from './profil-user/profil-user.component';
+import { HomePAgeComponent } from './home-page/home-page.component';
+import { HeaderVisiteurComponent } from './header-visiteur/header-visiteur.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { ProfilUserComponent } from './profil-user/profil-user.component';
     UserReservationsComponent,
     HistoriquePaymentUserComponent,
     MoyenPaimenetUserComponent,
-    ProfilUserComponent
+    ProfilUserComponent,
+    HomePAgeComponent,
+    HeaderVisiteurComponent
   ],
   imports: [
     BrowserModule,
