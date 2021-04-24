@@ -8,6 +8,16 @@
     background-color: teal;
 }
 
+.dropdown-item {
+    font-size: 25px;
+}
+
+.navbar .nav-link {
+    margin-right: 10px;
+    color: white !important;
+    font-size: 25px;
+}
+
 .logo {
     width: 10%;
     display: flex;
