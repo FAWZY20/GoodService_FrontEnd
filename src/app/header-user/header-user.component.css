@@ -53,19 +53,6 @@
     margin: 0px !important;
 }
 
-.btn {
-    margin-right: 5%;
-    font-size: 21px;
-    font-weight: bold;
-    color: white;
-    display: flex;
-    align-items: center;
-}
-
-svg {
-    margin-right: 5%;
-}
-
 .map {
     margin-right: 10%;
 }

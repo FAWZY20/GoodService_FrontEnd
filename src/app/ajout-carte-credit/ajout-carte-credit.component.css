@@ -444,3 +444,16 @@ input[type="radio"] {
 H1 {
     font-size: 21px;
 }
+
+.form_span {
+    display: flex;
+    height: 15%;
+}
+
+.form_input {
+    padding-bottom: 5%;
+}
+
+.numerocb {
+    padding: 0;
+}

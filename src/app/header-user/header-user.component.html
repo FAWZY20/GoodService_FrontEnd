@@ -58,24 +58,17 @@
                 <div class="col-lg">
                     <div class="header__button">
                         <div class="header__button_position">
-                            <a style="color: white;" routerLink="signup-professional">
-                                <div class="header__icon">
-                                    <img src="../../assets/img/professional-icon.webp" width="40" height="40" alt="">
-                                </div>
-                                <div class="header__button-text">
-                                    <p>Devenir pro</p>
-                                </div>
+                            <a href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="../../assets/img/icon-user.webp" width="40" height="40" alt="">
                             </a>
-                        </div>
-                        <div class="header__button_position">
-                            <a style="color: white;" routerLink="signup-user">
-                                <div class="header__icon">
-                                    <img src="../../assets/img/icon-user.webp" width="40" height="40" alt="">
-                                </div>
-                                <div class="header__button-text">
-                                    <p>Devenir client</p>
-                                </div>
-                            </a>
+                            <div class="dropdown-menu" style="margin-top: 14px;" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#" routerLink="/backuser">Tableau de bord</a>
+                                <a class="dropdown-item" href="#" routerLink="/ReservationUser">réservations en cour</a>
+                                <a class="dropdown-item" href="#" routerLink="/HistoriquePaymentUser">Historique & Réservations</a>
+                                <a class="dropdown-item" href="#" routerLink="/mon-comtpe">Mon profil</a>
+                                <a class="dropdown-item" href="#" routerLink="/MoyenDePaiment">Moyen de paiements</a>
+                                <a class="dropdown-item" href="#" routerLink="">Me déconnecter</a>
+                            </div>
                         </div>
                     </div>
                 </div>

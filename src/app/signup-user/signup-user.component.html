@@ -6,9 +6,9 @@
                 <img src="../../assets/img/istockphoto-1134958683-612x612.jpg" alt="" class="img-fluid" />
             </div>
             <div class="col form_span from_span-lg-6 bloc-inscription">
+                <div class="link-connect text-center">Vous avez un compte ? <a routerLink="/connexion">Connectez-vous</a></div>
                 <div class="bloc-form-inscription">
                     <h1>S'inscrire</h1>
-
                     <form #Registerform="ngForm" (ngSubmit)="registerUser()">
 
                         <div class="row form_input form_input">
@@ -78,10 +78,6 @@
                             <button [disabled]="Registerform.form.invalid" class="btn btn-primary btn-create-account" type="submit">Créer
                                 mon compte</button>
                         </div>
-                        <div>
-                            <small class="float-right btextual" [routerLink]="['/connexion']">Utilisateur existant ? Connectez-vous ici</small>
-                        </div>
-
                     </form>
                 </div>
             </div>

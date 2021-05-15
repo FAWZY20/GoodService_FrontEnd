@@ -12,9 +12,21 @@ import { HistoriquePaymentUserComponent } from './historique-payment-user/histor
 import { MoyenPaimenetUserComponent } from './moyen-paimenet-user/moyen-paimenet-user.component';
 import { ProfilUserComponent } from './profil-user/profil-user.component';
 import { HomePAgeComponent } from './home-page/home-page.component';
+import { AjoutCarteCreditComponent } from './ajout-carte-credit/ajout-carte-credit.component';
+import { ProfessionalHoraireOuvertureComponent } from './professional-horaire-ouverture/professional-horaire-ouverture.component';
+import { AbscenceProfessionalComponent } from './abscence-professional/abscence-professional.component';
+import { NouvelleAbsComponent } from './nouvelle-abs/nouvelle-abs.component';
+import { RendezVousCoiffureMenComponent } from './rendez-vous-coiffure-men/rendez-vous-coiffure-men.component';
+import { CoupeFemmeComponent } from './coupe-femme/coupe-femme.component';
 
 const routes: Routes = [
   {path: 'DashboardUser', component: BackUserComponent},
+  {path: 'coupe-homme', component: RendezVousCoiffureMenComponent},
+  {path: 'coupe-femme', component: CoupeFemmeComponent},
+  {path: 'NouvelleAbscence', component: NouvelleAbsComponent},
+  {path: 'Abscence', component: AbscenceProfessionalComponent},
+  {path: 'Horaire-ouverture', component: ProfessionalHoraireOuvertureComponent}, 
+  {path: 'nouvelleCarteCredit', component: AjoutCarteCreditComponent},
   {path: 'mon-compte', component: ProfilUserComponent},
   {path: 'MoyenDePaiment', component: MoyenPaimenetUserComponent},
   {path: 'ReservationUser', component: UserReservationsComponent},

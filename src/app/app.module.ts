@@ -25,6 +25,13 @@ import { MoyenPaimenetUserComponent } from './moyen-paimenet-user/moyen-paimenet
 import { ProfilUserComponent } from './profil-user/profil-user.component';
 import { HomePAgeComponent } from './home-page/home-page.component';
 import { HeaderVisiteurComponent } from './header-visiteur/header-visiteur.component';
+import { AjoutCarteCreditComponent } from './ajout-carte-credit/ajout-carte-credit.component';
+import { HeaderUserComponent } from './header-user/header-user.component';
+import { ProfessionalHoraireOuvertureComponent } from './professional-horaire-ouverture/professional-horaire-ouverture.component';
+import { AbscenceProfessionalComponent } from './abscence-professional/abscence-professional.component';
+import { NouvelleAbsComponent } from './nouvelle-abs/nouvelle-abs.component';
+import { RendezVousCoiffureMenComponent } from './rendez-vous-coiffure-men/rendez-vous-coiffure-men.component';
+import { CoupeFemmeComponent } from './coupe-femme/coupe-femme.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +54,14 @@ import { HeaderVisiteurComponent } from './header-visiteur/header-visiteur.compo
     MoyenPaimenetUserComponent,
     ProfilUserComponent,
     HomePAgeComponent,
-    HeaderVisiteurComponent
+    HeaderVisiteurComponent,
+    AjoutCarteCreditComponent,
+    HeaderUserComponent,
+    ProfessionalHoraireOuvertureComponent,
+    AbscenceProfessionalComponent,
+    NouvelleAbsComponent,
+    RendezVousCoiffureMenComponent,
+    CoupeFemmeComponent
   ],
   imports: [
     BrowserModule,

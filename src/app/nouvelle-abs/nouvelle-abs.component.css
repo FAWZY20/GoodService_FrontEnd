@@ -413,8 +413,12 @@ input[type="radio"] {
 }
 
 .btn-add-cart {
-    border-radius: 200px;
+    border-radius: 199px;
     background-color: teal;
+    margin-top: 3%;
+    margin-left: 30% !important;
+    padding: 2%;
+    font-weight: bold;
 }
 
 .btn-add-cart::after {
@@ -427,9 +431,13 @@ input[type="radio"] {
     margin-bottom: 20px;
 }
 
+.form-control {
+    padding: 1.575rem .75rem;
+}
+
 .container {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 3%;
+    padding-bottom: 10%;
     background-color: rgba(219, 219, 219, 0.267);
     display: flex;
     flex-direction: column;
@@ -442,5 +450,20 @@ input[type="radio"] {
 }
 
 H1 {
-    font-size: 21px;
+    font-size: 31px;
+    font-weight: bold;
+    padding-bottom: 5%;
+}
+
+.form_span {
+    display: flex;
+    height: 15%;
+}
+
+.form_input {
+    padding-bottom: 5%;
+}
+
+.numerocb {
+    padding: 0;
 }
