@@ -32,6 +32,8 @@ import { AbscenceProfessionalComponent } from './abscence-professional/abscence-
 import { NouvelleAbsComponent } from './nouvelle-abs/nouvelle-abs.component';
 import { RendezVousCoiffureMenComponent } from './rendez-vous-coiffure-men/rendez-vous-coiffure-men.component';
 import { CoupeFemmeComponent } from './coupe-femme/coupe-femme.component';
+import { BrushingComponent } from './brushing/brushing.component';
+import { ColorationComponent } from './coloration/coloration.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { CoupeFemmeComponent } from './coupe-femme/coupe-femme.component';
     AbscenceProfessionalComponent,
     NouvelleAbsComponent,
     RendezVousCoiffureMenComponent,
-    CoupeFemmeComponent
+    CoupeFemmeComponent,
+    BrushingComponent,
+    ColorationComponent
   ],
   imports: [
     BrowserModule,

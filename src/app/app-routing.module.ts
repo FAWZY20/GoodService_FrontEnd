@@ -18,10 +18,14 @@ import { AbscenceProfessionalComponent } from './abscence-professional/abscence-
 import { NouvelleAbsComponent } from './nouvelle-abs/nouvelle-abs.component';
 import { RendezVousCoiffureMenComponent } from './rendez-vous-coiffure-men/rendez-vous-coiffure-men.component';
 import { CoupeFemmeComponent } from './coupe-femme/coupe-femme.component';
+import { BrushingComponent } from './brushing/brushing.component';
+import { ColorationComponent } from './coloration/coloration.component';
 
 const routes: Routes = [
   {path: 'DashboardUser', component: BackUserComponent},
   {path: 'coupe-homme', component: RendezVousCoiffureMenComponent},
+  {path: 'brushing', component: BrushingComponent},
+  {path: 'coloration', component: ColorationComponent},
   {path: 'coupe-femme', component: CoupeFemmeComponent},
   {path: 'NouvelleAbscence', component: NouvelleAbsComponent},
   {path: 'Abscence', component: AbscenceProfessionalComponent},
