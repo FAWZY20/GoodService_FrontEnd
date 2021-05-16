@@ -34,6 +34,11 @@ import { RendezVousCoiffureMenComponent } from './rendez-vous-coiffure-men/rende
 import { CoupeFemmeComponent } from './coupe-femme/coupe-femme.component';
 import { BrushingComponent } from './brushing/brushing.component';
 import { ColorationComponent } from './coloration/coloration.component';
+import { EpilationComponent } from './epilation/epilation.component';
+import { ManucureComponent } from './manucure/manucure.component';
+import { SoinHydratanComponent } from './soin-hydratan/soin-hydratan.component';
+import { MenageComponent } from './menage/menage.component';
+import { RepasageComponent } from './repasage/repasage.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +70,12 @@ import { ColorationComponent } from './coloration/coloration.component';
     RendezVousCoiffureMenComponent,
     CoupeFemmeComponent,
     BrushingComponent,
-    ColorationComponent
+    ColorationComponent,
+    EpilationComponent,
+    ManucureComponent,
+    SoinHydratanComponent,
+    MenageComponent,
+    RepasageComponent
   ],
   imports: [
     BrowserModule,

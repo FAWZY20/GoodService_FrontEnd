@@ -20,11 +20,21 @@ import { RendezVousCoiffureMenComponent } from './rendez-vous-coiffure-men/rende
 import { CoupeFemmeComponent } from './coupe-femme/coupe-femme.component';
 import { BrushingComponent } from './brushing/brushing.component';
 import { ColorationComponent } from './coloration/coloration.component';
+import { ManucureComponent } from './manucure/manucure.component';
+import { EpilationComponent } from './epilation/epilation.component';
+import { SoinHydratanComponent } from './soin-hydratan/soin-hydratan.component';
+import { RepasageComponent } from './repasage/repasage.component';
+import { MenageComponent } from './menage/menage.component';
 
 const routes: Routes = [
   {path: 'DashboardUser', component: BackUserComponent},
+  {path: 'repasage', component: RepasageComponent},
+  {path: 'menage', component: MenageComponent},
   {path: 'coupe-homme', component: RendezVousCoiffureMenComponent},
   {path: 'brushing', component: BrushingComponent},
+  {path: 'manucure', component: ManucureComponent},
+  {path: 'epilation', component: EpilationComponent},
+  {path: 'soin-hydratant', component: SoinHydratanComponent},
   {path: 'coloration', component: ColorationComponent},
   {path: 'coupe-femme', component: CoupeFemmeComponent},
   {path: 'NouvelleAbscence', component: NouvelleAbsComponent},
