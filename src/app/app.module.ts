@@ -39,6 +39,9 @@ import { ManucureComponent } from './manucure/manucure.component';
 import { SoinHydratanComponent } from './soin-hydratan/soin-hydratan.component';
 import { MenageComponent } from './menage/menage.component';
 import { RepasageComponent } from './repasage/repasage.component';
+import { HeaderReservationComponent } from './header-reservation/header-reservation.component';
+import { ReservationCoupeHommeLieuxComponent } from './reservation-coupe-homme-lieux/reservation-coupe-homme-lieux.component';
+import { ReservationCoupeHommePrestationComponent } from './reservation-coupe-homme-prestation/reservation-coupe-homme-prestation.component';
 
 @NgModule({
   declarations: [
@@ -75,12 +78,14 @@ import { RepasageComponent } from './repasage/repasage.component';
     ManucureComponent,
     SoinHydratanComponent,
     MenageComponent,
-    RepasageComponent
+    RepasageComponent,
+    HeaderReservationComponent,
+    ReservationCoupeHommeLieuxComponent,
+    ReservationCoupeHommePrestationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule,

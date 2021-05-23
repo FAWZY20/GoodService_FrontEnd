@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+export interface ReservationDTO{
+  id:number;
+  profesional_id:number;
+  appointement_DateTime:Date;
+  etat:string;
+}
+
 
 @Component({
   selector: 'app-user-reservations',
@@ -7,9 +16,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserReservationsComponent implements OnInit {
 
-  constructor() { }
+  reservations:ReservationDTO[]=[];
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+      this.http.get<ReservationDTO[]>('https://mugiwara.csid.agilitejoviale.fr/ReservationUser').subscribe(dtos=>{
+        this.reservations = dtos;
+      }, error=>{
+        console.error('error occuid', error)
+      })
   }
 
 }

@@ -10,6 +10,33 @@
             </div>
             <div>
                 <div class="dropdown">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">profesional_id</th>
+                                <th scope="col">appointement_DateTime</th>
+                                <th scope="col">etat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <li *ngFor="let reservation of reservations">{{reservation.id}}</li>
+                                </td>
+                                <td>
+                                    <li *ngFor="let reservation of reservations">{{reservation.profesional_id}}</li>
+                                </td>
+                                <td>
+                                    <li *ngFor="let reservation of reservations">{{reservation.appointement_DateTime}}</li>
+                                </td>
+                                <td>
+                                    <li *ngFor="let reservation of reservations">{{reservation.etat}}</li>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
                     <button class="btn btn-secondary dropdown-toggle btn-reserved" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       RESERVER UN SERVICE
                     </button>

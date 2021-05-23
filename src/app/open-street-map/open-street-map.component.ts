@@ -1,6 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
 
+
 @Component({
   selector: 'app-open-street-map',
   templateUrl: './open-street-map.component.html',
@@ -42,7 +43,6 @@ export class OpenStreetMapComponent implements AfterViewInit {
      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>contributors'
      } ).addTo(map);
 
- }
- 
+    }
 
 }
