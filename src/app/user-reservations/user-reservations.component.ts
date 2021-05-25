@@ -21,7 +21,7 @@ export class UserReservationsComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-      this.http.get<ReservationDTO[]>('https://mugiwara.csid.agilitejoviale.fr/ReservationUser').subscribe(dtos=>{
+      this.http.get<ReservationDTO[]>('http://localhost:8080/ReservationUser').subscribe(dtos=>{
         this.reservations = dtos;
       }, error=>{
         console.error('error occuid', error)
