@@ -1,0 +1,201 @@
+.title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.panier {
+    position: fixed;
+    left: 66%;
+    font-weight: bold;
+    color: teal;
+    box-shadow: 1px 1px 12px #555;
+    border-radius: 20px;
+}
+
+.etape {
+    margin-bottom: 30%;
+}
+
+.panier-title {
+    margin-top: 5%;
+    color: teal;
+}
+
+hr {
+    margin-top: 0;
+    background-color: teal;
+    color: teal;
+    width: 25%;
+}
+
+.btn {
+    box-shadow: 1px 1px 12px #555;
+    font-size: 20px;
+    margin-top: 5%;
+    margin-right: 2%;
+    background-color: teal;
+    color: white;
+    border-radius: 200px;
+}
+
+.info-coiffeur {
+    margin-top: 3%;
+    padding: 20px;
+    padding-bottom: 100px;
+    box-shadow: 1px 1px 12px #555;
+    border-radius: 20px;
+}
+
+.info-coiffeur-title {
+    font-size: 20px;
+    color: teal;
+    font-weight: bold;
+    border-bottom: 3px solid teal;
+}
+
+.title-service {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: teal;
+    font-size: 20px;
+    margin-bottom: 5%;
+}
+
+.service {
+    margin-top: 3%;
+    padding: 20px;
+    box-shadow: 1px 1px 12px #555;
+    border-radius: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.prestation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 3%;
+    margin-left: 20%;
+}
+
+.prestation-text {
+    margin-left: 2%;
+}
+
+.prestation-date {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+    box-shadow: 1px 1px 12px #555;
+    border-radius: 20px;
+}
+
+.prestation-lieu {
+    padding: 50px;
+    margin-top: 3%;
+    box-shadow: 1px 1px 12px #555;
+    border-radius: 20px;
+}
+
+.form-check {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.prestation-lieu-bloc {
+    box-shadow: 1px 1px 12px #555;
+    border-radius: 20px;
+    padding: 34px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-weight: bold;
+}
+
+.prestation-paiement {
+    padding: 50px;
+    margin-top: 3%;
+    box-shadow: 1px 1px 12px #555;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.map-border {
+    border: 5px solid teal;
+    height: 30%;
+    width: 90%;
+}
+
+#map {
+    height: 100%;
+}

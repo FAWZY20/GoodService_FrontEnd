@@ -25,10 +25,11 @@ import { EpilationComponent } from './epilation/epilation.component';
 import { SoinHydratanComponent } from './soin-hydratan/soin-hydratan.component';
 import { RepasageComponent } from './repasage/repasage.component';
 import { MenageComponent } from './menage/menage.component';
-
+import { FormulaireReservationCoupeHommeComponent } from './formulaire-reservation-coupe-homme/formulaire-reservation-coupe-homme.component';
 
 const routes: Routes = [
-  {path: 'DashboardUser', component: BackUserComponent},
+  {path: 'utilisateur/tableau-de-bord', component: BackUserComponent},
+  {path: 'reservation/coupe/homme', component: FormulaireReservationCoupeHommeComponent},
   {path: 'repasage', component: RepasageComponent},
   {path: 'menage', component: MenageComponent},
   {path: 'coupe-homme', component: RendezVousCoiffureMenComponent},
@@ -44,7 +45,7 @@ const routes: Routes = [
   {path: 'nouvelleCarteCredit', component: AjoutCarteCreditComponent},
   {path: 'mon-compte', component: ProfilUserComponent},
   {path: 'MoyenDePaiment', component: MoyenPaimenetUserComponent},
-  {path: 'ReservationUser', component: UserReservationsComponent},
+  {path: 'reservation/list', component: UserReservationsComponent},
   {path: 'HistoriquePaymentUser', component: HistoriquePaymentUserComponent},
   {path: 'DashboardProfesionnal', component: ProfessionalDashboardHomeComponent},
   {path: 'Map', component: OpenStreetMapComponent },
