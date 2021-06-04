@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
-import { ProfessionalDTO } from '../api/professionalDTO';
+import { Professional } from '../api/professional';
 import { RegistationService } from '../registation.service';
 import { Router } from '@angular/router';
 
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class SignupProfessionalComponent implements OnInit {
 
-  professional: ProfessionalDTO = {};
+  professional = new Professional();
   msg="";
 
   constructor(private _service : RegistationService, private _router : Router) { }

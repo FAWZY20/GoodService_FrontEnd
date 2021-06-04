@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDTO } from '../api/userDTO';
+import { User } from '../api/user';
 import {NgForm} from '@angular/forms';
 
 @Component({
@@ -9,7 +9,7 @@ import {NgForm} from '@angular/forms';
 })
 export class ProfilUserComponent implements OnInit {
 
-  user: UserDTO = {};
+  user = new User();
 
   constructor() { }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
-import { UserDTO } from '../api/userDTO';
+import { User } from '../api/user';
 import { RegistationService } from '../registation.service';
 import { Router } from '@angular/router';
 
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class SignupUserComponent implements OnInit {
 
 
-  user: UserDTO = {};
+  user =new User();
   msg=''; 
 
   constructor(private _service : RegistationService, private _router : Router) { }

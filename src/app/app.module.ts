@@ -40,11 +40,10 @@ import { SoinHydratanComponent } from './soin-hydratan/soin-hydratan.component';
 import { MenageComponent } from './menage/menage.component';
 import { RepasageComponent } from './repasage/repasage.component';
 import { HeaderReservationComponent } from './header-reservation/header-reservation.component';
-import { ReservationCoupeHommeLieuxComponent } from './reservation-coupe-homme-lieux/reservation-coupe-homme-lieux.component';
 import { ReservationCoupeHommePrestationComponent } from './reservation-coupe-homme-prestation/reservation-coupe-homme-prestation.component';
 import { PrestationCoupeHommeComponent } from './prestation-coupe-homme/prestation-coupe-homme.component';
 import { ReservationComponent } from './reservation/reservation.component';
-import { ReservationEditComponent } from './reservation-edit/reservation-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -83,11 +82,9 @@ import { ReservationEditComponent } from './reservation-edit/reservation-edit.co
     MenageComponent,
     RepasageComponent,
     HeaderReservationComponent,
-    ReservationCoupeHommeLieuxComponent,
     ReservationCoupeHommePrestationComponent,
     PrestationCoupeHommeComponent,
-    ReservationComponent,
-    ReservationEditComponent
+    ReservationComponent
   ],
   imports: [
     BrowserModule,

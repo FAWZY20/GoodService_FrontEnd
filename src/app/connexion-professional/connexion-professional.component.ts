@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
-import { ProfessionalDTO } from '../api/professionalDTO';
-import { UserDTO } from '../api/userDTO';
+import { Professional } from '../api/professional';
 import { RegistationService } from '../registation.service';
 
 @Component({
@@ -12,7 +11,7 @@ import { RegistationService } from '../registation.service';
 })
 export class ConnexionProfessionalComponent implements OnInit {
 
-  user: ProfessionalDTO = {} ;
+  user = new Professional();
   msg = '';
 
   constructor(private _service: RegistationService, private _router:  Router) { }
@@ -28,7 +27,7 @@ export class ConnexionProfessionalComponent implements OnInit {
       },
       error => {
         console.log("exception occured");
-        this.msg = "Bad credentials, please enter valid email and password";
+        this.msg = "exception occured";
       }
     )
   }
