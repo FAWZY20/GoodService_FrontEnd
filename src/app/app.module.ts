@@ -42,8 +42,8 @@ import { RepasageComponent } from './repasage/repasage.component';
 import { HeaderReservationComponent } from './header-reservation/header-reservation.component';
 import { ReservationCoupeHommePrestationComponent } from './reservation-coupe-homme-prestation/reservation-coupe-homme-prestation.component';
 import { PrestationCoupeHommeComponent } from './prestation-coupe-homme/prestation-coupe-homme.component';
-import { ReservationComponent } from './reservation/reservation.component';
-
+import { ReservationAccepterComponent } from './reservation-accepter/reservation-accepter.component';
+import { FormulaireReservationCoupeHommeComponent } from './formulaire-reservation-coupe-homme/formulaire-reservation-coupe-homme.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +84,8 @@ import { ReservationComponent } from './reservation/reservation.component';
     HeaderReservationComponent,
     ReservationCoupeHommePrestationComponent,
     PrestationCoupeHommeComponent,
-    ReservationComponent
+    ReservationAccepterComponent,
+    FormulaireReservationCoupeHommeComponent
   ],
   imports: [
     BrowserModule,
