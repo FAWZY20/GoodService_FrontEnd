@@ -2,16 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegistationService } from '../registation.service';
-import {User} from '../user';
-import { connexion } from '../UserConnexion';
+import {UserDTO} from '../api/userDTO';
+import { ConnexionDTO } from '../api/userConnexionDTO';
 
 @Component({
   selector: 'app-connection',
   templateUrl:'./connection.component.html',
   styleUrls: ['./connection.component.css']
 })
+
+
 export class ConnectionComponent implements OnInit {
- user = new connexion();
+ user: UserDTO = {};
  msg= '';
 
   constructor(private _service : RegistationService, private _router : Router) { }

@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ProfessionalLightDTO } from '../api/professionalLightDTO';
+import { UserLightDTO } from '../api/userLightDTO';
 
 export interface ReservationDTO{
-  id:number;
-  profesional_id:number;
-  appointement_DateTime:Date;
-  etat:string;
+  id?:number;
+  professional:ProfessionalLightDTO;
+  client:UserLightDTO;
+  appointmentDateTime?:Date;
+  status?:string;
 }
 
 
@@ -14,6 +17,7 @@ export interface ReservationDTO{
   templateUrl: './user-reservations.component.html',
   styleUrls: ['./user-reservations.component.css']
 })
+
 export class UserReservationsComponent implements OnInit {
 
   reservations:ReservationDTO[]=[];
@@ -21,7 +25,7 @@ export class UserReservationsComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-      this.http.get<ReservationDTO[]>('http://localhost:8080/ReservationUser').subscribe(dtos=>{
+      this.http.get<ReservationDTO[]>('http://localhost:8080/api/reservation/list').subscribe(dtos=>{
         this.reservations = dtos;
       }, error=>{
         console.error('error occuid', error)

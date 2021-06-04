@@ -26,9 +26,11 @@ import { SoinHydratanComponent } from './soin-hydratan/soin-hydratan.component';
 import { RepasageComponent } from './repasage/repasage.component';
 import { MenageComponent } from './menage/menage.component';
 import { ReservationCoupeHommeLieuxComponent } from './reservation-coupe-homme-lieux/reservation-coupe-homme-lieux.component';
+import { ReservationEditComponent } from './reservation-edit/reservation-edit.component';
 
 const routes: Routes = [
   {path: 'DashboardUser', component: BackUserComponent},
+  {path: 'reservation/new', component: ReservationEditComponent},
   {path: 'reservation-coupe-homme-lieux', component: ReservationCoupeHommeLieuxComponent},
   {path: 'repasage', component: RepasageComponent},
   {path: 'menage', component: MenageComponent},

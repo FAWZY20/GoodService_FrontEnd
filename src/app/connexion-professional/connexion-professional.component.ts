@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
-import { Professional } from '../professional';
+import { ProfessionalDTO } from '../api/professionalDTO';
+import { UserDTO } from '../api/userDTO';
 import { RegistationService } from '../registation.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { RegistationService } from '../registation.service';
 })
 export class ConnexionProfessionalComponent implements OnInit {
 
-  user = new Professional();
+  user: ProfessionalDTO = {} ;
   msg = '';
 
   constructor(private _service: RegistationService, private _router:  Router) { }

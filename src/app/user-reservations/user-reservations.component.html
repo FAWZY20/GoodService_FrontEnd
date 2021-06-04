@@ -25,13 +25,13 @@
                                     <li *ngFor="let reservation of reservations">{{reservation.id}}</li>
                                 </td>
                                 <td>
-                                    <li *ngFor="let reservation of reservations">{{reservation.profesional_id}}</li>
+                                    <li *ngFor="let reservation of reservations">{{reservation.professional.nom}} {{reservation.professional.prenom}} ({{reservation.professional.poste}})</li>
                                 </td>
                                 <td>
-                                    <li *ngFor="let reservation of reservations">{{reservation.appointement_DateTime}}</li>
+                                    <li *ngFor="let reservation of reservations">{{reservation.appointmentDateTime}}</li>
                                 </td>
                                 <td>
-                                    <li *ngFor="let reservation of reservations">{{reservation.etat}}</li>
+                                    <li *ngFor="let reservation of reservations">{{reservation.status}}</li>
                                 </td>
                             </tr>
                         </tbody>
