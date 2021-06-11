@@ -14,31 +14,51 @@
                         <thead>
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">profesional_id</th>
-                                <th scope="col">appointement_DateTime</th>
+                                <th scope="col">prestation</th>
+                                <th scope="col">professionnel</th>
+                                <th scope="col">Date</th>
                                 <th scope="col">etat</th>
+                                <th scope="col">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr *ngFor="let reservation of reservations">
                                 <td>
-                                    <li *ngFor="let reservation of reservations">{{reservation.id}}</li>
+                                    <li>{{reservation.id}}</li>
                                 </td>
                                 <td>
-                                    <li *ngFor="let reservation of reservations">{{reservation.professional.nom}} {{reservation.professional.prenom}} ({{reservation.professional.poste}})</li>
+                                    <li>{{reservation.prestation}}</li>
                                 </td>
                                 <td>
-                                    <li *ngFor="let reservation of reservations">{{reservation.appointmentDateTime}}</li>
+                                    <li>{{reservation.professional.nom}} {{reservation.professional.prenom}}</li>
                                 </td>
                                 <td>
-                                    <li *ngFor="let reservation of reservations">{{reservation.status}}</li>
+                                    <li>{{reservation.appointementDate}}</li>
+                                </td>
+                                <td>
+                                    <li>{{reservation.etat}}</li>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-info" style="margin-right: 6px;">
+                                        <i class="fa fa-search"
+                                            (click)="openDetails(contentDetails, reservation)">Info</i>
+                                    </button>
+
+                                    <button type="button" class="btn btn-warning" style="margin-right: 6px;">
+                                        <i class="fa fa-edit"
+                                            (click)="openDetails(contentDetails, reservation)">modifier</i>
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger">
+                                        <i class="fa fa-remove"
+                                            (click)="openDelete(contentDelete, reservation)">Suprimer</i>
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-
                     <button class="btn btn-secondary dropdown-toggle btn-reserved" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      RESERVER UN SERVICE
+                        RESERVER UN SERVICE
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="#">COIFFURE</a>
@@ -51,4 +71,65 @@
         </div>
     </div>
 </section>
+
+
+<ng-template #contentDelete let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Confirm Delete</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <h2>Vous êtes sûr de vouloir supprimer cet enregistrement.</h2>
+        <div class="border text-center">
+            <button data-dismiss="modal" class="btn btn-danger" (click)="onDelete()">Oui, Suprimer!</button>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="openDetails(contentDetails, reservation)">Detail</button>
+    </div>
+</ng-template>
+
+
+<ng-template #contentDetails let-model>
+    <div class="modal-header">
+        <h4 class="nodal-title" id="nodal-basic-title">Information sur votre reservation</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <form #f="ngForm" (ngSubmit)="OnSubmit(f)" novalidate>
+        <div class="form-group">
+            <label for="firstname">prestation</label>
+            <div class="input-group">
+                <input id="prestation" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastname">professional</label>
+            <div class="input-group">
+                <input id="professional" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="department">Date</label>
+            <div class="input-group">
+                <input id="date" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Adress</label>
+            <div class="input-group">
+                <input id="Adress" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label> etat</label>
+            <div class="input-group">
+                <input id="etat" class="form-control" readonly>
+            </div>
+        </div>
+    </form>
+</ng-template>
 <app-footer></app-footer>
