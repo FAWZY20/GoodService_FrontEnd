@@ -5,21 +5,24 @@
             <div class="row">
                 <div class="welcome-home col-lg-3">
                     <h2>BIENVENUE</h2>
+                    <p *ngFor="let user of users"></p>
                 </div>
                 <div class="">
                     <div class="casse">
                         <div class="col-lg casse-one">
-                            <div>
-                                <img class="casse-img" src="../../assets/img/reserved.png" width="40" height="40" alt="reserved">
-                            </div>
-                            <div>
-                                <a class="cascol-lg-4 se-link" routerLink="/ReservationUser">
-                                    <p class="title-casse">RÉSERVATIONS EN COURS</p>
-                                    <p class="title-desscrription">
-                                        Consultez, modifiez ou annulez vos réservations. Echangez avec votre professionnel.
-                                    </p>
-                                </a>
-                            </div>
+                            <a class="casse-link" routerLink="/reservation/list">
+                                <div>
+                                    <img class="casse-img" src="../../assets/img/reserved.png" width="40" height="40" alt="reserved">
+                                </div>
+                                <div>
+                                    <a class="cascol-lg-4 se-link" routerLink="/ReservationUser">
+                                        <p class="title-casse">RÉSERVATIONS EN COURS</p>
+                                        <p class="title-desscrription">
+                                            Consultez, modifiez ou annulez vos réservations. Echangez avec votre professionnel.
+                                        </p>
+                                    </a>
+                                </div>
+                            </a>
                         </div>
                         <div class="col-lg casse-one">
                             <a class="casse-link" routerLink="/mon-compte">

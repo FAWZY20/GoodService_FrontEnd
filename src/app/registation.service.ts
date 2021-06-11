@@ -7,6 +7,7 @@ import { Professional } from './api/professional';
 import { environment } from 'src/environments/environment';
 import { Reservation } from './api/reservationDTO';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -22,6 +23,10 @@ export class RegistationService {
     return this._http.post<any>(environment.apiUrl + '/inscription/utilisateur', user)
   }
 
+  public getAll() {
+    return this._http.get<User[]>(environment.apiUrl + '/utilisateur')
+  }
+
   public loginProfessionalFromRemote(professional: Professional): Observable<any> {
     return this._http.post<any>(environment.apiUrl + '/connexionProfessional', professional)
   }
@@ -29,7 +34,8 @@ export class RegistationService {
   public registerProfessionalFromRemote(professional :Professional):Observable<any>{
     return this._http.post<any>(environment.apiUrl +'/registerProfessional', professional)
   }
-  public registerAppointment(appointement :Reservation):Observable<any>{
+
+  public registerAppointment(appointement : Reservation):Observable<any>{
     return this._http.post<any>(environment.apiUrl +'/new', appointement)
   }
 }
