@@ -8,6 +8,7 @@ export class User {
     code_postal:string;
     ville:string;
     mdp:string;
+    token:string;
     constructor(){}
 }
 
