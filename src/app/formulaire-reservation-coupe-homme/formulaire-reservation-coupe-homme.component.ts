@@ -2,6 +2,7 @@ import { AfterViewInit, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import * as L from 'leaflet';
 import { Reservation } from '../api/reservationDTO';
+
 import { RegistationService } from '../registation.service';
 
 @Component({
