@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="container">
             <div class="title">
-                <h1>RÉSERVATIONS EN COURS</h1>
+                <h1>Vos prestation</h1>
             </div>
             <div>
 
@@ -15,9 +15,8 @@
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">prestation</th>
-                                <th scope="col">professionnel</th>
+                                <th scope="col">client</th>
                                 <th scope="col">Date</th>
-                                <th scope="col">Adress</th>
                                 <th scope="col">etat</th>
                                 <th scope="col">Actions</th>
                             </tr>
@@ -37,41 +36,33 @@
                                     <li>{{reservation.appointementDate}}</li>
                                 </td>
                                 <td>
-                                    <li>{{reservation.address}}</li>
-                                </td>
-                                <td>
                                     <li>{{reservation.etat}}</li>
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-info" style="margin-right: 6px;" (click)="openDetails(contentDetails, reservation)">
-                                        <i class="fa fa-search">Info</i>
+                                    <button type="button" class="btn btn-info" style="margin-right: 6px;">
+                                        <i class="fa fa-search"
+                                            (click)="openDetails(contentDetails, reservation)">Info</i>
                                     </button>
 
-                                    <button type="button" class="btn btn-warning" style="margin-right: 6px;" (click)="openEdit(contentEdit, reservation)">
-                                        <i class="fa fa-edit">modifier</i>
+                                    <button type="button" class="btn btn-warning" style="margin-right: 6px;">
+                                        <i class="fa fa-edit"
+                                            (click)="openDetails(contentDetails, reservation)">modifier</i>
                                     </button>
 
-                                    <button type="button" class="btn btn-danger" (click)="openDelete(contentDelete, reservation)">
-                                        <i class="fa fa-remove">Suprimer</i>
+                                    <button type="button" class="btn btn-danger">
+                                        <i class="fa fa-remove"
+                                            (click)="openDelete(contentDelete, reservation)">Suprimer</i>
                                     </button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <button class="btn btn-secondary dropdown-toggle btn-reserved" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        RESERVER UN SERVICE
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">COIFFURE</a>
-                        <a class="dropdown-item" href="#">BEAUTE</a>
-                        <a class="dropdown-item" href="#">MENAGE</a>
-                        <a class="dropdown-item" href="#">COACH SPORTIF</a>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
 <ng-template #contentDelete let-modal>
     <div class="modal-header">
@@ -132,27 +123,4 @@
         </div>
     </form>
 </ng-template>
-
-
-<ng-template #contentEdit let-model>
-    <form [formGroup]="editForm" novalidate>
-        <div class="form-group">
-            <label for="address"> Adress </label>
-            <div class="input-group">
-                <input type="text" formControlName="address" class="form-control">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="appointementDate"> Date </label>
-            <div class="groupe d'entrée">
-                <input type="date" formControlName="appointementDate" class="form-control">
-            </div>
-        </div>
-        <div class="border text-center">
-            <button data-dismiss="modal" class="btn btn-info" (click)="onSave()"> Enregistrer les modifications </button>
-        </div>
-    </form>
-</ng-template>
-
-
 <app-footer></app-footer>
