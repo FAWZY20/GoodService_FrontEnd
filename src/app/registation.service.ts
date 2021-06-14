@@ -19,26 +19,34 @@ export class RegistationService {
   //Url user 
 
   public loginUserFromRemote(user: connexion): Observable<any> {
-    return this._http.post<any>( environment.apiUrl + '/connexion/utilisateur', user)
+    return this._http.post<any>(environment.apiUrl + '/connexion/utilisateur', user)
+  }
+
+  public getUsers(): Observable<any> {
+    return this._http.get<any>(environment.apiUrl + '/utilisateur')
+  }
+
+  public getUser(): Observable<any> {
+    return this._http.get<any>(environment.apiUrl + '/utilisateur')
   }
 
   public registerUserFromRemote(user: User): Observable<any> {
     return this._http.post<any>(environment.apiUrl + '/inscription/utilisateur', user)
   }
 
-  public registerAppointment(appointement :Reservation):Observable<any>{
-    return this._http.post<any>(environment.apiUrl +'/new', appointement)
+  public registerAppointment(appointement: Reservation): Observable<any> {
+    return this._http.post<any>(environment.apiUrl + '/new', appointement)
   }
 
-  
-//Url profesional
+
+  //Url profesional
 
   public loginProfessionalFromRemote(professional: Professional): Observable<any> {
     return this._http.post<any>(environment.apiUrl + '/connexionProfessional', professional)
   }
 
-  public registerProfessionalFromRemote(professional :Professional):Observable<any>{
-    return this._http.post<any>(environment.apiUrl +'/registerProfessional', professional)
+  public registerProfessionalFromRemote(professional: Professional): Observable<any> {
+    return this._http.post<any>(environment.apiUrl + '/registerProfessional', professional)
   }
 
 }

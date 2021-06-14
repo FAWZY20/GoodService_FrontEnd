@@ -8,7 +8,6 @@ import { HeaderVerticalComponent } from './header-vertical/header-vertical.compo
 import { SignupUserComponent } from './signup-user/signup-user.component';
 import { ConnectionComponent } from './connexion/connection.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { OpenStreetMapComponent } from './open-street-map/open-street-map.component';
 import { HeaderHorizontalComponent } from './header-horizontal/header-horizontal.component';
 import { SignupProfessionalComponent } from './signup-professional/signup-professional.component';
 import { ConnexionProfessionalComponent } from './connexion-professional/connexion-professional.component';
@@ -44,6 +43,8 @@ import { ReservationCoupeHommePrestationComponent } from './reservation-coupe-ho
 import { PrestationCoupeHommeComponent } from './prestation-coupe-homme/prestation-coupe-homme.component';
 import { ReservationAccepterComponent } from './reservation-accepter/reservation-accepter.component';
 import { FormulaireReservationCoupeHommeComponent } from './formulaire-reservation-coupe-homme/formulaire-reservation-coupe-homme.component';
+import { UtilisateurComponent } from './utilisateur/utilisateur.component';
+import { PrestataireComponent } from './prestataire/prestataire.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,6 @@ import { FormulaireReservationCoupeHommeComponent } from './formulaire-reservati
     HeaderVerticalComponent,
     SignupUserComponent,
     ConnectionComponent,
-    OpenStreetMapComponent,
     HeaderHorizontalComponent,
     SignupProfessionalComponent,
     ConnexionProfessionalComponent,
@@ -85,7 +85,9 @@ import { FormulaireReservationCoupeHommeComponent } from './formulaire-reservati
     ReservationCoupeHommePrestationComponent,
     PrestationCoupeHommeComponent,
     ReservationAccepterComponent,
-    FormulaireReservationCoupeHommeComponent
+    FormulaireReservationCoupeHommeComponent,
+    UtilisateurComponent,
+    PrestataireComponent
   ],
   imports: [
     FormsModule,

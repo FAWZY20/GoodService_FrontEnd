@@ -25,7 +25,7 @@ export class ConnectionComponent implements OnInit {
     this._service.loginUserFromRemote(this.user).subscribe(
       data =>{
         console.log("response recieved");
-        this._router.navigate(['/utilisateur/tableau-de-bord'])
+        this._router.navigate(['/utilisateur'])
         },
       error =>{ 
         console.log("exception occured");
