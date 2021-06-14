@@ -26,9 +26,11 @@ import { SoinHydratanComponent } from './soin-hydratan/soin-hydratan.component';
 import { RepasageComponent } from './repasage/repasage.component';
 import { MenageComponent } from './menage/menage.component';
 import { FormulaireReservationCoupeHommeComponent } from './formulaire-reservation-coupe-homme/formulaire-reservation-coupe-homme.component';
+import { ProfesionalRendezVousComponent } from './profesional-rendez-vous/profesional-rendez-vous.component';
 
 const routes: Routes = [
   {path: 'utilisateur/tableau-de-bord', component: BackUserComponent},
+  {path: 'professionel/list/rdv', component: ProfesionalRendezVousComponent},
   {path: 'reservation/coupe/homme', component: FormulaireReservationCoupeHommeComponent},
   {path: 'repasage', component: RepasageComponent},
   {path: 'menage', component: MenageComponent},

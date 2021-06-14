@@ -6,9 +6,12 @@ export class Reservation {
     id:number;
     client: UserLightDTO;
     professional: ProfessionalLightDTO;
-    prestation: string;
+    prestation ?: string;
+    prestation1: string;
+    prestation2: string;
+    prestation3: string;
+    prestation4: string;
     appointementDate: Date;
-    heure: Time;
     address: string;
     etat: string;
     constructor(){}
