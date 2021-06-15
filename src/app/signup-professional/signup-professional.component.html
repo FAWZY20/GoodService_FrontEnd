@@ -1,0 +1,91 @@
+<app-header-horizontal></app-header-horizontal>
+<section class="container signup-professional">
+    <div class="signup-professional-title">
+        <p>DEVENEZ PARTENAIRE <br> GOODSERVICE</p>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <img src="../../assets/img/prestataire.jpg" alt="" class="img-fluid" />
+        </div>
+        <div class="col-lg-6">
+            <div class="row justify-content-center">
+                <div class="link-connect text-center">Vous avez un compte ? <a routerLink="/connexion-professional">Connectez-vous</a></div>
+                <div>
+                    <div class="card">
+                        <header class="card-header">
+                            <h4 class="card-title mt-2">REJOIGNEZ-NOUS !</h4>
+                        </header>
+                        <article class="card-body">
+                            <form #Registerform="ngForm" (ngSubmit)="registerProfessional()">
+                                <div class="form-group">
+                                    <select class="form-select" aria-label="Default select example" [(ngModel)]="professional.poste">
+                                        <option selected>Postuler en tant que</option>
+                                        <option value="Coiffeur">Coiffeur</option>
+                                        <option value="Estheticienne">Estheticienne</option>
+                                        <option value="menager">Aide menager</option>
+                                        <option value="Coach">Coach sportif</option>
+                                    </select>
+                                </div>
+                                <div class="form-row ">
+                                    <div class="col form-group ">
+                                        <input type="text " placeholder="Prénom " class="form-control " [(ngModel)]="professional.prenom " [ngModelOptions]="{standalone: true} ">
+                                    </div>
+                                    <!-- form-group end.// -->
+                                    <div class="col form-group ">
+                                        <input type="text " placeholder="Nom " class="form-control " [(ngModel)]="professional.nom " [ngModelOptions]="{standalone: true} ">
+                                    </div>
+                                    <!-- form-group end.// -->
+                                </div>
+                                <div class="form-row ">
+                                    <div class="col form-group ">
+                                        <input type="date" class="form-control " [(ngModel)]="professional.date_naissance " [ngModelOptions]="{standalone: true} ">
+                                    </div>
+                                    <!-- form-group end.// -->
+                                    <div class="col form-group ">
+                                        <input type="text " placeholder="SIRET " class="form-control " [(ngModel)]="professional.siret " [ngModelOptions]="{standalone: true} ">
+                                    </div>
+                                    <!-- form-group end.// -->
+                                </div>
+                                <!-- form-row end.// -->
+                                <div class="form-row ">
+                                    <div class="form-group col-md-6 ">
+                                        <input type="text " placeholder="latitude " class="form-control " [(ngModel)]="professional.latitude" [ngModelOptions]="{standalone: true} ">
+                                    </div>
+                                    <div class="form-group col-md-6 ">
+                                        <input type="text " placeholder="longitude " class="form-control " [(ngModel)]="professional.longitude" [ngModelOptions]="{standalone: true} ">
+                                    </div>
+                                </div>
+                                <div class="coordonée">
+                                    <p class="coordonée">
+                                        Afin d'obtenir votre latitude et longitude cliquer <a href="https://www.coordonnees-gps.fr/" target="_blank">ici</a>
+                                    </p>
+                                </div>
+                                <div class="form-row ">
+                                    <div class="form-group col-md-6 ">
+                                        <input type="text " placeholder="Numero " class="form-control " [(ngModel)]="professional.numero " [ngModelOptions]="{standalone: true} ">
+                                    </div>
+                                    <div class="form-group col-md-6 ">
+                                        <input type="email " placeholder="Email " class="form-control " [(ngModel)]="professional.email " [ngModelOptions]="{standalone: true} ">
+                                    </div>
+                                </div>
+                                <div class="form-row ">
+                                    <div class="form-group col-md-6 ">
+                                        <input class="form-control " type="password " placeholder="Mot de passe " [(ngModel)]="professional.mdp " [ngModelOptions]="{standalone: true} ">
+                                    </div>
+                                    <!-- <div class="form-group col-md-6 ">
+                                        <input class="form-control " type="password " placeholder="Confirmer mot de passe ">
+                                    </div> -->
+                                </div>
+
+                                <div class="form-group ">
+                                    <button type="submit " class="btn btn-primary btn-block btn-create-account "> M'INSCIRE EN TANT QUE PRO </button>
+                                </div>
+                            </form>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>
