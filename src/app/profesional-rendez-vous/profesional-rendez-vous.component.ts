@@ -12,7 +12,7 @@ export interface ReservationDTO {
   client: UserLightDTO;
   professional: ProfessionalLightDTO;
   prestation: string;
-  appointementDate: Date;
+  appointementDate: string;
   address: string;
   etat: string;
 }
@@ -24,6 +24,7 @@ export interface ReservationDTO {
 })
 
 export class ProfesionalRendezVousComponent implements OnInit {
+
   reservations: ReservationDTO[] = [];
   reservationPro: ReservationDTO;
   private deleteId: number;

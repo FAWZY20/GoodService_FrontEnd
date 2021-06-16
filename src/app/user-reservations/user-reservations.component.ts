@@ -54,8 +54,6 @@ export class UserReservationsComponent implements OnInit {
 
   }
 
-
-  
   openDelete(targetModal, reservation: ReservationDTO) {
     this.deleteId = reservation.id;
     this.modalService.open(targetModal, {
