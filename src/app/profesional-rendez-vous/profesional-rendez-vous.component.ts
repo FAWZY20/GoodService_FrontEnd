@@ -1,31 +1,34 @@
-import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ProfessionalLightDTO } from '../api/professionalLightDTO';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from 'src/environments/environment';
-import { RegistationService } from '../registation.service';
+import { ProfessionalLightDTO } from '../api/professionalLightDTO';
+import { UserLightDTO } from '../api/userLightDTO';
+import { RegistationService } from '../_services/registation.service';
+
 
 export interface ReservationDTO {
   id: number;
+  client: UserLightDTO;
   professional: ProfessionalLightDTO;
   prestation: string;
-  address: string;
   appointementDate: string;
+  address: string;
   etat: string;
   message: string;
 }
 
-
 @Component({
-  selector: 'app-user-reservations',
-  templateUrl: './user-reservations.component.html',
-  styleUrls: ['./user-reservations.component.css']
+  selector: 'app-profesional-rendez-vous',
+  templateUrl: './profesional-rendez-vous.component.html',
+  styleUrls: ['./profesional-rendez-vous.component.css']
 })
-export class UserReservationsComponent implements OnInit {
+
+export class ProfesionalRendezVousComponent implements OnInit {
 
   reservations: ReservationDTO[] = [];
-  reservation: ReservationDTO;
+  reservationPro: ReservationDTO;
   private deleteId: number;
   editForm: FormGroup;
 
@@ -35,16 +38,14 @@ export class UserReservationsComponent implements OnInit {
     private fb: FormBuilder
   ) { }
 
-
-
   ngOnInit(): void {
-
     this.initForm();
-    this.getUserReservation();
-
+    this.getProfessionalReservation();
   }
 
-  getUserReservation() {
+
+  
+  getProfessionalReservation() {
 
     this.http.get<ReservationDTO[]>(environment.apiUrl + '/list').subscribe(dtos => {
       this.reservations = dtos;
@@ -59,33 +60,16 @@ export class UserReservationsComponent implements OnInit {
     this.editForm = this.fb.group(
       {
         id: [''],
+        client: [''],
         professional: [''],
         prestation: [''],
         address: [''],
         appointementDate: [''],
-        etat: ['']
+        etat: [''],
+        message: ['']
       });
 
   }
-
-  openDelete(targetModal, reservation: ReservationDTO) {
-    this.deleteId = reservation.id;
-    this.modalService.open(targetModal, {
-      backdrop: 'static',
-      size: 'lg'
-    });
-  }
-
-
-  onDelete() {
-    const deleteURL = 'http://localhost:8080/reservation/' + this.deleteId + '/delete';
-    this.http.delete(deleteURL)
-      .subscribe((results) => {
-        this.ngOnInit();
-        this.modalService.dismissAll();
-      });
-  }
-
 
 
   openDetails(targetModal, reservation: ReservationDTO) {
@@ -95,13 +79,11 @@ export class UserReservationsComponent implements OnInit {
       size: 'lg'
     });
     document.getElementById('prestation')?.setAttribute('value', reservation.prestation);
-    document.getElementById('professional')?.setAttribute('value', reservation.professional.nom);
+    document.getElementById('clientNom')?.setAttribute('value', reservation.client.nom);
     document.getElementById('date')?.setAttribute('value', reservation.appointementDate);
     document.getElementById('Adress')?.setAttribute('value', reservation.address);
     document.getElementById('etat')?.setAttribute('value', reservation.etat);
-    document.getElementById('message')?.setAttribute('value', reservation.message);
   }
-
 
 
   openEdit(targetModal, reservation: ReservationDTO) {
@@ -110,26 +92,29 @@ export class UserReservationsComponent implements OnInit {
       size: 'lg'
     });
     this.editForm.patchValue({
+
       id: reservation.id,
+      client: reservation.client,
       professional: reservation.professional,
       prestation: reservation.prestation,
       address: reservation.address,
       appointementDate: reservation.appointementDate,
-      etat: reservation.etat
+      etat: reservation.etat,
+      message: reservation.message
+
     });
   }
-
 
 
   onSave() {
     const editURL = environment.apiUrl + '/reservation/edit';
     this.http.put(editURL, this.editForm.value)
       .subscribe((results) => {
-        this.getUserReservation();
+        this.getProfessionalReservation();
         this.modalService.dismissAll();
       });
   }
 
-
+  
 
 }

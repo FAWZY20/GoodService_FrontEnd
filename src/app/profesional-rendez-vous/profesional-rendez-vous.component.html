@@ -1,0 +1,125 @@
+<div class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="title">
+                <h1>Vos future prestation !</h1>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Prestation</th>
+                        <th scope="col">client</th>
+                        <th scope="col">adress</th>
+                        <th scope="col">Date & heure</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let reservation of reservations">
+                        <td>
+                            <li>{{reservation.id}}</li>
+                        </td>
+                        <td>
+                            <li>{{reservation.prestation}}</li>
+                        </td>
+                        <td>
+                            <li>{{reservation.client.nom}} {{reservation.client.prenom}}</li>
+                        </td>
+                        <td>
+                            <li>{{reservation.appointementDate}}</li>
+                        </td>
+                        <td>
+                            <li>{{reservation.address}}</li>
+                        </td>
+                        <td>
+                            <li>{{reservation.etat}}</li>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-info" style="margin-right: 6px;" (click)="openDetails(contentDetails, reservation)">
+                                <i class="fa fa-search">Info</i>
+                            </button>
+
+                            <button type="button" class="btn btn-warning" style="margin-right: 6px;" (click)="openEdit(contentEdit, reservation)">
+                                <i class="fa fa-edit">etat</i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<ng-template #contentDetails let-model>
+    <div class="modal-body">
+        <h2>Information sur le renndez-vous</h2>
+        <form>
+            <div class="form-group">
+                <label for="firstname">prestation</label>
+                <div class="input-group">
+                    <input id="prestation" class="form-control" readonly>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Client</label>
+                <div class="input-group">
+                    <input id="clientNom" class="form-control" readonly>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="department">Date</label>
+                <div class="input-group">
+                    <input id="date" class="form-control" readonly>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Adress</label>
+                <div class="input-group">
+                    <input id="Adress" class="form-control" readonly>
+                </div>
+            </div>
+            <div class="form-group">
+                <label> etat</label>
+                <div class="input-group">
+                    <input id="etat" class="form-control" readonly>
+                </div>
+            </div>
+        </form>
+    </div>
+</ng-template>
+
+
+<ng-template #contentEdit let-model>
+    <div class="modal-body">
+        <h2>Statut du renndez-vous</h2>
+        <form [formGroup]="editForm" novalidate>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="select">
+                        <select id="standard-select" formControlName="etat">
+                            <option value="Accepter">Accepter</option>
+                            <option name="refuser" value="refuser">refuser</option>
+                            <option value="fini">fini</option>
+                        </select>
+                        <span class="focus"></span>
+                        <br>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Laissez un petit message à votre client</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="message"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border text-center">
+                <button data-dismiss="modal" class="btn btn-info" (click)="onSave()"> Enregistrer les modifications
+                </button>
+            </div>
+        </form>
+    </div>
+</ng-template>

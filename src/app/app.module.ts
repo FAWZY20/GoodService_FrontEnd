@@ -12,7 +12,7 @@ import { OpenStreetMapComponent } from './open-street-map/open-street-map.compon
 import { HeaderHorizontalComponent } from './header-horizontal/header-horizontal.component';
 import { SignupProfessionalComponent } from './signup-professional/signup-professional.component';
 import { ConnexionProfessionalComponent } from './connexion-professional/connexion-professional.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BackUserComponent } from './back-user/back-user.component';
 import { HeaderHorizontalUserComponent } from './header-horizontal-user/header-horizontal-user.component';
 import { ProfessionalDashboardHomeComponent } from './professional-dashboard-home/professional-dashboard-home.component';
@@ -44,9 +44,12 @@ import { ReservationCoupeHommePrestationComponent } from './reservation-coupe-ho
 import { PrestationCoupeHommeComponent } from './prestation-coupe-homme/prestation-coupe-homme.component';
 import { ReservationAccepterComponent } from './reservation-accepter/reservation-accepter.component';
 import { FormulaireReservationCoupeHommeComponent } from './formulaire-reservation-coupe-homme/formulaire-reservation-coupe-homme.component';
+import { ProfesionalRendezVousComponent } from './profesional-rendez-vous/profesional-rendez-vous.component';
+
 
 @NgModule({
   declarations: [
+    ProfesionalRendezVousComponent,
     AppComponent,
     HeaderVerticalComponent,
     SignupUserComponent,
@@ -88,6 +91,8 @@ import { FormulaireReservationCoupeHommeComponent } from './formulaire-reservati
     FormulaireReservationCoupeHommeComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,

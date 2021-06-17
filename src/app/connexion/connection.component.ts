@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
-import { RegistationService } from '../registation.service';
 import {User} from '../api/user';
 import { connexion } from '../api/UserConnexion';
+import { RegistationService } from '../_services/registation.service';
 
 @Component({
   selector: 'app-connection',
@@ -19,6 +19,7 @@ export class ConnectionComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
 
   loginUser(){
     console.log(this.user);

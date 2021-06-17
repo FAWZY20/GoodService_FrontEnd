@@ -18,12 +18,12 @@
                         <article class="card-body">
                             <form #Registerform="ngForm" (ngSubmit)="registerProfessional()">
                                 <div class="form-group">
-                                    <select class="form-select" aria-label="Default select example" [(ngModel)]="professional.poste" [ngModelOptions]="{standalone: true}">
+                                    <select class="form-select" aria-label="Default select example" [(ngModel)]="professional.poste" [ngModelOptions]="{standalone: true} "> 
                                         <option selected>Postuler en tant que</option>
-                                        <option value=" 1 ">Coiffeur</option>
-                                        <option value="2 ">Estheticienne</option>
-                                        <option value="3 ">Aide menager</option>
-                                        <option value="4 ">Coach sportif</option>
+                                        <option value="Coiffeur">Coiffeur</option>
+                                        <option value="Estheticienne">Estheticienne</option>
+                                        <option value="menager">Aide menager</option>
+                                        <option value="Coach">Coach sportif</option>
                                     </select>
                                 </div>
                                 <div class="form-row ">
@@ -45,6 +45,11 @@
                                         <input type="text " placeholder="SIRET " class="form-control " [(ngModel)]="professional.siret " [ngModelOptions]="{standalone: true} ">
                                     </div>
                                     <!-- form-group end.// -->
+                                </div>
+                                <div class="form-row ">
+                                    <div class="col form-group ">
+                                        <input type="text" placeholder="Ville" class="form-control " [(ngModel)]="professional.ville" [ngModelOptions]="{standalone: true} ">
+                                    </div>
                                 </div>
                                 <!-- form-row end.// -->
                                 <div class="form-row ">

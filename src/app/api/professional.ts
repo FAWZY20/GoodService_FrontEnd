@@ -5,6 +5,7 @@ export class Professional {
     prenom:string;
     date_naissance:Date;
     siret:string;
+    ville:string;
     latitude:string;
     longitude:string;
     numero:number;
