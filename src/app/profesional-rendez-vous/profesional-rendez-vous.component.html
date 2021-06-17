@@ -104,10 +104,15 @@
                     <div class="select">
                         <select id="standard-select" formControlName="etat">
                             <option value="Accepter">Accepter</option>
-                            <option value="refuser">refuser</option>
+                            <option name="refuser" value="refuser">refuser</option>
                             <option value="fini">fini</option>
                         </select>
                         <span class="focus"></span>
+                        <br>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Laissez un petit message à votre client</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="message"></textarea>
+                        </div>
                     </div>
                 </div>
             </div>

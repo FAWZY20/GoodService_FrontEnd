@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { environment } from 'src/environments/environment';
 import { ProfessionalLightDTO } from '../api/professionalLightDTO';
 import { UserLightDTO } from '../api/userLightDTO';
 import { RegistationService } from '../_services/registation.service';
@@ -15,6 +16,7 @@ export interface ReservationDTO {
   appointementDate: string;
   address: string;
   etat: string;
+  message: string;
 }
 
 @Component({
@@ -37,11 +39,23 @@ export class ProfesionalRendezVousComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.http.get<ReservationDTO[]>('http://localhost:8080/list').subscribe(dtos => {
+    this.initForm();
+    this.getProfessionalReservation();
+  }
+
+
+  
+  getProfessionalReservation() {
+
+    this.http.get<ReservationDTO[]>(environment.apiUrl + '/list').subscribe(dtos => {
       this.reservations = dtos;
     }, error => {
-      console.error('error occuid', error)
+      console.error('error occured while getting user reservations', error)
     })
+
+  }
+
+  initForm() {
 
     this.editForm = this.fb.group(
       {
@@ -51,9 +65,12 @@ export class ProfesionalRendezVousComponent implements OnInit {
         prestation: [''],
         address: [''],
         appointementDate: [''],
-        etat: ['']
+        etat: [''],
+        message: ['']
       });
+
   }
+
 
   openDetails(targetModal, reservation: ReservationDTO) {
     this.modalService.open(targetModal, {
@@ -67,30 +84,37 @@ export class ProfesionalRendezVousComponent implements OnInit {
     document.getElementById('Adress')?.setAttribute('value', reservation.address);
     document.getElementById('etat')?.setAttribute('value', reservation.etat);
   }
+
+
   openEdit(targetModal, reservation: ReservationDTO) {
     this.modalService.open(targetModal, {
       backdrop: 'static',
       size: 'lg'
     });
     this.editForm.patchValue({
+
       id: reservation.id,
       client: reservation.client,
       professional: reservation.professional,
       prestation: reservation.prestation,
       address: reservation.address,
       appointementDate: reservation.appointementDate,
-      etat: reservation.etat
+      etat: reservation.etat,
+      message: reservation.message
+
     });
   }
 
 
   onSave() {
-    const editURL = 'http://localhost:8080/reservation/' + this.editForm.value.id + '/edit';
-    console.log(this.editForm.value);
+    const editURL = environment.apiUrl + '/reservation/edit';
     this.http.put(editURL, this.editForm.value)
       .subscribe((results) => {
-        this.ngOnInit();
+        this.getProfessionalReservation();
         this.modalService.dismissAll();
       });
   }
+
+  
+
 }

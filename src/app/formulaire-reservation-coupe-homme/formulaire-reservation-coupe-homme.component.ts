@@ -1,6 +1,7 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import * as L from 'leaflet';
+import { Professional } from '../api/professional';
 import { Reservation } from '../api/reservationDTO';
 import { RegistationService } from '../_services/registation.service';
 
@@ -10,33 +11,37 @@ import { RegistationService } from '../_services/registation.service';
   styleUrls: ['./formulaire-reservation-coupe-homme.component.css']
 })
 export class FormulaireReservationCoupeHommeComponent implements AfterViewInit {
-
+  professional: Professional;
   reservation = new Reservation();
-  msg=''; 
-  
-  constructor(private _service : RegistationService, private _router : Router) { }
-  
+  msg = '';
+
+  constructor(private _service: RegistationService, private _router: Router, ) { }
+
+
+
   ngAfterViewInit(): void {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(this.setGeoLocation.bind(this));
     }
   }
 
-  
-  registerReservation()
-  {
+
+  registerReservation() {
     this._service.registerAppointment(this.reservation).subscribe(
-      data =>{
+      data => {
         console.log("response recieved");
         this._router.navigate(['/ReservationUser'])
-      } ,
+      },
       error => {
         console.log("exception occured");
-        this.msg = error.error;       
+        this.msg = error.error;
       }
-    ) 
+    )
   }
+
+
   setGeoLocation(position: { coords: { latitude: any; longitude: any } }) {
+
     const {
       coords: { latitude, longitude },
     } = position;
@@ -46,15 +51,16 @@ export class FormulaireReservationCoupeHommeComponent implements AfterViewInit {
 
     var iconBase = 'http://localhost:4200/assets/img/';
 
-    const zoomLevel =10;
-    
+    const zoomLevel = 10;
+
     var myIcon = L.icon({
       iconUrl: iconBase + "localisation.png",
       iconSize: [30, 30],
       iconAnchor: [25, 50],
       popupAnchor: [-3, -76],
-  
+
     })
+
 
     var marker = L.marker([latitude, longitude], { icon: myIcon }).addTo(map);
 
@@ -63,6 +69,16 @@ export class FormulaireReservationCoupeHommeComponent implements AfterViewInit {
       maxZoom: 20,
       attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>contributors'
     }).addTo(map);
+
+    this._service.getProfessional().forEach(Professional => {
+  
+        const lon = Number(this.professional.longitude);
+        const lat = Number (this.professional.latitude);
+        const marker = L.marker([lat, lon]);
+
+        marker.addTo(map);
+      
+    })
 
   }
 

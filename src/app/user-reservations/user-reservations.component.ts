@@ -4,6 +4,7 @@ import { ProfessionalLightDTO } from '../api/professionalLightDTO';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RegistationService } from '../_services/registation.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 
 export interface ReservationDTO {
   id: number;
@@ -12,6 +13,7 @@ export interface ReservationDTO {
   address: string;
   appointementDate: string;
   etat: string;
+  message: string;
 }
 
 
@@ -28,19 +30,32 @@ export class UserReservationsComponent implements OnInit {
   editForm: FormGroup;
 
   constructor(private _service: RegistationService,
-              private http: HttpClient,
-              private modalService: NgbModal,
-              private fb: FormBuilder
-            ) { }
+    private http: HttpClient,
+    private modalService: NgbModal,
+    private fb: FormBuilder
+  ) { }
 
 
 
   ngOnInit(): void {
-    this.http.get<ReservationDTO[]>('http://localhost:8080/list').subscribe(dtos => {
+
+    this.initForm();
+    this.getUserReservation();
+
+  }
+
+
+  getUserReservation() {
+
+    this.http.get<ReservationDTO[]>(environment.apiUrl + '/list').subscribe(dtos => {
       this.reservations = dtos;
     }, error => {
-      console.error('error occuid', error)
+      console.error('error occured while getting user reservations', error)
     })
+
+  }
+
+  initForm() {
 
     this.editForm = this.fb.group(
       {
@@ -73,7 +88,7 @@ export class UserReservationsComponent implements OnInit {
   }
 
 
-  
+
   openDetails(targetModal, reservation: ReservationDTO) {
     this.modalService.open(targetModal, {
       centered: true,
@@ -85,6 +100,7 @@ export class UserReservationsComponent implements OnInit {
     document.getElementById('date')?.setAttribute('value', reservation.appointementDate);
     document.getElementById('Adress')?.setAttribute('value', reservation.address);
     document.getElementById('etat')?.setAttribute('value', reservation.etat);
+    document.getElementById('message')?.setAttribute('value', reservation.message);
   }
 
 
@@ -107,11 +123,10 @@ export class UserReservationsComponent implements OnInit {
 
 
   onSave() {
-    const editURL = 'http://localhost:8080/reservation/' + this.editForm.value.id + '/edit';
-    console.log(this.editForm.value);
+    const editURL = environment.apiUrl + '/reservation/edit';
     this.http.put(editURL, this.editForm.value)
       .subscribe((results) => {
-        this.ngOnInit();
+        this.getUserReservation();
         this.modalService.dismissAll();
       });
   }

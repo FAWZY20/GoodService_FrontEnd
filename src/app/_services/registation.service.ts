@@ -41,4 +41,8 @@ export class RegistationService {
     return this._http.post<any>(environment.apiUrl +'/registerProfessional', professional)
   }
 
+  public getProfessional():Observable<any>{
+    return this._http.get<Professional[]>(environment.apiUrl +'/professional/list')
+  }
+
 }

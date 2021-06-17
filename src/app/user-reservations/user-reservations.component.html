@@ -40,7 +40,7 @@
                                 <td>
                                     <li>{{reservation.etat}}</li>
                                 </td>
-                                <td>
+                                <td style="display: flex;">
                                     <button type="button" class="btn btn-info" style="margin-right: 6px;" (click)="openDetails(contentDetails, reservation)">
                                         <i class="fa fa-search">Info</i>
                                     </button>
@@ -122,6 +122,12 @@
                 <input id="etat" class="form-control" readonly>
             </div>
         </div>
+        <div class="form-group">
+            <label> message</label>
+            <div class="input-group">
+                <input id="message" class="form-control" readonly>
+            </div>
+        </div>
     </form>
 </ng-template>
 
@@ -142,7 +148,8 @@
             </div>
         </div>
         <div class="border text-center">
-            <button data-dismiss="modal" class="btn btn-info" (click)="onSave()"> Enregistrer les modifications </button>
+            <button data-dismiss="modal" class="btn btn-info" (click)="onSave()"> Enregistrer les modifications
+            </button>
         </div>
     </form>
 </ng-template>

@@ -10,5 +10,6 @@ export class Reservation {
     appointementDate: Date;
     address: string;
     etat: string;
+    message:string;
     constructor(){}
 }
