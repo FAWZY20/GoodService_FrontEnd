@@ -50,7 +50,6 @@ import { HttpRequestInterceptor } from './interceptor/httpconfig.interceptor';
 
 @NgModule({
   declarations: [
-    HttpClientModule,
     ProfesionalRendezVousComponent,
     AppComponent,
     HeaderVerticalComponent,
@@ -102,11 +101,10 @@ import { HttpRequestInterceptor } from './interceptor/httpconfig.interceptor';
     NgbModule,
   ],
   providers: [
-    // Http Interceptor(s) -  adds with Client Credentials
     [
       { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }
-    ],
+  ],
   ],
   bootstrap: [AppComponent]
-})
+}) 
 export class AppModule { }
