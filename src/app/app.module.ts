@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HttpConfigInterceptor, HttpRequestInterceptor } from './interceptor/httpconfig.interceptor';
 import { HeaderVerticalComponent } from './header-vertical/header-vertical.component';
 import { SignupUserComponent } from './signup-user/signup-user.component';
 import { ConnectionComponent } from './connexion/connection.component';
@@ -46,6 +45,7 @@ import { PrestationCoupeHommeComponent } from './prestation-coupe-homme/prestati
 import { ReservationAccepterComponent } from './reservation-accepter/reservation-accepter.component';
 import { FormulaireReservationCoupeHommeComponent } from './formulaire-reservation-coupe-homme/formulaire-reservation-coupe-homme.component';
 import { ProfesionalRendezVousComponent } from './profesional-rendez-vous/profesional-rendez-vous.component';
+import { HttpRequestInterceptor } from './interceptor/httpconfig.interceptor';
 
 
 @NgModule({
