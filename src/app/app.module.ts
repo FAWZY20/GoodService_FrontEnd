@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpConfigInterceptor, HttpRequestInterceptor } from './interceptor/httpconfig.interceptor';
 import { HeaderVerticalComponent } from './header-vertical/header-vertical.component';
 import { SignupUserComponent } from './signup-user/signup-user.component';
 import { ConnectionComponent } from './connexion/connection.component';
@@ -49,6 +50,7 @@ import { ProfesionalRendezVousComponent } from './profesional-rendez-vous/profes
 
 @NgModule({
   declarations: [
+    HttpClientModule,
     ProfesionalRendezVousComponent,
     AppComponent,
     HeaderVerticalComponent,
@@ -99,7 +101,12 @@ import { ProfesionalRendezVousComponent } from './profesional-rendez-vous/profes
     HttpClientModule,
     NgbModule,
   ],
-  providers: [],
+  providers: [
+    // Http Interceptor(s) -  adds with Client Credentials
+    [
+      { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }
+    ],
+  ],
   bootstrap: [AppComponent]
-}) 
+})
 export class AppModule { }
