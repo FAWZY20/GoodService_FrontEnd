@@ -45,7 +45,7 @@ import { PrestationCoupeHommeComponent } from './prestation-coupe-homme/prestati
 import { ReservationAccepterComponent } from './reservation-accepter/reservation-accepter.component';
 import { FormulaireReservationCoupeHommeComponent } from './formulaire-reservation-coupe-homme/formulaire-reservation-coupe-homme.component';
 import { ProfesionalRendezVousComponent } from './profesional-rendez-vous/profesional-rendez-vous.component';
-import { HttpRequestInterceptor } from './interceptor/httpconfig.interceptor';
+///import { HttpRequestInterceptor } from './interceptor/httpconfig.interceptor';
 
 
 @NgModule({
@@ -101,9 +101,9 @@ import { HttpRequestInterceptor } from './interceptor/httpconfig.interceptor';
     NgbModule,
   ],
   providers: [
-    [
+   /* [
       { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }
-  ],
+  ],*/
   ],
   bootstrap: [AppComponent]
 }) 

@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
+/*import { Injectable } from '@angular/core';
 import {
   HttpEvent, HttpInterceptor, HttpHandler, HttpRequest
 } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
-/** Inject With Credentials into the request */
+/** Inject With Credentials into the request 
 @Injectable()
 export class HttpRequestInterceptor implements HttpInterceptor {
 
@@ -20,3 +20,4 @@ export class HttpRequestInterceptor implements HttpInterceptor {
       return next.handle(req);
   }
 }
+*/
