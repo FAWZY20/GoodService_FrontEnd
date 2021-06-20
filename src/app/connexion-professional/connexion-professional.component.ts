@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Professional } from '../api/professional';
+import { ProfessionalLightDTO } from '../api/professionalLightDTO';
 import { RegistationService } from '../_services/registation.service';
 
 @Component({
@@ -17,8 +18,8 @@ export class ConnexionProfessionalComponent implements OnInit {
   user = new Professional();
   msg = '';
 
-  constructor(private _service: RegistationService, private _router: Router,) {
-    this.currentProfessionalSubject = new BehaviorSubject<Professional>(JSON.parse(localStorage.getItem('ProfessionelConnected') || '{}'));
+  constructor(private _service: RegistationService, private _router: Router, private route: ActivatedRoute) {
+    this.currentProfessionalSubject = new BehaviorSubject<Professional>(JSON.parse(localStorage.getItem('currentProfessional') || '{}'));
     this.currentProfessional = this.currentProfessionalSubject.asObservable();
   }
 
@@ -31,12 +32,12 @@ export class ConnexionProfessionalComponent implements OnInit {
   loginProfessional() {
     console.log(this.user);
     this._service.loginProfessionalFromRemote(this.user).subscribe(
-      data => {
+      professionel => {
         console.log("response recieved");
-        this._router.navigate(['/DashboardProfesionnal']);
-        localStorage.setItem('ProfessionelConnected', JSON.stringify(this.user));
-        this.currentProfessionalSubject.next(this.user);
-        return this.user;
+        this._router.navigate(['/DashboardProfesionnal', this.currentProfessionalValue.id ]);
+        localStorage.setItem('currentProfessional', JSON.stringify(professionel));
+        this.currentProfessionalSubject.next(professionel);
+        return professionel;
       },
       error => {
         console.log("exception occured");

@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Professional } from '../api/professional';
+import { ConnexionProfessionalComponent } from '../connexion-professional/connexion-professional.component';
+
+export interface ProfessionalLightDTO {
+  id:number;
+  nom:string;
+}
+
 
 @Component({
   selector: 'app-professional-dashboard-home',
@@ -9,16 +17,25 @@ import { Professional } from '../api/professional';
 })
 export class ProfessionalDashboardHomeComponent implements OnInit {
   currentProfessional: Professional;
-  profesionals: Professional[] = [];
+  private routeSub: Subscription;
+  profesionals =  [];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,
+    private authentificationPro: ConnexionProfessionalComponent, 
+    private route: ActivatedRoute
+    ) {
+       this.currentProfessional = this.authentificationPro.currentProfessionalValue;      
+      }
 
   ngOnInit(): void {
+    this.routeSub = this.route.params.subscribe(user => {
+      console.log(user) //log the entire params object
+      console.log(user['id']) //log the value of id
+    });
   }
 
   logout() {
     localStorage.removeItem('ProfessionelConnected');
-    // this.currentUserSubject.next(null);
     this.router.navigate(['/connexion-professional']);
   }
 

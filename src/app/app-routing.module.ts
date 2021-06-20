@@ -29,38 +29,66 @@ import { FormulaireReservationCoupeHommeComponent } from './formulaire-reservati
 import { ProfesionalRendezVousComponent } from './profesional-rendez-vous/profesional-rendez-vous.component';
 
 const routes: Routes = [
-  {path: 'utilisateur/tableau-de-bord', component: BackUserComponent},
-  {path: 'professionel/list/rdv', component: ProfesionalRendezVousComponent},
-  {path: 'reservation/coupe/homme', component: FormulaireReservationCoupeHommeComponent},
-  {path: 'repasage', component: RepasageComponent},
-  {path: 'menage', component: MenageComponent},
-  {path: 'coupe-homme', component: RendezVousCoiffureMenComponent},
-  {path: 'brushing', component: BrushingComponent},
-  {path: 'manucure', component: ManucureComponent},
-  {path: 'epilation', component: EpilationComponent},
-  {path: 'soin-hydratant', component: SoinHydratanComponent},
-  {path: 'coloration', component: ColorationComponent},
-  {path: 'coupe-femme', component: CoupeFemmeComponent},
-  {path: 'NouvelleAbscence', component: NouvelleAbsComponent},
-  {path: 'Abscence', component: AbscenceProfessionalComponent},
-  {path: 'Horaire-ouverture', component: ProfessionalHoraireOuvertureComponent}, 
-  {path: 'nouvelleCarteCredit', component: AjoutCarteCreditComponent},
-  {path: 'mon-compte', component: ProfilUserComponent},
-  {path: 'MoyenDePaiment', component: MoyenPaimenetUserComponent},
-  {path: 'reservation/list', component: UserReservationsComponent},
-  {path: 'HistoriquePaymentUser', component: HistoriquePaymentUserComponent},
-  {path: 'DashboardProfesionnal', component: ProfessionalDashboardHomeComponent},
-  {path: 'Map', component: OpenStreetMapComponent },
-  {path: '', component: HomePAgeComponent },
-  {path: 'signup-user', component: SignupUserComponent},
-  {path: 'connexion', component:ConnectionComponent},
-  {path: 'backuser', component:BackUserComponent},
-  {path: 'signup-professional', component:SignupProfessionalComponent},
-  {path: 'connexion-professional', component: ConnexionProfessionalComponent},
-  {path: 'professional/list', component: ProfesionalRendezVousComponent},
-  {path: '**', redirectTo: 'not-found'}
-];
 
+  { path: '', component: HomePAgeComponent },
+
+  { path: 'signup-user', component: SignupUserComponent },
+  { path: 'connexion', component: ConnectionComponent },
+
+  {
+    path: 'tableau-de-bord/:id/',
+    children:
+      [
+        { path: 'mon-compte', component: ProfilUserComponent },
+        { path: 'MoyenDePaiment', component: MoyenPaimenetUserComponent },
+        { path: 'HistoriquePaymentUser', component: HistoriquePaymentUserComponent },
+        { path: 'nouvelleCarteCredit', component: AjoutCarteCreditComponent },
+        { path: 'reservation/list', component: UserReservationsComponent }
+      ],
+  },
+
+
+  { path: 'signup-professional', component: SignupProfessionalComponent },
+  { path: 'connexion-professional', component: ConnexionProfessionalComponent },
+
+  {
+    path: 'DashboardProfesionnal/:id',
+    component: ProfessionalDashboardHomeComponent,
+    children:
+      [
+        { path: 'professionel/list/rdv', component: ProfesionalRendezVousComponent },
+        { path: 'NouvelleAbscence', component: NouvelleAbsComponent },
+        { path: 'Horaire-ouverture', component: ProfessionalHoraireOuvertureComponent },
+        { path: 'Abscence', component: AbscenceProfessionalComponent },
+        { path: 'professional/list', component: ProfesionalRendezVousComponent },
+        { path: 'professional/list', component: ProfesionalRendezVousComponent }
+      ],
+  },
+
+
+  {
+    path: 'prestation/',
+    children:
+      [
+        { path: 'repasage', component: RepasageComponent },
+        { path: 'menage', component: MenageComponent },
+        { path: 'coupe-homme', component: RendezVousCoiffureMenComponent },
+        { path: 'brushing', component: BrushingComponent },
+        { path: 'manucure', component: ManucureComponent },
+        { path: 'epilation', component: EpilationComponent },
+        { path: 'soin-hydratant', component: SoinHydratanComponent },
+        { path: 'coloration', component: ColorationComponent },
+        { path: 'coupe-femme', component: CoupeFemmeComponent },
+
+      ],
+  },
+
+  { path: 'reservation/coupe/homme', component: FormulaireReservationCoupeHommeComponent },
+
+  { path: '**', redirectTo: 'not-found' }
+
+];
+.0
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
