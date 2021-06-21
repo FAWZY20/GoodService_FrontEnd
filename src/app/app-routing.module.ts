@@ -35,7 +35,6 @@ const routes: Routes = [
 
   { path: 'signup-user', component: SignupUserComponent },
   { path: 'connexion', component: ConnectionComponent },
-  
 
   {
     path: 'client',

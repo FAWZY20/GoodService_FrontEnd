@@ -55,7 +55,7 @@ export class UserReservationsComponent implements OnInit {
       console.log(user) //log the entire params object
       console.log(user['id']) //log the value of id
     });
-
+    
     this.initForm();
     this.getUserReservation();
 

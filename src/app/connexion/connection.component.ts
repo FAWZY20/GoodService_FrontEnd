@@ -35,7 +35,7 @@ export class ConnectionComponent implements OnInit {
     this._service.loginUserFromRemote(this.user).subscribe(
       user => {
         console.log("response recieved");
-        this._router.navigate(['client', this.currentUserValue.id ,'Dashboard']);
+        this._router.navigate(['client/' + this.currentUserValue.id +'/Dashboard/']);
         localStorage.setItem('currentUser', JSON.stringify(user));
         this.currentUserSubject.next(user);
         return user;

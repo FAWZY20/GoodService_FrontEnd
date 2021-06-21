@@ -34,7 +34,7 @@ export class ConnexionProfessionalComponent implements OnInit {
     this._service.loginProfessionalFromRemote(this.user).subscribe(
       professionel => {
         console.log("response recieved");
-        this._router.navigate(['/professionel', this.currentProfessionalValue.id, 'Dashboard' ]);
+        this._router.navigate([ 'professionel/'+ this.currentProfessionalValue.id +'/Dashboard/']);
         localStorage.setItem('currentProfessional', JSON.stringify(professionel));
         this.currentProfessionalSubject.next(professionel);
         return professionel;
