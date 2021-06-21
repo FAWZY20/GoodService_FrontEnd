@@ -68,18 +68,18 @@ const routes: Routes = [
 
 
   {
-    path: 'prestation/',
+    path: 'prestation',
     children:
       [
         { path: 'repasage', component: RepasageComponent },
         { path: 'menage', component: MenageComponent },
-        { path: 'coupe-homme', component: RendezVousCoiffureMenComponent },
+        { path: 'coupe/homme', component: RendezVousCoiffureMenComponent },
         { path: 'brushing', component: BrushingComponent },
         { path: 'manucure', component: ManucureComponent },
         { path: 'epilation', component: EpilationComponent },
         { path: 'soin-hydratant', component: SoinHydratanComponent },
         { path: 'coloration', component: ColorationComponent },
-        { path: 'coupe-femme', component: CoupeFemmeComponent },
+        { path: 'coupe/femme', component: CoupeFemmeComponent },
 
       ],
   },

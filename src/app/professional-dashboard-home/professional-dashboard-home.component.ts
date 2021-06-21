@@ -36,7 +36,7 @@ export class ProfessionalDashboardHomeComponent implements OnInit {
   
 
   logout() {
-    localStorage.removeItem('ProfessionelConnected');
+    localStorage.removeItem('currentProfessional');
     this.router.navigate(['/connexion-professional']);
   }
 

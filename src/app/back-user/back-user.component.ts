@@ -29,7 +29,7 @@ export class BackUserComponent implements OnInit {
   }
 
   logout() {
-    localStorage.removeItem('ProfessionelConnected');
+    localStorage.removeItem('currentUser');
     this.router.navigate(['/connexion-professional']);
   }
 
