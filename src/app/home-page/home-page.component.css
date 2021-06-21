@@ -1,0 +1,160 @@
+h2 {
+    color: teal;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.esprit-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.esprit-title {
+    padding-top: 27px;
+    text-align: center;
+    padding-left: 3%;
+}
+
+.esprit-bloc {
+    padding-left: 15%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.homepage-slide {
+    background-color: #b05ccc;
+}
+
+.bloc-title {
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.bloc {
+    margin-right: 20px;
+    border-radius: 5%;
+    padding: 20px 50px;
+}
+
+.subtitle {
+    color: black;
+}
+
+.coiffure {
+    background-image: url(../../assets/img/coiffure.jpg);
+    box-shadow: 1px 1px 12px #555;
+    background-repeat: no-repeat;
+    width: 301px;
+    height: 200px;
+}
+
+.menage {
+    background-image: url(../../assets/img/menage.jpg);
+    box-shadow: 1px 1px 12px #555;
+    background-repeat: no-repeat;
+    width: 301px;
+    height: 200px;
+}
+
+.coach {
+    background-image: url(../../assets/img/coach.jpg);
+    box-shadow: 1px 1px 12px #555;
+    background-repeat: no-repeat;
+    width: 301px;
+    height: 200px;
+}
+
+.beaute {
+    background-image: url(../../assets/img/esthetique.jpeg);
+    box-shadow: 1px 1px 12px #555;
+    background-repeat: no-repeat;
+    width: 301px;
+    height: 200px;
+}
+
+.service-container,
+.nouveaux-service-container {
+    margin-top: 5%;
+    padding-bottom: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.slider {
+    justify-content: center;
+    align-items: center;
+}
+
+.service-bloc {
+    color: black !important;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.localisation-banner {
+    background-color: teal;
+}
+
+.localisation-banner .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title-loclisation {
+    font-size: 30px !important;
+    padding: 0;
+    margin: 0;
+}
+
+.subtitle-localisation {
+    padding: 0;
+    margin: 0;
+}
+
+.presentation {
+    background-color: teal;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.title-presentation {
+    color: white;
+    font-size: 35px;
+}
+
+.new-service {
+    background-color: teal;
+    padding: 60px 50px;
+    width: 301px;
+    height: 200px;
+}
+
+.new-service-badge {
+    margin-top: 10px;
+    padding: 5px;
+    text-align: center;
+    transform: rotate(-5deg);
+    box-shadow: 1px 1px 12px #555;
+}
+
+.presentation-img {
+    margin-right: 20px;
+}

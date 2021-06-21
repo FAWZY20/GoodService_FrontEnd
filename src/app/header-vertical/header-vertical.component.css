@@ -1,0 +1,99 @@
+.logo {
+    padding-left: 33%;
+    padding-bottom: 20%;
+}
+
+.navbar-nav {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.onglet-menu ul {
+    display: block;
+    margin-bottom: 10%;
+}
+
+.onglet-menu {
+    padding-bottom: 20%;
+}
+
+.nav-item a::after {
+    color: black;
+}
+
+.nav-item a::hover {
+    color: black;
+}
+
+.navbar {
+    padding: 0px;
+    margin: 0px;
+}
+
+.container-header {
+    padding-bottom: 16.5vw;
+    background-color: teal;
+}
+
+.icon {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.icon-user {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px;
+}
+
+.icon-user a {
+    font-weight: bold;
+    margin: 0px;
+    color: white;
+}
+
+.icon button {
+    font-weight: bold;
+}
+
+.signup-user {
+    text-align: center;
+    padding-left: 10%;
+}
+
+.signup-user a {
+    font-size: 12px;
+    font-weight: normal;
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.onglet-menu a {
+    color: white !important;
+}
+
+li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.nav-item .img {
+    margin-right: 10px;
+    margin-right: 20px;
+}
+
+.dropdown-menu {
+    width: 220px;
+    text-align: center;
+}
+
+.btn-professional {
+    margin-left: 10%;
+    font-size: 15px;
+}

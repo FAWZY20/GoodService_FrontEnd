@@ -1,0 +1,153 @@
+<app-header-user></app-header-user>
+<section>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="title">
+                <h1>RÉSERVATIONS EN COURS</h1>
+            </div>
+            <div>
+                <div class="dropdown">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">prestation</th>
+                                <th scope="col">professionnel</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Adress</th>
+                                <th scope="col">etat</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let reservation of reservations">
+                                <td>
+                                    <li>{{reservation.id}}</li>
+                                </td>
+                                <td>
+                                    <li>{{reservation.prestation}}</li>
+                                </td>
+                                <td>
+                                    <li>{{reservation.professional.nom}} {{reservation.professional.prenom}}</li>
+                                </td>
+                                <td>
+                                    <li>{{reservation.appointementDate}}</li>
+                                </td>
+                                <td>
+                                    <li>{{reservation.address}}</li>
+                                </td>
+                                <td>
+                                    <li>{{reservation.etat}}</li>
+                                </td>
+                                <td style="display: flex;">
+                                    <button type="button" class="btn btn-info" style="margin-right: 6px;" (click)="openDetails(contentDetails, reservation)">
+                                        <i class="fa fa-search">Info</i>
+                                    </button>
+
+                                    <button type="button" class="btn btn-warning" style="margin-right: 6px;" (click)="openEdit(contentEdit, reservation)">
+                                        <i class="fa fa-edit">modifier</i>
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger" (click)="openDelete(contentDelete, reservation)">
+                                        <i class="fa fa-remove">Suprimer</i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn btn-secondary dropdown-toggle btn-reserved" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        RESERVER UN SERVICE
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">COIFFURE</a>
+                        <a class="dropdown-item" href="#">BEAUTE</a>
+                        <a class="dropdown-item" href="#">MENAGE</a>
+                        <a class="dropdown-item" href="#">COACH SPORTIF</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<ng-template #contentDelete let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Confirm Delete</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <h2>Vous êtes sûr de vouloir supprimer cet enregistrement.</h2>
+        <div class="border text-center">
+            <button data-dismiss="modal" class="btn btn-danger" (click)="onDelete()">Oui, Suprimer!</button>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="openDetails(contentDetails, reservation)">Detail</button>
+    </div>
+</ng-template>
+
+<ng-template #contentDetails let-model>
+    <form>
+        <div class="form-group">
+            <label for="firstname">prestation</label>
+            <div class="input-group">
+                <input id="prestation" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastname">professional</label>
+            <div class="input-group">
+                <input id="professional" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="department">Date</label>
+            <div class="input-group">
+                <input id="date" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Adress</label>
+            <div class="input-group">
+                <input id="Adress" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label> etat</label>
+            <div class="input-group">
+                <input id="etat" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label> message</label>
+            <div class="input-group">
+                <input id="message" class="form-control" readonly>
+            </div>
+        </div>
+    </form>
+</ng-template>
+
+<ng-template #contentEdit let-model>
+    <form [formGroup]="editForm" novalidate>
+        <div class="form-group">
+            <label for="address"> Adress </label>
+            <div class="input-group">
+                <input type="text" formControlName="address" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="appointementDate"> Date </label>
+            <div class="groupe d'entrée">
+                <input type="date" formControlName="appointementDate" class="form-control">
+            </div>
+        </div>
+        <div class="border text-center">
+            <button data-dismiss="modal" class="btn btn-info" (click)="onSave()"> Enregistrer les modifications
+            </button>
+        </div>
+    </form>
+</ng-template>
+
+<app-footer></app-footer>

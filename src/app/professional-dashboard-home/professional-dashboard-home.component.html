@@ -1,0 +1,55 @@
+<app-header-horizontal-professional></app-header-horizontal-professional>
+<div class="container-fluid">
+    <div class="container">
+        <div class="contenu">
+            <div class="row">
+                <div class="welcome-home col-lg-3">
+                    <h2>BIENVENUE</h2>
+                    <p>
+                        {{currentProfessional.prenom}}
+                    </p>
+                </div>
+                <div class="col-lg-9">
+                    <div class="casse">
+                        <div class="casse-one">
+                            <a class="casse-link" [routerLink]="['../rendezvous']">
+                                <img class="casse-img" src="../../assets/img/reserved.png" width="40" height="40" alt="reserved">
+                                <p class="title-casse">Agenda</p>
+                                <p class="title-desscrription">
+                                </p>
+                            </a>
+                        </div>
+                        <div class="casse-one">
+                            <a class="casse-link" [routerLink]="['../Horaire']">
+                                <img class="casse-img" src="../../assets/img/user-menu.png" width="40" height="40" alt="">
+                                <p class="title-casse">Horaire d'ouverture</p>
+                                <p class="title-desscrription">
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="casse">
+                        <div class="casse-two col-lg-8">
+                            <a class="casse-link" [routerLink]="['../profil']">
+                                <img class="casse-img" src="../../assets/img/user.png" width="40" height="40" alt="">
+                                <p class="title-casse">Réglage PROFIL</p>
+                                <p class="title-desscrription"></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-9 deconnect">
+                    <div>
+                        <img class="deconnect-img" src="../../assets/img/deconnect.png" width="40" height="40" alt="">
+                    </div>
+                    <div>
+                        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

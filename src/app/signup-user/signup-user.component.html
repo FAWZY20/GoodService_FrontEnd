@@ -1,0 +1,87 @@
+<app-header-horizontal></app-header-horizontal>
+<section class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col form_span from_span-lg-6">
+                <img src="../../assets/img/istockphoto-1134958683-612x612.jpg" alt="" class="img-fluid" />
+            </div>
+            <div class="col form_span from_span-lg-6 bloc-inscription">
+                <div class="link-connect text-center">Vous avez un compte ? <a routerLink="/connexion">Connectez-vous</a></div>
+                <div class="bloc-form-inscription">
+                    <h1>S'inscrire</h1>
+                    <form #Registerform="ngForm" (ngSubmit)="registerUser()">
+
+                        <div class="row form_input form_input">
+                            <div class="col form_span from_span">
+                                <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/user.png"
+                                        width="24" height="24" alt="" class="img-fluid" /></span>
+                                <input type="text" class="form-control" placeholder="Nom" aria-label="Nom" aria-describedby="basic-addon1" [(ngModel)]="user.nom" [ngModelOptions]="{standalone: true}">
+                            </div>
+                            <div class="col form_span from_span">
+                                <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/user.png"
+                                        width="24" height="24" alt="" class="img-fluid" /></span>
+                                <input type="text" class="form-control" placeholder="Prenom" aria-label="Prenom" aria-describedby="basic-addon1" [(ngModel)]="user.prenom" [ngModelOptions]="{standalone: true}">
+                            </div>
+                        </div>
+
+                        <div class="row form_input">
+                            <div class="col form_span from_span">
+                                <span class="input-group-text" id="basic-addon1"><img
+                                        src="../../assets/img/telephone.png" width="24" height="24" alt=""
+                                        class="img-fluid" /></span>
+                                <input type="text" class="form-control" placeholder="Téléphone" aria-label="Téléphone" aria-describedby="basic-addon1" [(ngModel)]="user.numero" [ngModelOptions]="{standalone: true}">
+                            </div>
+                            <div class="col form_span from_span">
+                                <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/mail.svg"
+                                        width="24" height="24" alt="" class="img-fluid" /></span>
+                                <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}">
+                            </div>
+                        </div>
+
+                        <div class="row form_input">
+                            <div class="col form_span from_span">
+                                <span class="input-group-text" id="basic-addon1"><img
+                                        src="../../assets/img/localisateur.png" width="24" height="24" alt=""
+                                        class="img-fluid" /></span>
+                                <input type="text" class="form-control" placeholder="Adresse" aria-label="Adresse" aria-describedby="basic-addon1" [(ngModel)]="user.adresse" [ngModelOptions]="{standalone: true}">
+                            </div>
+                            <div class="col form_span from_span">
+                                <span class="input-group-text" id="basic-addon1"><img
+                                        src="../../assets/img/localisateur.png" width="24" height="24" alt=""
+                                        class="img-fluid" /></span>
+                                <input type="text" class="form-control" placeholder="Code postal" aria-label="Code postal" aria-describedby="basic-addon1" [(ngModel)]="user.code_postal" [ngModelOptions]="{standalone: true}">
+                            </div>
+                        </div>
+
+                        <div class="form_span form_input">
+                            <span class="input-group-text" id="basic-addon1"><img
+                                    src="../../assets/img/localisateur.png" width="24" height="24" alt=""
+                                    class="img-fluid" /></span>
+                            <input type="text" class="form-control" placeholder="Ville" aria-label="Ville" aria-describedby="basic-addon1" [(ngModel)]="user.ville" [ngModelOptions]="{standalone: true}">
+                        </div>
+
+                        <div class="row form_input">
+                            <div class="col form_span from_span">
+                                <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/lock.png"
+                                        width="24" height="24" alt="" class="img-fluid" /></span>
+                                <input type="text" class="form-control" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon1" name="mdp" #mdp="ngModel" [(ngModel)]="user.mdp" [ngModelOptions]="{standalone: true}">
+                            </div>
+                            <!--<div class="col form_span from_span">
+                                <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/lock.png"
+                                        width="24" height="24" alt="" class="img-fluid" /></span>
+                                <input type="text" class="form-control" placeholder="Confirmer votre mot de passe" aria-label="Mot de passe" name="cmdp" #cmdp="ngModel" (ngModel)="user.mdp" aria-describedby="basic-addon1">
+                                <small class="text-danger" [class.d-none]="(cmdp.value == mdp.value) || cmdp.untouched" )>Les mots de passe ne cooresponde pas</small>
+                            </div>-->
+                        </div>
+
+                        <div class="col form_span from_span-12">
+                            <button [disabled]="Registerform.form.invalid" class="btn btn-primary btn-create-account" type="submit">Créer
+                                mon compte</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

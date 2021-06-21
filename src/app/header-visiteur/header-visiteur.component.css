@@ -1,0 +1,51 @@
+.header {
+    align-items: center;
+}
+
+.header_horizontal {
+    box-shadow: 0.5px 0.5px black;
+    box-shadow: 8px 8px 50px teal;
+    background-color: teal;
+}
+
+.dropdown-item {
+    font-size: 25px;
+}
+
+.navbar .nav-link {
+    margin-right: 10px;
+    color: white !important;
+    font-size: 25px;
+}
+
+.logo {
+    width: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.exit {
+    display: flex;
+    align-items: center;
+    padding-left: 37%;
+}
+
+.header__button {
+    padding-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header__button_position {
+    padding-right: 30px;
+}
+
+.header__button-text p {
+    font-size: 13px;
+    text-align: center;
+    padding: 0px !important;
+    margin: 0px !important;
+}
