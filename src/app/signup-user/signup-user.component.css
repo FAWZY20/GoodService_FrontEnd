@@ -1,0 +1,68 @@
+.connexion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_span {
+    display: flex;
+    height: 15%;
+}
+
+.form_input {
+    padding-bottom: 5%;
+}
+
+.bloc-connexion {
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px black;
+    padding: 20px;
+    width: 50%;
+}
+
+.btn-create-account {
+    background-color: teal;
+    border-radius: 20px;
+}
+
+.bloc-connexion button {
+    margin-left: 20%;
+}
+
+.btn-inscription {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid black;
+}
+
+.bloc-inscription {
+    flex-direction: column;
+}
+
+.link-connect {
+    border: 1px solid rgba(0, 0, 0, .125);
+    padding: 20px;
+    padding-left: 88px;
+    padding-right: 80px;
+    margin-bottom: 15px;
+}
+
+.bloc-form-inscription {
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.btn-inscription button {
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.btn-inscription button::after {
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px black;
+}

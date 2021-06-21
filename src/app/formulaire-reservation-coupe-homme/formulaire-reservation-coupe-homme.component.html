@@ -1,0 +1,97 @@
+<app-header-reservation></app-header-reservation>
+<section>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="map-wrapper col-lg-8">
+
+                    <h1 class="title">Choisssez votre coiffeur!</h1>
+                    <div class="map-border">
+                        <div id="map"></div>
+                    </div>
+                    <form #Registerform="ngForm" (ngSubmit)="registerReservation()">
+                        <input type="hidden" value="22" [(ngModel)]="reservation.client" name="client">
+                        <input type="hidden" value="30" [(ngModel)]="reservation.professional" name="pro ">
+                        <div class="info-coiffeur">
+                            <p class="info-coiffeur-title">Liste des salons de coiffure à proximiter !</p>
+                        </div>
+                        <div>
+                            <div class="service">
+                                <div class="service-block">
+                                    <h2 class="title" style="padding-top: 3%;">choisissez votre services !</h2>
+                                    <div class="select">
+                                        <select id="standard-select" [(ngModel)]="reservation.prestation" name="prestation">
+                                            <option value="Shampoing">Shampoing</option>
+                                            <option value="Coupe">Coupe</option>
+                                            <option value="Couleur">Couleur</option>
+                                            <option value="Barbe">Barbe</option>
+                                        </select>
+                                        <span class="focus"></span>
+                                    </div>
+                                </div>
+                                <div class="service-block">
+                                    <h2 class="title" style="padding-top: 3%;">Joli choix ! Quelle jour & heure voulez-vous ? </h2>
+                                    <div>
+                                        <input type="datetime-local" id="meeting-time" name="meeting-time" min="2021-06-16T09:00" [(ngModel)]="reservation.appointementDate" name="date">
+                                    </div>
+                                </div>
+                                <div class="service-block">
+                                    <h2 class="title" style="padding-top: 3%;">Où vient-on prendre soin de vous ?</h2>
+                                    <div>
+                                        <div class="form-check">
+                                            <div class="prestation-lieu-bloc">
+                                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="{{reservation.client.address}" [(ngModel)]="reservation.address" name="adressClient">
+                                                <label class="form-check-label" for="exampleRadios1">
+                                                    Chez moi
+                                                </label>
+                                            </div>
+                                            <div class="prestation-lieu-bloc">
+                                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="{{reservation.proffesional.address}" [(ngModel)]="reservation.address" name="adressPro">
+                                                <label class="form-check-label" for="exampleRadios2">
+                                                    Chez le prestataire
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" value="Encour" [(ngModel)]="reservation.etat" name="etat">
+                        <div class="col form_span from_span-12">
+                            <button [disabled]="Registerform.form.invalid" class="btn btn-primary btn-create-account" type="submit" style="margin-bottom: 3%;">Validation</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="panier col-lg-4">
+                    <p class="panier-title text-center h4"><strong>MON PANIER</strong></p>
+                    <hr>
+                    <div class="etape">
+                        <p>SALON DE COIFFURE</p>
+                        <div class="etape-text">
+
+                        </div>
+                    </div>
+                    <div class="etape">
+                        <p>Prestation</p>
+                        <div class="etape-text">
+                            {{reservation.prestation}}
+                        </div>
+                    </div>
+                    <div class="etape">
+                        <p>DISPONIBILITES</p>
+                        <div class="etape-text">
+                            {{reservation.appointementDate}}
+                        </div>
+                    </div>
+                    <div class="etape">
+                        <p>ADRESSE</p>
+                        <div class="etape-text">
+                            {{reservation.address}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

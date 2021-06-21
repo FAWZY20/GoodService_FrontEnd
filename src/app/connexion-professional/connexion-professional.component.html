@@ -1,0 +1,29 @@
+<app-header-horizontal></app-header-horizontal>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="../../assets/img/user-icon.png" id="icon" alt="User Icon" />
+        </div>
+
+        <!-- Login Form -->
+        <form #loginform="ngForm" (ngSubmit)="loginProfessional()">
+            <small class="danger">{{msg}}</small>
+            <input type="email" class="fadeIn second" name="email" placeholder="Email" [(ngModel)]="user.email" required #email="ngModel" [class.is-invalid]="email.invalid && email.touched"><br>
+            <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email id is required
+                field</small>
+            <input type="password" class="fadeIn third" name="mdp" placeholder="Mots de passe" [(ngModel)]="user.mdp" required #mdp="ngModel" [class.is-invalid]="mdp.invalid && mdp.touched"><br>
+            <small class="text-danger" [class.d-none]="mdp.valid || mdp.untouched">Password is required
+                field</small><br>
+            <input type="submit" class="fadeIn fourth" value="ME CONNECTER">
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" href="#">Mot de passe oublié ?</a>
+        </div>
+
+    </div>
+</div>
