@@ -1,140 +1,84 @@
 <app-header-horizontal-professional></app-header-horizontal-professional>
-<section>
-    <h1>Horaire d'ouverture</h1>
-    <form action="">
-        <div class="row form_input form_input">
-            <div class="col-lg-1 form_span from_span">
-                <div class="col-sm-10" style="padding: 0;">
-                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Lundi">
-                </div>
+<div class="container">
+    <div class="container-fluid">
+        <div class="row horaire-info">
+            <div class="title">
+                <h1>Vos Horaires !</h1>
             </div>
-            <div class="col-lg-2 form_span from_span">
-                <div class="md-form mx-8 my-8">
-                    <input type="time" id="inputMDEx1" class="form-control">
-                    <label for="inputMDEx1">Heure de début</label>
-                </div>
-            </div>
-            <div class="col-lg-2 form_span from_span">
-                <div class="md-form mx-8 my-8">
-                    <input type="time" id="inputMDEx1" class="form-control">
-                    <label for="inputMDEx1">Heure de fin</label>
-                </div>
-            </div>
-        </div>
-        <div class="row form_input form_input">
-            <div class="col-lg-1 form_span from_span">
-                <div class="col-sm-10" style="padding: 0;">
-                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Mardi">
-                </div>
-            </div>
-            <div class="col-lg-2 form_span from_span">
-                <div class="md-form mx-8 my-8">
-                    <input type="time" id="inputMDEx1" class="form-control">
-                    <label for="inputMDEx1">Heure de début</label>
-                </div>
-            </div>
-            <div class="col-lg-2 form_span from_span">
-                <div class="md-form mx-8 my-8">
-                    <input type="time" id="inputMDEx1" class="form-control">
-                    <label for="inputMDEx1">Heure de fin</label>
-                </div>
-            </div>
-        </div>
-        <div class="row form_input form_input">
-            <div class="col-lg-1 form_span from_span">
-                <div class="col-sm-10" style="padding: 0;">
-                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Mercredi">
-                </div>
-            </div>
-            <div class="col-lg-2 form_span from_span">
-                <div class="md-form mx-8 my-8">
-                    <input type="time" id="inputMDEx1" class="form-control">
-                    <label for="inputMDEx1">Heure de début</label>
-                </div>
-            </div>
-            <div class="col-lg-2 form_span from_span">
-                <div class="md-form mx-8 my-8">
-                    <input type="time" id="inputMDEx1" class="form-control">
-                    <label for="inputMDEx1">Heure de fin</label>
-                </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Jour</th>
+                        <th scope="col">Heure de debut</th>
+                        <th scope="col">Heure de fin</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let horaire of horaires">
+                        <td>
+                            <li>{{horaire.jour}}</li>
+                        </td>
+                        <td>
+                            <li>{{horaire.heureDeb}}</li>
+                        </td>
+                        <td>
+                            <li>{{horaire.heureFin}}</li>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-warning" style="margin-right: 6px;" (click)="openEdit(contentEdit, horaire)">
+                                <i class="fa fa-edit">Modifier vos horaire</i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <button type="button" class="btn-add" style="background-color: teal;" [routerLink]="['../Horaire/addHoraire']">
+                     Ajouter des horaires
+                </button>
             </div>
         </div>
-        <div class="row form_input form_input">
-            <div class="col-lg-1 form_span from_span">
-                <div class="col-sm-10" style="padding: 0;">
-                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Jeudi">
-                </div>
-            </div>
-            <div class="col-lg-2 form_span from_span">
-                <div class="md-form mx-8 my-8">
-                    <input type="time" id="inputMDEx1" class="form-control">
-                    <label for="inputMDEx1">Heure de début</label>
-                </div>
-            </div>
-            <div class="col-lg-2 form_span from_span">
-                <div class="md-form mx-8 my-8">
-                    <input type="time" id="inputMDEx1" class="form-control">
-                    <label for="inputMDEx1">Heure de fin</label>
-                </div>
-            </div>
-        </div>
-        <div class="row form_input form_input">
-            <div class="col-lg-1 form_span from_span">
-                <div class="col-sm-10" style="padding: 0;">
-                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Vendredi">
-                </div>
-            </div>
-            <div class="col-lg-2 form_span from_span">
-                <div class="md-form mx-8 my-8">
-                    <input type="time" id="inputMDEx1" class="form-control">
-                    <label for="inputMDEx1">Heure de début</label>
-                </div>
-            </div>
-            <div class="col-lg-2 form_span from_span">
-                <div class="md-form mx-8 my-8">
-                    <input type="time" id="inputMDEx1" class="form-control">
-                    <label for="inputMDEx1">Heure de fin</label>
-                </div>
-            </div>
-        </div>
-        <div class="row form_input form_input">
-            <div class="col-lg-1 form_span from_span">
-                <div class="col-sm-10" style="padding: 0;">
-                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Samedi">
-                </div>
-            </div>
-            <div class="col-lg-2 form_span from_span">
-                <div class="md-form mx-8 my-8">
-                    <input type="time" id="inputMDEx1" class="form-control">
-                    <label for="inputMDEx1">Heure de début</label>
-                </div>
-            </div>
-            <div class="col-lg-2 form_span from_span">
-                <div class="md-form mx-8 my-8">
-                    <input type="time" id="inputMDEx1" class="form-control">
-                    <label for="inputMDEx1">Heure de fin</label>
-                </div>
-            </div>
-        </div>
-        <div class="row form_input form_input">
-            <div class="col-lg-1 form_span from_span">
-                <div class="col-sm-10" style="padding: 0;">
-                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Dimanche">
-                </div>
-            </div>
-            <div class="col-lg-2 form_span from_span">
-                <div class="md-form mx-8 my-8">
-                    <input type="time" id="inputMDEx1" class="form-control">
-                    <label for="inputMDEx1">Heure de début</label>
-                </div>
-            </div>
-            <div class="col-lg-2 form_span from_span">
-                <div class="md-form mx-8 my-8">
-                    <input type="time" id="inputMDEx1" class="form-control">
-                    <label for="inputMDEx1">Heure de fin</label>
-                </div>
-            </div>
-        </div>
-    </form>
-</section>
+    </div>
+</div>
 <app-footer></app-footer>
+
+<ng-template #contentEdit let-model>
+    <div class="modal-body">
+        <h2>Statut du renndez-vous</h2>
+        <form [formGroup]="editForm" novalidate>
+            <div class="row form_edit form_input">
+                <div class="col-lg-1 form_span from_span">
+                    <div class="col-lg-4" style="padding: 0;">
+                        <select id="standard-select" formControlName="jour">
+                            <option selected>Choisir un jour</option>
+                            <option value="Lundi">Lundi</option>
+                            <option value="Mardi">Mardi</option>
+                            <option value="Mercredi">Mercredi</option>
+                            <option value="Jeudi">Jeudi</option>
+                            <option value="Vendredi">Vendredi</option>
+                            <option value="Samedi">Samedi</option>
+                            <option value="Dimanche">Dimanche</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 form_span from_span">
+                    <div class="md-form mx-8 my-8">
+                        <label for="inputMDEx1">Heure de début</label>
+                        <input type="time" id="inputMDEx1" class="form-control" formControlName="heureDeb">
+                    </div>
+                </div>
+                <div class="col-lg-4 form_span from_span">
+                    <div class="md-form mx-8 my-8">
+                        <label for="inputMDEx1">Heure de fin</label>
+                        <input type="time" id="inputMDEx1" class="form-control" formControlName="heureFin">
+                    </div>
+                </div>
+            </div>
+            <div class="border text-center">
+                <button data-dismiss="modal" class="btn btn-info" (click)="onSave()"> Enregistrer les modifications
+                </button>
+            </div>
+        </form>
+    </div>
+</ng-template>

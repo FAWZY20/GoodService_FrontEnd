@@ -4,47 +4,49 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { User } from '../api/user';
-import { ConnectionComponent } from '../connexion/connection.component';
+import { Professional } from '../api/professional';
+import { ConnexionProfessionalComponent } from '../connexion-professional/connexion-professional.component';
 import { RegistationService } from '../registation.service';
 import { ReservationDTO } from '../user-reservations/user-reservations.component';
 
 @Component({
-  selector: 'app-historique-payment-user',
-  templateUrl: './historique-payment-user.component.html',
-  styleUrls: ['./historique-payment-user.component.css']
+  selector: 'app-historique-professionel',
+  templateUrl: './historique-professionel.component.html',
+  styleUrls: ['./historique-professionel.component.css']
 })
-export class HistoriquePaymentUserComponent implements OnInit {
+export class HistoriqueProfessionelComponent implements OnInit {
 
-  currentUser: User;
+  currentPro: Professional;
   private routeSub: Subscription;
   reservations: ReservationDTO[] = [];
   reservation: ReservationDTO;
 
-  constructor(private _service: RegistationService,
+  constructor(
+    private _service: RegistationService,
     private http: HttpClient,
     private modalService: NgbModal,
     private router: Router,
-    private authentificationUser: ConnectionComponent,
+    private authentificationUser: ConnexionProfessionalComponent,
     private route: ActivatedRoute
   ) 
   {
-    this.currentUser = this.authentificationUser.currentUserValue;
-  }
+    this.currentPro = this.authentificationUser.currentProfessionalValue;
+   }
 
   ngOnInit(): void {
-    this.getUserReservationFinishOrRefused();
+    this.getProReservationFinishOrRefused();
   }
 
-  getUserReservationFinishOrRefused() {
+  getProReservationFinishOrRefused() {
 
-    this.http.get<ReservationDTO[]>(environment.apiUrl + '/list/fini/' + this.currentUser.id).subscribe(dtos => {
+    this.http.get<ReservationDTO[]>(environment.apiUrl + '/list/pro/fini/' + this.currentPro.id).subscribe(dtos => {
       this.reservations = dtos;
     }, error => {
       console.error('error occured while getting user reservations', error)
     })
-    
+
   }
+
 
   openDetails(targetModal, reservation: ReservationDTO) {
     this.modalService.open(targetModal, {
@@ -53,7 +55,7 @@ export class HistoriquePaymentUserComponent implements OnInit {
       size: 'lg'
     });
     document.getElementById('prestation')?.setAttribute('value', reservation.prestation);
-    document.getElementById('professional')?.setAttribute('value', reservation.professional.nom);
+    document.getElementById('client')?.setAttribute('value', reservation.client.nom);
     document.getElementById('date')?.setAttribute('value', reservation.appointementDate);
     document.getElementById('Adress')?.setAttribute('value', reservation.address);
     document.getElementById('etat')?.setAttribute('value', reservation.etat);

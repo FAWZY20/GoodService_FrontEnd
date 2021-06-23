@@ -27,7 +27,9 @@ import { RepasageComponent } from './repasage/repasage.component';
 import { MenageComponent } from './menage/menage.component';
 import { FormulaireReservationCoupeHommeComponent } from './formulaire-reservation-coupe-homme/formulaire-reservation-coupe-homme.component';
 import { ProfesionalRendezVousComponent } from './profesional-rendez-vous/profesional-rendez-vous.component';
-import { ProfileReglageProfessionalComponent } from './profile-reglage-professional/profile-reglage-professional.component';
+import { ProfileReglageprofessionalComponent } from './profile-reglage-professional/profile-reglage-professional.component';
+import { HistoriqueProfessionelComponent } from './historique-professionel/historique-professionel.component';
+import { AddHoraireComponent } from './add-horaire/add-horaire.component';
 
 const routes: Routes = [
 
@@ -40,7 +42,7 @@ const routes: Routes = [
     path: 'client',
     children:
       [
-        { path: ':id/Dashboard', component:BackUserComponent },
+        { path: ':id/Dashboard', component: BackUserComponent },
         { path: ':id/profile', component: ProfilUserComponent },
         { path: ':id/MoyenDePaiment', component: MoyenPaimenetUserComponent },
         { path: ':id/Historique', component: HistoriquePaymentUserComponent },
@@ -61,8 +63,9 @@ const routes: Routes = [
         { path: ':id/rendezvous', component: ProfesionalRendezVousComponent },
         { path: ':id/NouvelleAbscence', component: NouvelleAbsComponent },
         { path: ':id/Horaire', component: ProfessionalHoraireOuvertureComponent },
-        { path: ':id/profil', component: ProfileReglageProfessionalComponent },
-        { path: ':id/Abscence', component: AbscenceProfessionalComponent },
+        { path: ':id/Horaire/addHoraire', component: AddHoraireComponent },
+        { path: ':id/profil', component: ProfileReglageprofessionalComponent },
+        { path: ':id/historique', component: HistoriqueProfessionelComponent }
       ],
   },
 

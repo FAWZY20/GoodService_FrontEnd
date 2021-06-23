@@ -412,22 +412,15 @@ input[type="radio"] {
     box-shadow: 0 10px 20px -5px rgba(20, 50, 64, 0.76);
 }
 
-.btn-modify-profil {
+.btn-reserved {
     margin-top: 20px;
-    font-weight: bold;
     margin-bottom: 20px;
-    color: white !important;
-    border-radius: 200px;
     background-color: teal;
-}
-
-.client-profile__label {
-    font-weight: bold;
-}
-
-.btn-modify-profil::after {
-    color: white;
     border-radius: 200px;
+    font-size: 15px;
+}
+
+.btn-reserved:hover {
     background-color: teal;
 }
 
@@ -452,10 +445,4 @@ input[type="radio"] {
 
 H1 {
     font-size: 21px;
-}
-
-.attribut {
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 3%;
 }

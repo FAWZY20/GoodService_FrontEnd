@@ -1,17 +1,19 @@
 <nav class="header_horizontal">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-6 exit">
-                <a routerLink=''>
-                    < retour </a>
-            </div>
-            <div class="col-lg-6 logo">
-                <a class="navbar-brand" href="#">
-                    <img src="../../assets/img/logo.png" alt="" width="55" height="50" class="d-inline-block align-top">
-                </a>
-            </div>
-            <div class="col-lg-6 nom user">
-                <!--Afficher le nom du User-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 exit">
+                    <a routerLink=''>
+                        < retour </a>
+                </div>
+                <div class="col-lg-6 logo">
+                    <a class="navbar-brand" href="#">
+                        <img src="../../assets/img/logo.png" alt="" width="55" height="50" class="d-inline-block align-top">
+                    </a>
+                </div>
+                <div class="col-lg-3 nom">
+                    <p> Hey {{currentUser.prenom}} !! </p>
+                </div>
             </div>
         </div>
     </div>

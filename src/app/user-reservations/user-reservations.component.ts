@@ -9,10 +9,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ConnectionComponent } from '../connexion/connection.component';
 import { User } from '../api/user';
 import { Subscription } from 'rxjs';
+import { UserLightDTO } from '../api/userLightDTO';
 
 export interface ReservationDTO {
   id: number;
   professional: ProfessionalLightDTO;
+  client: UserLightDTO;
   prestation: string;
   address: string;
   appointementDate: string;
@@ -137,7 +139,6 @@ export class UserReservationsComponent implements OnInit {
       etat: reservation.etat
     });
   }
-
 
 
   onSave() {

@@ -1,3 +1,7 @@
+* {
+    list-style: none;
+}
+
 section {
     padding: 30px;
     background-color: rgba(219, 219, 219, 0.267);
@@ -14,8 +18,35 @@ input {
     padding-bottom: 5%;
 }
 
+.form_edit {
+    padding-top: 10%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: unset;
+}
+
 h1 {
     font-size: 25px;
     text-align: center;
     padding-bottom: 5%;
+}
+
+.btn-add {
+    padding: 2%;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: teal;
+    border-radius: 200px;
+    font-size: 20px;
+}
+
+.btn-add:hover {
+    background-color: teal;
+}
+
+.horaire-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
