@@ -1,5 +1,5 @@
 export interface ProfessionalLightDTO{
-    id:number;
+    id: number;
     poste:string;
     nom:string;
     prenom:string;

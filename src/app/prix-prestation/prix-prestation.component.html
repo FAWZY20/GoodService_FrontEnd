@@ -1,0 +1,45 @@
+<app-header-horizontal-professional></app-header-horizontal-professional>
+<section>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row prestation-prix">
+                <div class="prestation prestation-prix-title">
+                    <h1>Vos prix</h1>
+                </div>
+                <div class=" prestation prestation-prix-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Prestation</th>
+                                <th scope="col">Prix</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let prix of prixs">
+                                <td>
+                                    <li>{{prix.prestation}}</li>
+                                </td>
+                                <td>
+                                    <li>{{prix.prix}} €</li>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-warning" style="margin-right: 6px;">
+                                        <i class="fa fa-edit">Modifier vottre prix</i>
+                                    </button>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="prestation-prix-add">
+                    <button [routerLink]="['../addPrestation']" type="button" class="btn btn-primary" style="margin-right: 6px;">
+                        Ajouter de nouvelle prestation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

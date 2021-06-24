@@ -7,6 +7,7 @@ import { Professional } from '../api/professional';
 import { environment } from 'src/environments/environment';
 import { Reservation } from '../api/reservationDTO';
 import { ReservationDTO } from '../user-reservations/user-reservations.component';
+import { horaire } from '../professional-horaire-ouverture/professional-horaire-ouverture.component';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,6 @@ export class RegistationService {
     return this._http.post<any>(environment.apiUrl +'/new', appointement)
   }
 
-  
 //Url profesional
 
   public loginProfessionalFromRemote(professional: Professional): Observable<any> {
@@ -43,6 +43,10 @@ export class RegistationService {
 
   public getProfessional():Observable<any>{
     return this._http.get<Professional[]>(environment.apiUrl +'/professional/list')
+  }
+
+  public addHoraire(horaire: horaire): Observable<any> {
+    return this._http.post<any>(environment.apiUrl + '/new/horaire', horaire)
   }
 
 }

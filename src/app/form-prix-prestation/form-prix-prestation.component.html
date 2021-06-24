@@ -1,0 +1,101 @@
+<app-header-horizontal-professional></app-header-horizontal-professional>
+<div class="container-fluid">
+    <div class="container">
+        <div class="row prestation-prix">
+            <div class="title">
+                <h1>Choisir votre Secteur d'activitée</h1>
+            </div>
+            <div class="coifure">
+                <h2 class="coiffure-title">
+                    Coiffure
+                </h2>
+                <form #Registerform="ngForm" (ngSubmit)="addPrice()">
+                    <div>
+                        <label for="prestation">Choisir une prestation à ajouter dans votre liste :   </label>
+                        <select name="prestation" id="prestation" [(ngModel)]="newPrix.prestation" name="prestation">
+                                <option value="coupe Homme">Coupe Homme</option>
+                                <option value="coupe Femme">Coupe Femme</option>
+                                <option value="Brushing">Brushing</option>
+                                <option value="Shampoing">Shampoing</option>
+                                <option value="Barbe">Barbe</option>
+                                <option value="Coloration">Coloration</option>
+                            </select>
+                    </div>
+                    <div>
+                        <label for="prix">Prix de la prestation : </label>
+                        <input type="text" placeholder="Quel est votre Prix" [(ngModel)]="newPrix.prix" name="prix"> €
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <button type="submit " class="btn btn-primary btn-block btn-create-account "> Ajouter cette prestation </button>
+                    </div>
+                </form>
+            </div>
+            <div class="coifure">
+                <h2 class="coiffure-title">
+                    Beauté
+                </h2>
+                <form #Registerform="ngForm" (ngSubmit)="addPrice()">
+                    <div>
+                        <label for="prestation">Choisir une prestation à ajouter dans votre liste :   </label>
+                        <select name="prestation" id="prestation" [(ngModel)]="newPrix.prestation1" name="prestation">
+                                <option value="Epilation">Epilation</option>
+                                <option value="Manucure">Manucure</option>
+                                <option value="Soin hydratan">Soin hydratan</option>
+                            </select>
+                    </div>
+                    <div>
+                        <label for="prix">Prix de la prestation : </label>
+                        <input type="text" placeholder="Quel est votre Prix" [(ngModel)]="newPrix.prix1" name="prix"> €
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <button (click)="changeDataBeauter()" type="submit " class="btn btn-primary btn-block btn-create-account "> Ajouter cette prestation </button>
+                    </div>
+                </form>
+            </div>
+            <div class="coifure">
+                <h2 class="coiffure-title">
+                    Ménage
+                </h2>
+                <form #Registerform="ngForm" (ngSubmit)="addPrice()">
+                    <div>
+                        <label for="prestation">Choisir une prestation à ajouter dans votre liste :   </label>
+                        <select name="prestation" id="prestation" [(ngModel)]="newPrix.prestation2" name="prestation">
+                                <option value="Menage">Menage</option>
+                                <option value="Repasage">Repasage</option>
+                            </select>
+                    </div>
+                    <div>
+                        <label for="prix">Prix de la prestation ( par heure ) : </label>
+                        <input type="text" placeholder="Quel est votre Prix" [(ngModel)]="newPrix.prix2" name="prix"> €
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <button (click)="changeDataMenage()" type="submit " class="btn btn-primary btn-block btn-create-account "> Ajouter cette prestation </button>
+                    </div>
+                </form>
+            </div>
+            <div class="coifure">
+                <h2 class="coiffure-title">
+                    Coach sportif
+                </h2>
+                <form #Registerform="ngForm" (ngSubmit)="addPrice()">
+                    <div>
+                        <label for="prestation">Choisir une prestation à ajouter dans votre liste :   </label>
+                        <select name="prestation" id="prestation" [(ngModel)]="newPrix.prestation3" name="prestation3">
+                                <option value="Condition">Cuisse, abdo, fessier</option>
+                                <option value="Yoga">Yoga</option>
+                                <option value="Cardio">Cardion</option>
+                            </select>
+                    </div>
+                    <div>
+                        <label for="prix">Prix de la prestation ( par heure ) : </label>
+                        <input type="text" placeholder="Quel est votre Prix" [(ngModel)]="newPrix.prix3" name="prix3"> €
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <button (click)="changeDataCoach()" type="submit " class="btn btn-primary btn-block btn-create-account "> Ajouter cette prestation </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

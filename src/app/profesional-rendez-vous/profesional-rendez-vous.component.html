@@ -1,3 +1,4 @@
+<app-header-horizontal-professional></app-header-horizontal-professional>
 <div class="container">
     <div class="container-fluid">
         <div class="row">
@@ -50,7 +51,7 @@
         </div>
     </div>
 </div>
-
+<app-footer></app-footer>
 
 
 
@@ -97,12 +98,13 @@
 
 <ng-template #contentEdit let-model>
     <div class="modal-body">
-        <h2>Statut du renndez-vous</h2>
+        <h2>Statut du rendez-vous</h2>
         <form [formGroup]="editForm" novalidate>
             <div class="form-group">
                 <div class="input-group">
                     <div class="select">
-                        <select id="standard-select" formControlName="etat">
+                        <label for="etat">Choissir l'etat de la prestation :</label>
+                        <select form="etat" id="standard-select" formControlName="etat">
                             <option value="Accepter">Accepter</option>
                             <option name="refuser" value="refuser">refuser</option>
                             <option value="fini">fini</option>

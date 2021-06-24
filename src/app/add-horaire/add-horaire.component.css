@@ -1,0 +1,30 @@
+section {
+    padding: 30px;
+    background-color: rgba(219, 219, 219, 0.267);
+}
+
+input {
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.form_input {
+    justify-content: center;
+    align-items: baseline;
+    padding-bottom: 5%;
+}
+
+h1 {
+    font-size: 25px;
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+.form-horaire {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_span {
+    padding-bottom: 3%;
+}

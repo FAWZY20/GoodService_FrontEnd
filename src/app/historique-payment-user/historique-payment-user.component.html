@@ -6,12 +6,51 @@
                 <h1>HISTORIQUE & FACTURES</h1>
             </div>
             <div>
-
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">prestation</th>
+                            <th scope="col">professionnel</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Adress</th>
+                            <th scope="col">etat</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let reservation of reservations">
+                            <td>
+                                <li>{{reservation.id}}</li>
+                            </td>
+                            <td>
+                                <li>{{reservation.prestation}}</li>
+                            </td>
+                            <td>
+                                <li>{{reservation.professional.nom}} {{reservation.professional.prenom}}</li>
+                            </td>
+                            <td>
+                                <li>{{reservation.appointementDate}}</li>
+                            </td>
+                            <td>
+                                <li>{{reservation.address}}</li>
+                            </td>
+                            <td>
+                                <li>{{reservation.etat}}</li>
+                            </td>
+                            <td style="display: flex;">
+                                <button type="button" class="btn btn-info" style="margin-right: 6px;" (click)="openDetails(contentDetails, reservation)">
+                                    <i class="fa fa-search">Info</i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div>
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle btn-reserved" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      RESERVER UN SERVICE
+                        RESERVER UN SERVICE
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="#">COIFFURE</a>
@@ -25,3 +64,44 @@
     </div>
 </section>
 <app-footer></app-footer>
+
+<ng-template #contentDetails let-model>
+    <form>
+        <div class="form-group">
+            <label for="firstname">prestation</label>
+            <div class="input-group">
+                <input id="prestation" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastname">professional</label>
+            <div class="input-group">
+                <input id="professional" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="department">Date</label>
+            <div class="input-group">
+                <input id="date" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Adress</label>
+            <div class="input-group">
+                <input id="Adress" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label> etat</label>
+            <div class="input-group">
+                <input id="etat" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label> message</label>
+            <div class="input-group">
+                <input id="message" class="form-control" readonly>
+            </div>
+        </div>
+    </form>
+</ng-template>

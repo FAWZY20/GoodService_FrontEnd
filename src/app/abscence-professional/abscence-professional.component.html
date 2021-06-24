@@ -3,15 +3,68 @@
     <div class="container-fluid">
         <div class="container">
             <div class="title">
-                <h1>Ajouter une abscence</h1>
+                <h1>Vos abscences</h1>
             </div>
             <div>
-
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Jour de debut</th>
+                            <th scope="col">Jour de fin</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let absence of absences">
+                            <td>
+                                <li>{{absence.jourDeb}}</li>
+                            </td>
+                            <td>
+                                <li>{{absence.jourFin}}</li>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-info" style="margin-right: 6px;" (click)="openDetails(contentDetails, absence)">
+                                    <i class="fa fa-search">Info</i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div>
-                <a routerLink="/NouvelleAbscence" class="btn btn-alt btn-sm btn-primary btn-add-cart">Ajouter une nouvelle abscence</a>
+                <a routerLink="/NouvelleAbscence" class="btn btn-alt btn-sm btn-primary btn-add-cart">Ajouter une
+                    nouvelle abscence</a>
             </div>
         </div>
     </div>
 </section>
 <app-footer></app-footer>
+
+
+<ng-template #contentDetails let-model>
+    <div class="modal-header">
+        <h4 class="modal-title">Information sur votre abscence</h4>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="firstname">Jour de debut </label>
+                <div class="input-group">
+                    <input id="jourDeb" class="form-control" readonly>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname">JOur de fin</label>
+                <div class="input-group">
+                    <input id="jourFin" class="form-control" readonly>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="department">justificatif</label>
+                <div class="input-group">
+                    <input id="justificatif" class="form-control" readonly>
+                </div>
+            </div>
+        </form>
+    </div>
+</ng-template>
