@@ -16,8 +16,8 @@ export interface horaire {
   id: number;
   professional: ProfessionalLightDTO;
   jour: string;
-  heureDeb: Date;
-  heureFin: Date;
+  heureDeb: Time;
+  heureFin: Time;
 
 }
 
@@ -31,6 +31,7 @@ export class ProfessionalHoraireOuvertureComponent implements OnInit {
   currentProfessional: Professional;
   horaires: horaire[] = [];
   horaire: horaire;
+  private deleteId: number;
   editForm: FormGroup;
 
   constructor(
@@ -75,6 +76,23 @@ export class ProfessionalHoraireOuvertureComponent implements OnInit {
       console.error('error occured while getting user reservations', error)
     })
 
+  }
+
+  openDelete(targetModal, horaire: horaire) {
+    this.deleteId = horaire.id;
+    this.modalService.open(targetModal, {
+      backdrop: 'static',
+      size: 'lg'
+    });
+  }
+
+  onDelete() {
+    const deleteURL = 'http://localhost:8080/horaire/' + this.deleteId + '/delete';
+    this.http.delete(deleteURL)
+      .subscribe((results) => {
+        this.ngOnInit();
+        this.modalService.dismissAll();
+      });
   }
 
 

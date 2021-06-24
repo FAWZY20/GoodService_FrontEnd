@@ -47,6 +47,9 @@ import { FormulaireReservationCoupeHommeComponent } from './formulaire-reservati
 import { ProfesionalRendezVousComponent } from './profesional-rendez-vous/profesional-rendez-vous.component';
 import { HistoriqueProfessionelComponent } from './historique-professionel/historique-professionel.component';
 import { AddHoraireComponent } from './add-horaire/add-horaire.component';
+import { FormPrixPrestationComponent } from './form-prix-prestation/form-prix-prestation.component';
+import { PrixPrestationComponent } from './prix-prestation/prix-prestation.component';
+import { CarteUserComponent } from './carte-user/carte-user.component';
 
 
 
@@ -93,7 +96,10 @@ import { AddHoraireComponent } from './add-horaire/add-horaire.component';
     ReservationAccepterComponent,
     FormulaireReservationCoupeHommeComponent,
     HistoriqueProfessionelComponent,
-    AddHoraireComponent
+    AddHoraireComponent,
+    FormPrixPrestationComponent,
+    PrixPrestationComponent,
+    CarteUserComponent
   ],
   imports: [
     FormsModule,

@@ -30,6 +30,8 @@ import { ProfesionalRendezVousComponent } from './profesional-rendez-vous/profes
 import { ProfileReglageprofessionalComponent } from './profile-reglage-professional/profile-reglage-professional.component';
 import { HistoriqueProfessionelComponent } from './historique-professionel/historique-professionel.component';
 import { AddHoraireComponent } from './add-horaire/add-horaire.component';
+import { PrixPrestationComponent } from './prix-prestation/prix-prestation.component';
+import { FormPrixPrestationComponent } from './form-prix-prestation/form-prix-prestation.component';
 
 const routes: Routes = [
 
@@ -61,11 +63,14 @@ const routes: Routes = [
       [
         { path: ':id/Dashboard', component: ProfessionalDashboardHomeComponent },
         { path: ':id/rendezvous', component: ProfesionalRendezVousComponent },
+        { path: ':id/Abscence', component: AbscenceProfessionalComponent },
         { path: ':id/NouvelleAbscence', component: NouvelleAbsComponent },
         { path: ':id/Horaire', component: ProfessionalHoraireOuvertureComponent },
-        { path: ':id/Horaire/addHoraire', component: AddHoraireComponent },
+        { path: ':id/addHoraire', component: AddHoraireComponent },
         { path: ':id/profil', component: ProfileReglageprofessionalComponent },
-        { path: ':id/historique', component: HistoriqueProfessionelComponent }
+        { path: ':id/historique', component: HistoriqueProfessionelComponent },
+        { path: ':id/prestation', component: PrixPrestationComponent },
+        { path: ':id/addPrestation', component: FormPrixPrestationComponent }
       ],
   },
 
@@ -84,6 +89,14 @@ const routes: Routes = [
         { path: 'coloration', component: ColorationComponent },
         { path: 'coupe/femme', component: CoupeFemmeComponent },
 
+      ],
+  },
+
+  {
+    path: 'reservation',
+    children:
+      [
+        { path: 'coupe/homme', component: FormulaireReservationCoupeHommeComponent },
       ],
   },
 

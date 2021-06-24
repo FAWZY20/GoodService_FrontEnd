@@ -8,13 +8,25 @@ import { environment } from 'src/environments/environment';
 import { Reservation } from './api/reservationDTO';
 import { horaire } from './professional-horaire-ouverture/professional-horaire-ouverture.component';
 import { Absence } from './api/absence';
+import { ConnectionComponent } from './connexion/connection.component';
+import { ConnexionProfessionalComponent } from './connexion-professional/connexion-professional.component';
+import { Prix } from './api/Prix';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegistationService {
 
-  constructor(private _http: HttpClient) { }
+  currentProfessional: Professional;
+  currentUser: User;
+
+  constructor(private _http: HttpClient,
+    private authentificationPro: ConnexionProfessionalComponent, 
+    private authentificationUser: ConnectionComponent
+    ) {
+      this.currentProfessional = this.authentificationPro.currentProfessionalValue; 
+      this.currentUser = this.authentificationUser.currentUserValue; 
+     }
 
 //User
 
@@ -42,12 +54,19 @@ export class RegistationService {
   }
 
   public addHoraire(horaire: horaire): Observable<any> {
-    return this._http.post<any>(environment.apiUrl + '/new/horaire', horaire)
+    return this._http.post<any>(environment.apiUrl + '/new/horaire/' + this.currentProfessional.id, horaire)
   }
 
   public addAbscence(abscence: Absence): Observable<any> {
-    return this._http.post<any>(environment.apiUrl + '/new/absence', abscence)
+    return this._http.post<any>(environment.apiUrl + '/new/absence/' + this.currentProfessional.id, abscence)
   }
+
+
+  public addPrice(prix: Prix): Observable<any> {
+    return this._http.post<any>(environment.apiUrl + '/new/price/' + this.currentProfessional.id, prix)
+  }
+
+
 
 
 }

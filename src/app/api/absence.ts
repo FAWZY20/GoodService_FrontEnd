@@ -5,7 +5,7 @@ export class Absence{
     id: number;
     professional: ProfessionalLightDTO;
     justificatif: string;
-    jourDeb: Date;
-    jourFin: Date; 
+    jourDeb: string;
+    jourFin: string; 
 
 }

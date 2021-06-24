@@ -19,3 +19,12 @@ h1 {
     text-align: center;
     padding-bottom: 5%;
 }
+
+.form-horaire {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_span {
+    padding-bottom: 3%;
+}

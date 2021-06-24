@@ -16,3 +16,9 @@ h1 {
     padding-top: 5%;
     padding-bottom: 10%;
 }
+
+.select {
+    padding-top: 3%;
+    display: flex;
+    flex-direction: column;
+}

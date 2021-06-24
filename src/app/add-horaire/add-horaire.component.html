@@ -1,38 +1,47 @@
 <app-header-horizontal-professional></app-header-horizontal-professional>
 <section>
-    <h1>Horaire d'ouverture</h1>
-    <form #Registerform="ngForm" (ngSubmit)="addHoraire()">
-        <div class="row form_input form_input">
-            <div class="col-lg-4 form_span from_span">
-                <div class="col-lg-4" style="padding: 0;">
-                    <select class="form-select" aria-label="Default select example" [(ngModel)]="newHoraire.jour" name="jour"> 
-                        <option selected>Choisir un jour</option>
-                        <option value="Lundi">Lundi</option>
-                        <option value="Mardi">Mardi</option>
-                        <option value="Mercredi">Mercredi</option>
-                        <option value="Jeudi">Jeudi</option>
-                        <option value="Vendredi">Vendredi</option>
-                        <option value="Samedi">Samedi</option>
-                        <option value="Dimanche">Dimanche</option>
-                    </select>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row form-horaire">
+                <div class="form-horaire-title">
+                    <h1>Horaire d'ouverture</h1>
                 </div>
-            </div>
-            <div class="col-lg-4 form_span from_span">
-                <div class="md-form mx-8 my-8">
-                    <input type="time" id="inputMDEx1" class="form-control" [(ngModel)]="newHoraire.heureDeb" name="heureDeb">
-                    <label for="inputMDEx1">Heure de début</label>
-                </div>
-            </div>
-            <div class="col-lg-4 form_span from_span">
-                <div class="md-form mx-8 my-8">
-                    <input type="time" id="inputMDEx1" class="form-control" [(ngModel)]="newHoraire.heureFin" name="heureFin">
-                    <label for="inputMDEx1">Heure de fin</label>
-                </div>
+                <form #Registerform="ngForm" (ngSubmit)="addHoraire()">
+                    <div class="form_input form_input">
+                        <div class="col-lg-4 form_span from_span">
+                            <div class="col-lg-4" style="padding: 0;">
+                                <select class="form-select" aria-label="Default select example" [(ngModel)]="newHoraire.jour" name="jour"> 
+                                    <option selected value="">Choisir un jour</option>
+                                    <option value="Lundi">Lundi</option>
+                                    <option value="Mardi">Mardi</option>
+                                    <option value="Mercredi">Mercredi</option>
+                                    <option value="Jeudi">Jeudi</option>
+                                    <option value="Vendredi">Vendredi</option>
+                                    <option value="Samedi">Samedi</option>
+                                    <option value="Dimanche">Dimanche</option>
+                                </select>
+                                <label for="inputMDEx1">Jour</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 form_span from_span">
+                            <div class="md-form mx-8 my-8">
+                                <input type="time" id="inputMDEx1" class="form-control" [(ngModel)]="newHoraire.heureDeb" name="heureDeb">
+                                <label for="inputMDEx1">Heure de début</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 form_span from_span">
+                            <div class="md-form mx-8 my-8">
+                                <input type="time" id="inputMDEx1" class="form-control" [(ngModel)]="newHoraire.heureFin" name="heureFin">
+                                <label for="inputMDEx1">Heure de fin</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <button type="submit " class="btn btn-primary btn-block btn-create-account "> Ajouter cette horaire </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="form-group ">
-            <button (click)="defaultValue()" type="submit " class="btn btn-primary btn-block btn-create-account "> Ajouter cette horaire </button>
-        </div>
-    </form>
+    </div>
 </section>
 <app-footer></app-footer>
