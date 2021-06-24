@@ -45,16 +45,12 @@ import { PrestationCoupeHommeComponent } from './prestation-coupe-homme/prestati
 import { ReservationAccepterComponent } from './reservation-accepter/reservation-accepter.component';
 import { FormulaireReservationCoupeHommeComponent } from './formulaire-reservation-coupe-homme/formulaire-reservation-coupe-homme.component';
 import { ProfesionalRendezVousComponent } from './profesional-rendez-vous/profesional-rendez-vous.component';
-<<<<<<< HEAD
-///import { HttpRequestInterceptor } from './interceptor/httpconfig.interceptor';
-=======
 import { HistoriqueProfessionelComponent } from './historique-professionel/historique-professionel.component';
 import { AddHoraireComponent } from './add-horaire/add-horaire.component';
 import { FormPrixPrestationComponent } from './form-prix-prestation/form-prix-prestation.component';
 import { PrixPrestationComponent } from './prix-prestation/prix-prestation.component';
 import { CarteUserComponent } from './carte-user/carte-user.component';
 
->>>>>>> Dev
 
 
 @NgModule({
@@ -115,14 +111,8 @@ import { CarteUserComponent } from './carte-user/carte-user.component';
     NgbModule,
   ],
   providers: [
-<<<<<<< HEAD
-   /* [
-      { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }
-  ],*/
-=======
     ConnexionProfessionalComponent,
     ConnectionComponent
->>>>>>> Dev
   ],
   bootstrap: [AppComponent]
 }) 
