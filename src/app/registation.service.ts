@@ -11,6 +11,7 @@ import { Absence } from './api/absence';
 import { ConnectionComponent } from './connexion/connection.component';
 import { ConnexionProfessionalComponent } from './connexion-professional/connexion-professional.component';
 import { Prix } from './api/Prix';
+import { Card } from './api/Card';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +41,10 @@ export class RegistationService {
 
   public registerAppointment(appointement :Reservation):Observable<any>{
     return this._http.post<any>(environment.apiUrl +'/new', appointement)
+  }
+
+  public addCard(card: Card): Observable<any> {
+    return this._http.post<any>(environment.apiUrl + '/new/card/' + this.currentUser.id, card)
   }
 
 
