@@ -1,3 +1,7 @@
+* {
+    list-style: none;
+}
+
 .title {
     color: teal;
     font-size: 25px;

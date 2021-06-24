@@ -1,10 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from 'src/environments/environment';
+import { Professional } from '../api/professional';
 import { ProfessionalLightDTO } from '../api/professionalLightDTO';
 import { UserLightDTO } from '../api/userLightDTO';
+import { ConnexionProfessionalComponent } from '../connexion-professional/connexion-professional.component';
 import { RegistationService } from '../_services/registation.service';
 
 
@@ -26,7 +29,7 @@ export interface ReservationDTO {
 })
 
 export class ProfesionalRendezVousComponent implements OnInit {
-
+  currentProfessional: Professional;
   reservations: ReservationDTO[] = [];
   reservationPro: ReservationDTO;
   private deleteId: number;
@@ -35,8 +38,13 @@ export class ProfesionalRendezVousComponent implements OnInit {
   constructor(private _service: RegistationService,
     private http: HttpClient,
     private modalService: NgbModal,
-    private fb: FormBuilder
-  ) { }
+    private fb: FormBuilder,
+    private router: Router,
+    private authentificationPro:  ConnexionProfessionalComponent,
+    private route: ActivatedRoute
+  ) {
+    this.currentProfessional = this.authentificationPro.currentProfessionalValue;
+   }
 
   ngOnInit(): void {
     this.initForm();
@@ -47,7 +55,7 @@ export class ProfesionalRendezVousComponent implements OnInit {
   
   getProfessionalReservation() {
 
-    this.http.get<ReservationDTO[]>(environment.apiUrl + '/list').subscribe(dtos => {
+    this.http.get<ReservationDTO[]>(environment.apiUrl + '/listprofesionel/' + this.currentProfessional.id ).subscribe(dtos => {
       this.reservations = dtos;
     }, error => {
       console.error('error occured while getting user reservations', error)

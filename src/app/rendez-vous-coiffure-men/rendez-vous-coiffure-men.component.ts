@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ConnectionComponent } from '../connexion/connection.component';
 
 @Component({
   selector: 'app-rendez-vous-coiffure-men',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RendezVousCoiffureMenComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private authenticationService: ConnectionComponent) { }
 
   ngOnInit(): void {
   }
 
+  showConnect(){
+    if (this.authenticationService.currentUserValue.id != null) {
+      this.router.navigate(['reservation/coupe/homme']);
+    }else{
+      this.router.navigate(['connexion']);
+    }
+  }
 }

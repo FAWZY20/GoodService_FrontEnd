@@ -453,3 +453,9 @@ input[type="radio"] {
 H1 {
     font-size: 21px;
 }
+
+.attribut {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 3%;
+}

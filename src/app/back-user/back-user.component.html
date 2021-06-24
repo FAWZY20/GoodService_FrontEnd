@@ -5,6 +5,9 @@
             <div class="row">
                 <div class="welcome-home col-lg-3">
                     <h2>BIENVENUE</h2>
+                    <p>
+                        {{currentUser.prenom}}
+                    </p>
                 </div>
                 <div class="">
                     <div class="casse">
@@ -13,7 +16,7 @@
                                 <img class="casse-img" src="../../assets/img/reserved.png" width="40" height="40" alt="reserved">
                             </div>
                             <div>
-                                <a class="cascol-lg-4 se-link" routerLink="/reservation/list">
+                                <a class="cascol-lg-4 se-link" [routerLink]="['../reservation']">
                                     <p class="title-casse">RÉSERVATIONS EN COURS</p>
                                     <p class="title-desscrription">
                                         Consultez, modifiez ou annulez vos réservations. Echangez avec votre professionnel.
@@ -22,7 +25,7 @@
                             </div>
                         </div>
                         <div class="col-lg casse-one">
-                            <a class="casse-link" routerLink="/mon-compte">
+                            <a class="casse-link" [routerLink]="['../profile']">
                                 <img class="casse-img" src="../../assets/img/user-menu.png" width="40" height="40" alt="">
                                 <p class="title-casse">MON PROFIL</p>
                                 <p class="title-desscrription">
@@ -33,7 +36,7 @@
                     </div>
                     <div class="casse">
                         <div class="col-lg casse-two">
-                            <a class="casse-link" routerLink="/HistoriquePaymentUser">
+                            <a class="casse-link" [routerLink]="['../Historique']">
                                 <img class="casse-img" src="../../assets/img/historique.png" width="40" height="40" alt="">
                                 <p class="title-casse">HISTORIQUE & FACTURES</p>
                                 <p class="title-desscrription">Consultez vos commandes passées <br> et téléchargez vos factures.
@@ -41,7 +44,7 @@
                             </a>
                         </div>
                         <div class="col-lg casse-two">
-                            <a class="casse-link" routerLink="/MoyenDePaiment">
+                            <a class="casse-link" [routerLink]="['../CarteCredit']">
                                 <img class="casse-img" src="../../assets/img/cb.png" width="40" height="40" alt="">
                                 <p class="title-casse">Moyens de paiements</p>
                                 <p class="title-desscrription">Modifiez vos cartes bancaires.</p>
@@ -56,7 +59,7 @@
                         <img class="deconnect-img" src="../../assets/img/deconnect.png" width="40" height="40" alt="">
                     </div>
                     <div>
-                        <p>Déconnexion</p>
+                        <a class="nav-item nav-link" (click)="logout()">Déconnexion</a>
                     </div>
                 </div>
             </div>

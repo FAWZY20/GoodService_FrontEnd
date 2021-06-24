@@ -1,1 +1,136 @@
-<p>profile-reglage-professional works!</p>
+<app-header-horizontal-professional></app-header-horizontal-professional>
+<section>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="title">
+                <h1>CONSULTER MON COMPTE</h1>
+            </div>
+            <div>
+                <div class="attribut">
+                    <div class="col-4"><label class="client-profile__label">Nom</label></div>
+                    <div class="col-8">{{ currentProfessional.nom}}</div>
+                </div>
+                <div class="attribut">
+                    <div class="col-4"><label class="client-profile__label">Prénom</label></div>
+                    <div class="col-8">{{ currentProfessional.prenom}}</div>
+                </div>
+                <div class="attribut">
+                    <div class="col-4"><label class="client-profile__label">Date de naissance</label></div>
+                    <div class="col-8">{{ currentProfessional.date_naissance}}</div>
+                </div>
+                <div class="attribut">
+                    <div class="col-4"><label class="client-profile__label">Poste</label></div>
+                    <div class="col-8">{{ currentProfessional.poste}}</div>
+                </div>
+                <div class="attribut">
+                    <div class="col-4"><label class="client-profile__label">Siret</label></div>
+                    <div class="col-8">{{ currentProfessional.siret}}</div>
+                </div>
+                <div class="attribut">
+                    <div class="col-4"><label class="client-profile__label">Téléphone</label></div>
+                    <div class="col-8">{{ currentProfessional.numero}}</div>
+                </div>
+                <div class="attribut">
+                    <div class="col-4"><label class="client-profile__label">Email</label></div>
+                    <div class="col-8">{{ currentProfessional.email}}</div>
+                </div>
+                <div class="attribut">
+                    <div class="col-4"><label class="client-profile__label">Mot de passe</label></div>
+                    <div class="col-8"><button type="button" class="btn btn-primary">Modifier votre mot de passe</button></div>
+                </div>
+                <div class="attribut">
+                    <div class="col-4"><label class="client-profile__label">ville</label></div>
+                    <div class="col-8">{{ currentProfessional.ville}}</div>
+                </div>
+                <div class="attribut">
+                    <div class="col-4"><label class="client-profile__label">latitude</label></div>
+                    <div class="col-8">{{ currentProfessional.latitude}}</div>
+                </div>
+                <div class="attribut">
+                    <div class="col-4"><label class="client-profile__label">longitude</label></div>
+                    <div class="col-8">{{ currentProfessional.longitude}}</div>
+                </div>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary" style="margin-right: 6px;" (click)="openEdit(contentEdit, currentProfessional)">
+                    <i class="fa fa-edit">modifier</i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>
+
+
+<ng-template #contentEdit let-model>
+    <div class="modal-header">
+        <h4 class="modal-title">Modifications du compte</h4>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="editForm" novalidate>
+            <div class="form-group">
+                <label for="nom"> nom </label>
+                <div class="input-group">
+                    <input type="text" formControlName="nom" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="prenom"> Prenom </label>
+                <div class="input-group">
+                    <input type="text" formControlName="prenom" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="date_naissance"> Date de naissance </label>
+                <div class="input-group">
+                    <input type="text" formControlName="date_naissance" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="numero"> Numero </label>
+                <div class="input-group">
+                    <input type="text" formControlName="numero" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="poste"> Poste </label>
+                <div class="input-group">
+                    <input type="text" formControlName="poste" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="siret"> Siret </label>
+                <div class="input-group">
+                    <input type="text" formControlName="siret" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email"> email </label>
+                <div class="input-group">
+                    <input type="text" formControlName="email" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ville">  Ville </label>
+                <div class="input-group">
+                    <input type="text" formControlName="ville" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="latitude"> Latitude </label>
+                <div class="input-group">
+                    <input type="text" formControlName="latitude" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="longitude">  longitude </label>
+                <div class="input-group">
+                    <input type="text" formControlName="longitude" class="form-control">
+                </div>
+            </div>
+            <div class="border text-center">
+                <button data-dismiss="modal" class="btn btn-info" (click)="onSave()"> Enregistrer les modifications</button>
+            </div>
+        </form>
+    </div>
+</ng-template>

@@ -6,23 +6,29 @@
                 <h1>AJOUTER UNE CARTE BANCAIRE</h1>
             </div>
             <div>
-                <form>
+                <form #Registerform="ngForm" (ngSubmit)="addCart()">
                     <div class="numerocb col form_span from_span">
                         <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/user.png"
                                 width="24" height="24" alt="" class="img-fluid" /></span>
-                        <input type="text" maxlength="16" class="form-control" placeholder="1234 1234 1234 1234" aria-label="1234 1234 1234 1234">
+                        <input type="text" maxlength="16" class="form-control" placeholder="Nom sur la carte" aria-label="Nom sur la carte" [(ngModel)]="newCard.nom" name="nom">
+                    </div>
+                    <br>
+                    <div class="numerocb col form_span from_span">
+                        <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/user.png"
+                                width="24" height="24" alt="" class="img-fluid" /></span>
+                        <input type="text" maxlength="16" class="form-control" placeholder="1234 1234 1234 1234" aria-label="1234 1234 1234 1234" [(ngModel)]="newCard.numeroDeCarte" name="numeroCarte">
                     </div>
                     <br>
                     <div class="row form_input form_input">
                         <div class="col form_span from_span">
                             <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/user.png"
                                     width="24" height="24" alt="" class="img-fluid" /></span>
-                            <input type="date" class="form-control" placeholder="Nom" aria-label="Nom">
+                            <input type="date" class="form-control" placeholder="dateExpiration" [(ngModel)]="newCard.dateExpiration" name="date">
                         </div>
                         <div class="col form_span from_span">
                             <span class="input-group-text" id="basic-addon1"><img src="../../assets/img/user.png"
                                     width="24" height="24" alt="" class="img-fluid" /></span>
-                            <input type="text" class="form-control" placeholder="CVC" aria-label="CVC" aria-describedby="basic-addon1" maxlength="3" inputmode="numeric">
+                            <input type="number" class="form-control" placeholder="CVC" aria-label="CVC" aria-describedby="basic-addon1" maxlength="3" inputmode="numeric" [(ngModel)]="newCard.cvc" name="cvc">
                         </div>
                     </div>
                     <div>

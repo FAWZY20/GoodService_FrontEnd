@@ -11,3 +11,14 @@ h1 {
     font-size: 21px;
     font-weight: bold;
 }
+
+.container {
+    padding-top: 5%;
+    padding-bottom: 10%;
+}
+
+.select {
+    padding-top: 3%;
+    display: flex;
+    flex-direction: column;
+}

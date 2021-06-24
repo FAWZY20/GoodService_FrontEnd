@@ -467,3 +467,8 @@ H1 {
 .numerocb {
     padding: 0;
 }
+
+.button-abs {
+    display: flex;
+    justify-self: flex-end !important;
+}

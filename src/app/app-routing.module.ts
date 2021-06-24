@@ -27,40 +27,85 @@ import { RepasageComponent } from './repasage/repasage.component';
 import { MenageComponent } from './menage/menage.component';
 import { FormulaireReservationCoupeHommeComponent } from './formulaire-reservation-coupe-homme/formulaire-reservation-coupe-homme.component';
 import { ProfesionalRendezVousComponent } from './profesional-rendez-vous/profesional-rendez-vous.component';
+import { ProfileReglageprofessionalComponent } from './profile-reglage-professional/profile-reglage-professional.component';
+import { HistoriqueProfessionelComponent } from './historique-professionel/historique-professionel.component';
+import { AddHoraireComponent } from './add-horaire/add-horaire.component';
+import { PrixPrestationComponent } from './prix-prestation/prix-prestation.component';
+import { FormPrixPrestationComponent } from './form-prix-prestation/form-prix-prestation.component';
 
 const routes: Routes = [
-  {path: 'utilisateur/tableau-de-bord', component: BackUserComponent},
-  {path: 'professionel/list/rdv', component: ProfesionalRendezVousComponent},
-  {path: 'reservation/coupe/homme', component: FormulaireReservationCoupeHommeComponent},
-  {path: 'repasage', component: RepasageComponent},
-  {path: 'menage', component: MenageComponent},
-  {path: 'coupe-homme', component: RendezVousCoiffureMenComponent},
-  {path: 'brushing', component: BrushingComponent},
-  {path: 'manucure', component: ManucureComponent},
-  {path: 'epilation', component: EpilationComponent},
-  {path: 'soin-hydratant', component: SoinHydratanComponent},
-  {path: 'coloration', component: ColorationComponent},
-  {path: 'coupe-femme', component: CoupeFemmeComponent},
-  {path: 'NouvelleAbscence', component: NouvelleAbsComponent},
-  {path: 'Abscence', component: AbscenceProfessionalComponent},
-  {path: 'Horaire-ouverture', component: ProfessionalHoraireOuvertureComponent}, 
-  {path: 'nouvelleCarteCredit', component: AjoutCarteCreditComponent},
-  {path: 'mon-compte', component: ProfilUserComponent},
-  {path: 'MoyenDePaiment', component: MoyenPaimenetUserComponent},
-  {path: 'reservation/list', component: UserReservationsComponent},
-  {path: 'HistoriquePaymentUser', component: HistoriquePaymentUserComponent},
-  {path: 'DashboardProfesionnal', component: ProfessionalDashboardHomeComponent},
-  {path: 'Map', component: OpenStreetMapComponent },
-  {path: '', component: HomePAgeComponent },
-  {path: 'signup-user', component: SignupUserComponent},
-  {path: 'connexion', component:ConnectionComponent},
-  {path: 'backuser', component:BackUserComponent},
-  {path: 'signup-professional', component:SignupProfessionalComponent},
-  {path: 'connexion-professional', component: ConnexionProfessionalComponent},
-  {path: 'professional/list', component: ProfesionalRendezVousComponent},
-  {path: '**', redirectTo: 'not-found'}
-];
 
+  { path: '', component: HomePAgeComponent },
+
+  { path: 'signup-user', component: SignupUserComponent },
+  { path: 'connexion', component: ConnectionComponent },
+
+  {
+    path: 'client',
+    children:
+      [
+        { path: ':id/Dashboard', component: BackUserComponent },
+        { path: ':id/profile', component: ProfilUserComponent },
+        { path: ':id/MoyenDePaiment', component: MoyenPaimenetUserComponent },
+        { path: ':id/Historique', component: HistoriquePaymentUserComponent },
+        { path: ':id/CarteCredit', component: AjoutCarteCreditComponent },
+        { path: ':id/reservation', component: UserReservationsComponent }
+      ],
+  },
+
+
+  { path: 'signup-professional', component: SignupProfessionalComponent },
+  { path: 'connexion-professional', component: ConnexionProfessionalComponent },
+
+  {
+    path: 'professionel',
+    children:
+      [
+        { path: ':id/Dashboard', component: ProfessionalDashboardHomeComponent },
+        { path: ':id/rendezvous', component: ProfesionalRendezVousComponent },
+        { path: ':id/Abscence', component: AbscenceProfessionalComponent },
+        { path: ':id/NouvelleAbscence', component: NouvelleAbsComponent },
+        { path: ':id/Horaire', component: ProfessionalHoraireOuvertureComponent },
+        { path: ':id/addHoraire', component: AddHoraireComponent },
+        { path: ':id/profil', component: ProfileReglageprofessionalComponent },
+        { path: ':id/historique', component: HistoriqueProfessionelComponent },
+        { path: ':id/prestation', component: PrixPrestationComponent },
+        { path: ':id/addPrestation', component: FormPrixPrestationComponent }
+      ],
+  },
+
+
+  {
+    path: 'prestation',
+    children:
+      [
+        { path: 'repasage', component: RepasageComponent },
+        { path: 'menage', component: MenageComponent },
+        { path: 'coupe/homme', component: RendezVousCoiffureMenComponent },
+        { path: 'brushing', component: BrushingComponent },
+        { path: 'manucure', component: ManucureComponent },
+        { path: 'epilation', component: EpilationComponent },
+        { path: 'soin-hydratant', component: SoinHydratanComponent },
+        { path: 'coloration', component: ColorationComponent },
+        { path: 'coupe/femme', component: CoupeFemmeComponent },
+
+      ],
+  },
+
+  {
+    path: 'reservation',
+    children:
+      [
+        { path: 'coupe/homme', component: FormulaireReservationCoupeHommeComponent },
+      ],
+  },
+
+  { path: 'reservation/coupe/homme', component: FormulaireReservationCoupeHommeComponent },
+
+  { path: '**', redirectTo: 'not-found' }
+
+];
+.0
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

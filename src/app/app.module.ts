@@ -17,7 +17,7 @@ import { BackUserComponent } from './back-user/back-user.component';
 import { HeaderHorizontalUserComponent } from './header-horizontal-user/header-horizontal-user.component';
 import { ProfessionalDashboardHomeComponent } from './professional-dashboard-home/professional-dashboard-home.component';
 import { HeaderHorizontalProfessionalComponent } from './header-horizontal-professional/header-horizontal-professional.component';
-import { ProfileReglageProfessionalComponent } from './profile-reglage-professional/profile-reglage-professional.component';
+import { ProfileReglageprofessionalComponent } from './profile-reglage-professional/profile-reglage-professional.component';
 import { FooterComponent } from './footer/footer.component';
 import { UserReservationsComponent } from './user-reservations/user-reservations.component';
 import { HistoriquePaymentUserComponent } from './historique-payment-user/historique-payment-user.component';
@@ -45,7 +45,16 @@ import { PrestationCoupeHommeComponent } from './prestation-coupe-homme/prestati
 import { ReservationAccepterComponent } from './reservation-accepter/reservation-accepter.component';
 import { FormulaireReservationCoupeHommeComponent } from './formulaire-reservation-coupe-homme/formulaire-reservation-coupe-homme.component';
 import { ProfesionalRendezVousComponent } from './profesional-rendez-vous/profesional-rendez-vous.component';
+<<<<<<< HEAD
 ///import { HttpRequestInterceptor } from './interceptor/httpconfig.interceptor';
+=======
+import { HistoriqueProfessionelComponent } from './historique-professionel/historique-professionel.component';
+import { AddHoraireComponent } from './add-horaire/add-horaire.component';
+import { FormPrixPrestationComponent } from './form-prix-prestation/form-prix-prestation.component';
+import { PrixPrestationComponent } from './prix-prestation/prix-prestation.component';
+import { CarteUserComponent } from './carte-user/carte-user.component';
+
+>>>>>>> Dev
 
 
 @NgModule({
@@ -63,7 +72,7 @@ import { ProfesionalRendezVousComponent } from './profesional-rendez-vous/profes
     HeaderHorizontalUserComponent,
     ProfessionalDashboardHomeComponent,
     HeaderHorizontalProfessionalComponent,
-    ProfileReglageProfessionalComponent,
+    ProfileReglageprofessionalComponent,
     FooterComponent,
     UserReservationsComponent,
     HistoriquePaymentUserComponent,
@@ -89,7 +98,12 @@ import { ProfesionalRendezVousComponent } from './profesional-rendez-vous/profes
     ReservationCoupeHommePrestationComponent,
     PrestationCoupeHommeComponent,
     ReservationAccepterComponent,
-    FormulaireReservationCoupeHommeComponent
+    FormulaireReservationCoupeHommeComponent,
+    HistoriqueProfessionelComponent,
+    AddHoraireComponent,
+    FormPrixPrestationComponent,
+    PrixPrestationComponent,
+    CarteUserComponent
   ],
   imports: [
     FormsModule,
@@ -101,9 +115,14 @@ import { ProfesionalRendezVousComponent } from './profesional-rendez-vous/profes
     NgbModule,
   ],
   providers: [
+<<<<<<< HEAD
    /* [
       { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }
   ],*/
+=======
+    ConnexionProfessionalComponent,
+    ConnectionComponent
+>>>>>>> Dev
   ],
   bootstrap: [AppComponent]
 }) 

@@ -4,7 +4,6 @@
         <div class="container">
             <div class="row">
                 <div class="map-wrapper col-lg-8">
-
                     <h1 class="title">Choisssez votre coiffeur!</h1>
                     <div class="map-border">
                         <div id="map"></div>
@@ -14,6 +13,40 @@
                         <input type="hidden" value="30" [(ngModel)]="reservation.professional" name="pro ">
                         <div class="info-coiffeur">
                             <p class="info-coiffeur-title">Liste des salons de coiffure à proximiter !</p>
+                            <div>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Nom</th>
+                                            <th scope="col">Poste</th>
+                                            <th scope="col">Ville</th>
+                                            <th scope="col">Action</th>
+                                            <th scope="col">Choix</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let professional of professionals">
+                                            <td>
+                                                <li>{{professional.nom}}</li>
+                                            </td>
+                                            <td>
+                                                <li>{{professional.poste}}</li>
+                                            </td>
+                                            <td>
+                                                <li>{{professional.ville}}</li>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-info" style="margin-right: 6px;" (click)="openDetails(contentDetails, professional)">
+                                                    <i class="fa fa-search">Info</i>
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <input type="radio" name="radio">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                         <div>
                             <div class="service">
@@ -68,7 +101,7 @@
                     <div class="etape">
                         <p>SALON DE COIFFURE</p>
                         <div class="etape-text">
-
+                            {{reservation.professional}}
                         </div>
                     </div>
                     <div class="etape">
@@ -94,3 +127,45 @@
         </div>
     </div>
 </section>
+
+
+<ng-template #contentDetails let-model>
+    <div class="modal-header">
+        <div class="modal-header">
+            <h4 class="modal-title">Information sur le prestataire</h4>
+        </div>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="firstname">Nom du prestataire</label>
+                <div class="input-group">
+                    <div style=" padding-right: 3%; margin-right: 2%;">
+                        <input id="nom" class="form-control" readonly>
+                    </div>
+                    <div>
+                        <input id="prenom" class="form-control" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Courte description</label>
+                <div class="input-group">
+                    <input id="description" class="form-control" readonly>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="poste">Poste</label>
+                <div class="input-group">
+                    <input id="poste" class="form-control" readonly>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Ville</label>
+                <div class="input-group">
+                    <input id="ville" class="form-control" readonly>
+                </div>
+            </div>
+        </form>
+    </div>
+</ng-template>

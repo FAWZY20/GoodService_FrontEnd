@@ -5,10 +5,16 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { RegistationService } from '../registation.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ConnectionComponent } from '../connexion/connection.component';
+import { User } from '../api/user';
+import { Subscription } from 'rxjs';
+import { UserLightDTO } from '../api/userLightDTO';
 
 export interface ReservationDTO {
   id: number;
   professional: ProfessionalLightDTO;
+  client: UserLightDTO;
   prestation: string;
   address: string;
   appointementDate: string;
@@ -24,6 +30,8 @@ export interface ReservationDTO {
 })
 export class UserReservationsComponent implements OnInit {
 
+  currentUser: User;
+  private routeSub: Subscription;
   reservations: ReservationDTO[] = [];
   reservation: ReservationDTO;
   private deleteId: number;
@@ -32,27 +40,40 @@ export class UserReservationsComponent implements OnInit {
   constructor(private _service: RegistationService,
     private http: HttpClient,
     private modalService: NgbModal,
-    private fb: FormBuilder
-  ) { }
+    private fb: FormBuilder,
+    private router: Router,
+    private authentificationUser: ConnectionComponent,
+    private route: ActivatedRoute
+  ) 
+  {
+    this.currentUser = this.authentificationUser.currentUserValue;
+  }
 
 
 
   ngOnInit(): void {
 
+    this.routeSub = this.route.params.subscribe(user => {
+      console.log(user) //log the entire params object
+      console.log(user['id']) //log the value of id
+    });
+    
     this.initForm();
     this.getUserReservation();
 
   }
 
+
   getUserReservation() {
 
-    this.http.get<ReservationDTO[]>(environment.apiUrl + '/list').subscribe(dtos => {
+    this.http.get<ReservationDTO[]>(environment.apiUrl + '/list/' + this.currentUser.id).subscribe(dtos => {
       this.reservations = dtos;
     }, error => {
       console.error('error occured while getting user reservations', error)
     })
 
   }
+
 
   initForm() {
 
@@ -78,7 +99,7 @@ export class UserReservationsComponent implements OnInit {
 
 
   onDelete() {
-    const deleteURL = 'http://localhost:8080/reservation/' + this.deleteId + '/delete';
+    const deleteURL = environment.apiUrl + this.deleteId + '/delete';
     this.http.delete(deleteURL)
       .subscribe((results) => {
         this.ngOnInit();
@@ -118,7 +139,6 @@ export class UserReservationsComponent implements OnInit {
       etat: reservation.etat
     });
   }
-
 
 
   onSave() {
