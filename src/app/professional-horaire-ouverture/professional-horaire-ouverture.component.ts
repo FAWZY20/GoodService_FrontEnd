@@ -87,7 +87,7 @@ export class ProfessionalHoraireOuvertureComponent implements OnInit {
   }
 
   onDelete() {
-    const deleteURL = 'http://localhost:8080/horaire/' + this.deleteId + '/delete';
+    const deleteURL = environment.apiUrl + this.deleteId + '/delete';
     this.http.delete(deleteURL)
       .subscribe((results) => {
         this.ngOnInit();
