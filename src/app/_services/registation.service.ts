@@ -31,6 +31,7 @@ export class RegistationService {
     return this._http.post<any>(environment.apiUrl +'/new', appointement)
   }
 
+
 //Url profesional
 
   public loginProfessionalFromRemote(professional: Professional): Observable<any> {

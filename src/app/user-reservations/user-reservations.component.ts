@@ -99,7 +99,7 @@ export class UserReservationsComponent implements OnInit {
 
 
   onDelete() {
-    const deleteURL = environment.apiUrl + '/reservation/' + this.deleteId + '/delete';
+    const deleteURL = 'http://localhost:8080/reservation/' + this.deleteId + '/delete';
     this.http.delete(deleteURL)
       .subscribe((results) => {
         this.ngOnInit();
