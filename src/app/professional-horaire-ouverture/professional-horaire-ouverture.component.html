@@ -10,7 +10,7 @@
                     <thead>
                         <tr>
                             <th scope="col">Jour</th>
-                            <th scope="col">Heure de debut</th>
+                            <th scope="col">Heure de début</th>
                             <th scope="col">Heure de fin</th>
                             <th scope="col">Action</th>
                         </tr>
@@ -28,11 +28,11 @@
                             </td>
                             <td>
                                 <button type="button" class="btn btn-warning" style="margin-right: 6px;" (click)="openEdit(contentEdit, horaire)">
-                                    <i class="fa fa-edit">Modifier vos horaire</i>
+                                    <i class="fa fa-edit">Modifier vos horaires</i>
                                 </button>
 
                                 <button type="button" class="btn btn-danger" (click)="openDelete(contentDelete, horaire)">
-                                    <i class="fa fa-remove">Suprimer</i>
+                                    <i class="fa fa-remove">Supprimer</i>
                                 </button>
 
                             </td>
@@ -58,9 +58,9 @@
         </button>
     </div>
     <div class="modal-body">
-        <h2>Vous êtes sûr de vouloir supprimer cette horaire.</h2>
+        <h2>Vous êtes sûr de vouloir supprimer cet horaire.</h2>
         <div class="border text-center">
-            <button data-dismiss="modal" class="btn btn-danger" (click)="onDelete()">Oui, Suprimer!</button>
+            <button data-dismiss="modal" class="btn btn-danger" (click)="onDelete()">Oui, Supprimer!</button>
         </div>
     </div>
 </ng-template>

@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="map-wrapper col-lg-8">
-                    <h1 class="title">Choisssez votre coiffeur!</h1>
+                    <h1 class="title">Choisissez votre coiffeur !</h1>
                     <div class="map-border">
                         <div id="map"></div>
                     </div>
@@ -12,7 +12,7 @@
                         <input type="hidden" value="22" [(ngModel)]="reservation.client" name="client">
                         <input type="hidden" value="30" [(ngModel)]="reservation.professional" name="pro ">
                         <div class="info-coiffeur">
-                            <p class="info-coiffeur-title">Liste des salons de coiffure à proximiter !</p>
+                            <p class="info-coiffeur-title">Liste des salons de coiffure à proximités !</p>
                             <div>
                                 <table class="table">
                                     <thead>
@@ -63,7 +63,7 @@
                                     </div>
                                 </div>
                                 <div class="service-block">
-                                    <h2 class="title" style="padding-top: 3%;">Joli choix ! Quelle jour & heure voulez-vous ? </h2>
+                                    <h2 class="title" style="padding-top: 3%;">Joli choix ! Quel jour & heure voulez-vous ? </h2>
                                     <div>
                                         <input type="datetime-local" id="meeting-time" name="meeting-time" min="2021-06-16T09:00" [(ngModel)]="reservation.appointementDate" name="date">
                                     </div>
@@ -111,7 +111,7 @@
                         </div>
                     </div>
                     <div class="etape">
-                        <p>DISPONIBILITES</p>
+                        <p>DISPONIBILITÉS</p>
                         <div class="etape-text">
                             {{reservation.appointementDate}}
                         </div>

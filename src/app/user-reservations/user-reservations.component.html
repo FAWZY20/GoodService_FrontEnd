@@ -14,8 +14,8 @@
                                 <th scope="col">prestation</th>
                                 <th scope="col">professionnel</th>
                                 <th scope="col">Date</th>
-                                <th scope="col">Adress</th>
-                                <th scope="col">etat</th>
+                                <th scope="col">adresse</th>
+                                <th scope="col">état</th>
                                 <th scope="col">Actions</th>
                             </tr>
                         </thead>
@@ -49,18 +49,18 @@
                                     </button>
 
                                     <button type="button" class="btn btn-danger" (click)="openDelete(contentDelete, reservation)">
-                                        <i class="fa fa-remove">Suprimer</i>
+                                        <i class="fa fa-remove">Supprimer</i>
                                     </button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <button class="btn btn-secondary dropdown-toggle btn-reserved" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        RESERVER UN SERVICE
+                        RÉSERVER UN SERVICE
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="#">COIFFURE</a>
-                        <a class="dropdown-item" href="#">BEAUTE</a>
+                        <a class="dropdown-item" href="#">BEAUTÉ</a>
                         <a class="dropdown-item" href="#">MENAGE</a>
                         <a class="dropdown-item" href="#">COACH SPORTIF</a>
                     </div>
@@ -106,13 +106,13 @@
             </div>
         </div>
         <div class="form-group">
-            <label>Adress</label>
+            <label>Adresse</label>
             <div class="input-group">
                 <input id="Adress" class="form-control" readonly>
             </div>
         </div>
         <div class="form-group">
-            <label> etat</label>
+            <label> état</label>
             <div class="input-group">
                 <input id="etat" class="form-control" readonly>
             </div>
@@ -129,7 +129,7 @@
 <ng-template #contentEdit let-model>
     <form [formGroup]="editForm" novalidate>
         <div class="form-group">
-            <label for="address"> Adress </label>
+            <label for="address"> Adresse </label>
             <div class="input-group">
                 <input type="text" formControlName="address" class="form-control">
             </div>
