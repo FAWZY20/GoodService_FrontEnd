@@ -62,7 +62,6 @@ export class FormulaireReservationCoupeHommeComponent implements AfterViewInit {
     });
 
   }
-  
 
   ngAfterViewInit(): void {
 
@@ -74,7 +73,6 @@ export class FormulaireReservationCoupeHommeComponent implements AfterViewInit {
 
   }
 
-
   getProfessionalByCity() {
 
     this.http.get<Professional[]>(environment.apiUrl + '/professional/list/' + this.currentUser.ville).subscribe(dtos => {
@@ -84,7 +82,6 @@ export class FormulaireReservationCoupeHommeComponent implements AfterViewInit {
     })
 
   }
-
 
   openDetails(targetModal, professional: ProfessionalLightDTO) {
     this.modalService.open(targetModal, {
@@ -134,6 +131,7 @@ export class FormulaireReservationCoupeHommeComponent implements AfterViewInit {
       popupAnchor: [-3, -76],
 
     })
+
 
     var marker = L.marker([latitude, longitude], { icon: myIcon }).addTo(map);
 
