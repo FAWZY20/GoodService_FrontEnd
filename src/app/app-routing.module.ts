@@ -51,7 +51,11 @@ const routes: Routes = [
         { path: ':id/MoyenDePaiment', component: MoyenPaimenetUserComponent },
         { path: ':id/Historique', component: HistoriquePaymentUserComponent },
         { path: ':id/CarteCredit', component: AjoutCarteCreditComponent },
-        { path: ':id/reservation', component: UserReservationsComponent }
+        { path: ':id/reservation', component: UserReservationsComponent },
+        { path: ':id/coupe/homme', component: RendezVousCoiffureMenComponent },
+        { path: ':id/coupe/femme', component: CoupeFemmeComponent },
+        { path: ':id/brushing', component: BrushingComponent },
+        { path: ':id/coloration', component: ColorationComponent },
       ],
   },
 

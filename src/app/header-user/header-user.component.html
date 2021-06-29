@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row header">
                 <div class="col-lg-2 logo">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" [routerLink]="['../Dashboard']">
                         <img src="../../assets/img/logos.png" alt="" width="90" height="80" class="d-inline-block align-top">
                     </a>
                 </div>
@@ -16,10 +16,10 @@
                                         Coiffure
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" [routerLink]="['/prestation/coupe/homme']">Coupe Homme</a>
-                                        <a class="dropdown-item" [routerLink]="['/prestation/coupe/femme']">Coupe Femme</a>
-                                        <a class="dropdown-item" [routerLink]="['/prestation/brushing']">Brushing</a>
-                                        <a class="dropdown-item" [routerLink]="['/prestation/coloration']">Coloration</a>
+                                        <a class="dropdown-item" [routerLink]="['../coupe/homme']">Coupe Homme</a>
+                                        <a class="dropdown-item" [routerLink]="['../coupe/femme']">Coupe Femme</a>
+                                        <a class="dropdown-item" [routerLink]="['../brushing']">Brushing</a>
+                                        <a class="dropdown-item" [routerLink]="['../coloration']">Coloration</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">

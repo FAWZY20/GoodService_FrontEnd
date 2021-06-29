@@ -42,7 +42,7 @@ export class ConnectionComponent implements OnInit {
       },
       error => {
         console.log("exception occured");
-        this.msg = "Bad credentials, please enter valid email and password";
+        this.msg = "veuillez entrer une adresse e-mail et un mot de passe valides.";
       }
     )
   }

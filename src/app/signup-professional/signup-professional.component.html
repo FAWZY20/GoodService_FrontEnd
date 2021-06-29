@@ -18,11 +18,11 @@
                         <article class="card-body">
                             <form #Registerform="ngForm" (ngSubmit)="registerProfessional()">
                                 <div class="form-group">
-                                    <select class="form-select" aria-label="Default select example" [(ngModel)]="professional.poste" [ngModelOptions]="{standalone: true} "> 
-                                        <option selected>Postuler en tant que</option>
+                                    <label for="">Postuler en tant que</label><br>
+                                    <select class="form-select" aria-label="Default select example" [(ngModel)]="professional.poste" [ngModelOptions]="{standalone: true} ">
                                         <option value="Coiffeur">Coiffeur</option>
                                         <option value="Estheticienne">Esthéticienne</option>
-                                        <option value="menager">Aide menager</option>
+                                        <option value="menager">Aide ménagère</option>
                                         <option value="Coach">Coach sportif</option>
                                     </select>
                                 </div>
@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="form-row ">
                                     <div class="col form-group ">
-                                        <input type="date" class="form-control " [(ngModel)]="professional.date_naissance " [ngModelOptions]="{standalone: true} ">
+                                        <input type="Date" class="form-control " [(ngModel)]="professional.date_naissance " [ngModelOptions]="{standalone: true} ">
                                     </div>
                                     <!-- form-group end.// -->
                                     <div class="col form-group ">
@@ -54,10 +54,10 @@
                                 <!-- form-row end.// -->
                                 <div class="form-row ">
                                     <div class="form-group col-md-6 ">
-                                        <input type="text " placeholder="latitude " class="form-control " [(ngModel)]="professional.latitude" [ngModelOptions]="{standalone: true} ">
+                                        <input type="text " placeholder="Latitude " class="form-control " [(ngModel)]="professional.latitude" [ngModelOptions]="{standalone: true} ">
                                     </div>
                                     <div class="form-group col-md-6 ">
-                                        <input type="text " placeholder="longitude " class="form-control " [(ngModel)]="professional.longitude" [ngModelOptions]="{standalone: true} ">
+                                        <input type="text " placeholder="Longitude " class="form-control " [(ngModel)]="professional.longitude" [ngModelOptions]="{standalone: true} ">
                                     </div>
                                 </div>
                                 <div class="coordonée">
@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="form-row ">
                                     <div class="form-group col-md-6 ">
-                                        <input type="text " placeholder="Numero " class="form-control " [(ngModel)]="professional.numero " [ngModelOptions]="{standalone: true} ">
+                                        <input type="text " placeholder="Numéro " class="form-control " [(ngModel)]="professional.numero " [ngModelOptions]="{standalone: true} ">
                                     </div>
                                     <div class="form-group col-md-6 ">
                                         <input type="email " placeholder="Email " class="form-control " [(ngModel)]="professional.email " [ngModelOptions]="{standalone: true} ">
@@ -83,7 +83,8 @@
                                 </div>
 
                                 <div class="form-group ">
-                                    <button type="submit " class="btn btn-primary btn-block btn-create-account ">  M'INSCRIRE EN TANT QUE PRO </button>
+                                    <button type="submit " class="btn btn-primary btn-block btn-create-account ">
+                                        M'INSCRIRE EN TANT QUE PRO </button>
                                 </div>
                             </form>
                         </article>

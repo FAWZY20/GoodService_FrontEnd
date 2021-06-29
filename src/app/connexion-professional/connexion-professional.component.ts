@@ -41,7 +41,7 @@ export class ConnexionProfessionalComponent implements OnInit {
       },
       error => {
         console.log("exception occured");
-        this.msg = "exception occured";
+        this.msg = "veuillez entrer une adresse e-mail et un mot de passe valides.";
       }
     )
   }
