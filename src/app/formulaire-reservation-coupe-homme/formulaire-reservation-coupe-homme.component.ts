@@ -56,7 +56,7 @@ export class FormulaireReservationCoupeHommeComponent implements AfterViewInit {
       professionals: ['']
     });
 
-    this.http.get<Professional[]>(environment.apiUrl + '/professional/list/' + this.currentUser.ville).subscribe(professionals => {
+    this.http.get<Professional[]>(environment.apiUrl + '/professional/list/').subscribe(professionals => {
       this.professionals = professionals;
       this.form.controls.orders.patchValue(this.professionals[0].id)
     });
