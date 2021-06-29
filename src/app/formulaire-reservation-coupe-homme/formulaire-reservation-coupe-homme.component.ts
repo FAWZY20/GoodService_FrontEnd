@@ -56,10 +56,10 @@ export class FormulaireReservationCoupeHommeComponent implements AfterViewInit {
       professionals: ['']
     });
 
-    this.http.get<Professional[]>(environment.apiUrl + '/professional/list/').subscribe(professionals => {
+ /*   this.http.get<Professional[]>(environment.apiUrl + '/professional/list/').subscribe(professionals => {
       this.professionals = professionals;
       this.form.controls.orders.patchValue(this.professionals[0].id)
-    });
+    });*/
 
   }
 
@@ -70,11 +70,9 @@ export class FormulaireReservationCoupeHommeComponent implements AfterViewInit {
     }
 
     this.getProfessionalByCity();
-
   }
 
   getProfessionalByCity() {
-
     this.http.get<Professional[]>(environment.apiUrl + '/professional/list/' + this.currentUser.ville).subscribe(dtos => {
       this.professionals = dtos;
     }, error => {
