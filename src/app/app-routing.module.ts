@@ -2,7 +2,6 @@ import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ConnectionComponent } from './connexion/connection.component';
 import { ConnexionProfessionalComponent } from './connexion-professional/connexion-professional.component';
-import { OpenStreetMapComponent } from './open-street-map/open-street-map.component';
 import { SignupProfessionalComponent } from './signup-professional/signup-professional.component';
 import { SignupUserComponent } from './signup-user/signup-user.component';
 import { BackUserComponent } from './back-user/back-user.component';
@@ -32,6 +31,9 @@ import { HistoriqueProfessionelComponent } from './historique-professionel/histo
 import { AddHoraireComponent } from './add-horaire/add-horaire.component';
 import { PrixPrestationComponent } from './prix-prestation/prix-prestation.component';
 import { FormPrixPrestationComponent } from './form-prix-prestation/form-prix-prestation.component';
+import { CoiffureComponent } from './coiffure/coiffure.component';
+import { ConstructionComponent } from './construction/construction.component';
+import { QuiSommeNousComponent } from './qui-somme-nous/qui-somme-nous.component';
 
 const routes: Routes = [
 
@@ -93,6 +95,14 @@ const routes: Routes = [
   },
 
   {
+    path: 'service',
+    children:
+      [
+        { path: 'coiffure', component: CoiffureComponent },
+      ],
+  },
+
+  {
     path: 'reservation',
     children:
       [
@@ -100,8 +110,9 @@ const routes: Routes = [
       ],
   },
 
+  { path: 'construction', component: ConstructionComponent },
   { path: 'reservation/coupe/homme', component: FormulaireReservationCoupeHommeComponent },
-
+  { path: 'quiSommeNous', component: QuiSommeNousComponent},
   { path: '**', redirectTo: 'not-found' }
 
 ];

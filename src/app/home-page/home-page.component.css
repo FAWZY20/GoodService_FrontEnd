@@ -1,3 +1,7 @@
+a:link {
+    text-decoration: none;
+}
+
 h2 {
     color: teal;
     font-size: 40px;
@@ -33,7 +37,14 @@ h2 {
 }
 
 .bloc-title {
-    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    padding: 0;
+    margin: 0;
+}
+
+.bloc-title-news {
     font-weight: bold;
     color: black;
     padding: 0;
@@ -119,12 +130,14 @@ a {
 }
 
 .title-loclisation {
+    color: white;
     font-size: 30px !important;
     padding: 0;
     margin: 0;
 }
 
 .subtitle-localisation {
+    color: white;
     padding: 0;
     margin: 0;
 }
@@ -150,6 +163,14 @@ a {
 .new-service-badge {
     margin-top: 10px;
     padding: 5px;
+    text-align: center;
+    transform: rotate(-5deg);
+    box-shadow: 1px 1px 12px #555;
+}
+
+.new-service-badge-exepted {
+    margin-top: 10px;
+    padding: 3px;
     text-align: center;
     transform: rotate(-5deg);
     box-shadow: 1px 1px 12px #555;

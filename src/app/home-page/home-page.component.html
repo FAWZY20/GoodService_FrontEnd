@@ -25,28 +25,28 @@
                     <h2>Nos Services</h2>
                 </div>
                 <div class="service-bloc">
-                    <a href="">
+                    <a [routerLink]="['/service/coiffure']">
                         <div class="bloc coiffure">
-                            <p class="h2 bloc-title">Coiffure</p>
-                            <p class="h2 new-service-badge  badge-primary">à domicile</p>
+                            <p class="h2  new-service-badge  badge-primary">Coiffure</p>
+                            <p class="h2 bloc-title">à domicile</p>
                         </div>
                     </a>
-                    <a href="">
+                    <a [routerLink]="['/construction']">
                         <div class="bloc beaute">
-                            <p class="h2 bloc-title">Beaute</p>
-                            <p class="h2 new-service-badge  badge-primary">à domicile</p>
+                            <p class="h2  new-service-badge  badge-primary">Beauté</p>
+                            <p class="h2 bloc-title">à domicile</p>
                         </div>
                     </a>
-                    <a href="">
+                    <a [routerLink]="['/construction']">
                         <div class="bloc menage">
-                            <p class="h2 bloc-title">Ménage</p>
-                            <p class="h2 new-service-badge  badge-primary">à domicile</p>
+                            <p class="h2 new-service-badge  badge-primary">Ménage</p>
+                            <p class="h2 bloc-title">à domicile</p>
                         </div>
                     </a>
-                    <a href="">
+                    <a [routerLink]="['/construction']">
                         <div class="bloc coach">
-                            <p class="h2 bloc-title">Coach sportif</p>
-                            <p class="h2 new-service-badge  badge-primary">à domicile</p>
+                            <p class="h2 new-service-badge-exepted  badge-primary">Coach sportif</p>
+                            <p class="h2 bloc-title">à domicile</p>
                         </div>
                     </a>
                 </div>
@@ -60,7 +60,7 @@
             <div class="row">
                 <div class="title-localisation">
                     <p class="title-loclisation">Vos services à proximité de chez vous</p>
-                    <p class="subtitle-localisation">Grace à notre système de géolocalisation innovant</p>
+                    <p class="subtitle-localisation">Grace à notre système de géolocalisation innovante</p>
                 </div>
                 <div class="image-localisation">
                     <img src="../../assets/img/localisation-banner.png" alt="" width="150" height="150" class="localisation-image">
@@ -82,14 +82,14 @@
                 <div class="col-lg-6 service-bloc">
                     <a href="">
                         <div class="bloc new-service coach-yoga">
-                            <p class="h2 bloc-title">Coach sportif</p>
+                            <p class="h2 bloc-title-news">Coach sportif</p>
                             <p class="h2 new-service-badge  badge-primary">Yoga</p>
                         </div>
                     </a>
-                    <a href="">
-                        <div class="bloc new-service coiffure-couleur">
-                            <p class="h2 bloc-title">Coiffure</p>
-                            <p class="h2 new-service-badge badge-primary">Couleur</p>
+                    <a [routerLink]="['/prestation/coloration']">
+                        <div class=" bloc new-service coiffure-couleur ">
+                            <p class="h2 bloc-title-news ">Coiffure</p>
+                            <p class="h2 new-service-badge badge-primary ">Couleur</p>
                         </div>
                     </a>
                 </div>
@@ -97,53 +97,57 @@
         </div>
     </div>
 </section>
-<section class="presentation">
-    <div class="container-fluid">
-        <div class="container">
-            <div class="row presentation">
-                <div class="presentation-img">
-                    <img src="../../assets/img/qui-somme-nous.jpg" class="img-fluid" alt="Responsive image">
+<section class="presentation ">
+    <div class="container-fluid ">
+        <div class="container ">
+            <div class="row presentation ">
+                <div class="presentation-img ">
+                    <img src="../../assets/img/qui-somme-nous.jpg " class="img-fluid " alt="Responsive image ">
                 </div>
-                <div class="presentation-text">
-                    <h2 class="title-presentation">Qui sommme-nous ?</h2>
+                <div class="presentation-text ">
+                    <h2 class="title-presentation ">Qui somme-nous ?</h2>
+                    <br>
+                    <p style="color: white; font-size: 25px; ">
+                        GoodService est la plateforme pour vous<br> faire gagner du temps, du confort, ainsi <br>que de mettre en lumière le talent des artisans<br> à proximité de chez vous .
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section class="esprit">
-    <div class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 esprit-title">
+<section class="esprit ">
+    <div class="container-fluid ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-lg-12 esprit-title ">
                     <h2>L'ESPRIT GOODSERVICE </h2>
                 </div>
-                <div class="esprit-bloc">
-                    <div class="esprit-container">
-                        <div class="esprit-image">
-                            <img src="../../assets/img/colombe.png" width="100" height="100" alt="">
-                        </div>
-                        <div class="bloc">
-                            <p class="bloc-title">Libérté</p>
-                            <p class="subtitle">Prenez vos rendez-vous <br> d'où vous êtes.</p>
-                        </div>
-                    </div>
-                    <div class="esprit-container">
-                        <div class="esprit-image">
-                            <img src="../../assets/img/exigence.png" width="100" height="100" alt="">
+                <div class="esprit-bloc ">
+                    <div class="esprit-container ">
+                        <div class="esprit-image ">
+                            <img src="../../assets/img/colombe.png " width="100 " height="100 " alt=" ">
                         </div>
                         <div class="bloc ">
-                            <p class="bloc-title">Exigence</p>
-                            <p class="subtitle">Nous somme à <br> l'écoute du client</p>
+                            <p class="bloc-title ">Libérté</p>
+                            <p class="subtitle ">Prenez vos rendez-vous <br> d'où vous êtes.</p>
                         </div>
                     </div>
-                    <div class="esprit-container">
-                        <div class="esprit-image">
-                            <img src="../../assets/img/confiance.png" width="100" height="100" alt="">
+                    <div class="esprit-container ">
+                        <div class="esprit-image ">
+                            <img src="../../assets/img/exigence.png " width="100 " height="100 " alt=" ">
                         </div>
                         <div class="bloc ">
-                            <p class="bloc-title">Confiance</p>
-                            <p class="subtitle">Tous nos professionnels <br> sont qualifiés</p>
+                            <p class="bloc-title ">Exigence</p>
+                            <p class="subtitle ">Nous somme à <br> l'écoute du client</p>
+                        </div>
+                    </div>
+                    <div class="esprit-container ">
+                        <div class="esprit-image ">
+                            <img src="../../assets/img/confiance.png " width="100 " height="100 " alt=" ">
+                        </div>
+                        <div class="bloc ">
+                            <p class="bloc-title ">Confiance</p>
+                            <p class="subtitle ">Tous nos professionnels <br> sont qualifiés</p>
                         </div>
                     </div>
                 </div>

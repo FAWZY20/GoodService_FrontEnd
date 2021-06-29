@@ -8,7 +8,6 @@ import { HeaderVerticalComponent } from './header-vertical/header-vertical.compo
 import { SignupUserComponent } from './signup-user/signup-user.component';
 import { ConnectionComponent } from './connexion/connection.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { OpenStreetMapComponent } from './open-street-map/open-street-map.component';
 import { HeaderHorizontalComponent } from './header-horizontal/header-horizontal.component';
 import { SignupProfessionalComponent } from './signup-professional/signup-professional.component';
 import { ConnexionProfessionalComponent } from './connexion-professional/connexion-professional.component';
@@ -50,8 +49,10 @@ import { AddHoraireComponent } from './add-horaire/add-horaire.component';
 import { FormPrixPrestationComponent } from './form-prix-prestation/form-prix-prestation.component';
 import { PrixPrestationComponent } from './prix-prestation/prix-prestation.component';
 import { CarteUserComponent } from './carte-user/carte-user.component';
-
-
+import { MarkerService } from './marker.service';
+import { CoiffureComponent } from './coiffure/coiffure.component';
+import { ConstructionComponent } from './construction/construction.component';
+import { QuiSommeNousComponent } from './qui-somme-nous/qui-somme-nous.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,6 @@ import { CarteUserComponent } from './carte-user/carte-user.component';
     HeaderVerticalComponent,
     SignupUserComponent,
     ConnectionComponent,
-    OpenStreetMapComponent,
     HeaderHorizontalComponent,
     SignupProfessionalComponent,
     ConnexionProfessionalComponent,
@@ -99,7 +99,10 @@ import { CarteUserComponent } from './carte-user/carte-user.component';
     AddHoraireComponent,
     FormPrixPrestationComponent,
     PrixPrestationComponent,
-    CarteUserComponent
+    CarteUserComponent,
+    CoiffureComponent,
+    ConstructionComponent,
+    QuiSommeNousComponent
   ],
   imports: [
     FormsModule,
@@ -111,6 +114,7 @@ import { CarteUserComponent } from './carte-user/carte-user.component';
     NgbModule,
   ],
   providers: [
+    MarkerService,
     ConnexionProfessionalComponent,
     ConnectionComponent
   ],

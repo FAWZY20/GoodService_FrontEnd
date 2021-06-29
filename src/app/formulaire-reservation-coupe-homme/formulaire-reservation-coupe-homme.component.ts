@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import * as L from 'leaflet';
@@ -10,7 +10,8 @@ import { Professional } from '../api/professional';
 import { Reservation } from '../api/reservationDTO';
 import { User } from '../api/user';
 import { ConnectionComponent } from '../connexion/connection.component';
-import { RegistationService } from '../_services/registation.service';
+import { MarkerService } from '../marker.service';
+import { RegistationService } from '../registation.service';
 
 export interface ProfessionalLightDTO {
   id: number;
@@ -37,30 +38,41 @@ export class FormulaireReservationCoupeHommeComponent implements AfterViewInit {
   professionals: ProfessionalLightDTO[] = [];
   professional: ProfessionalLightDTO;
   reservation = new Reservation();
+  form: FormGroup;
   msg = '';
-  
+
   constructor(
     private _service: RegistationService,
     private _router: Router,
     private http: HttpClient,
     private modalService: NgbModal,
     private authentificationUser: ConnectionComponent,
+    private markerService: MarkerService,
+    private formBuilder: FormBuilder
   ) {
     this.currentUser = this.authentificationUser.currentUserValue;
-  }
 
+    this.form = this.formBuilder.group({
+      professionals: ['']
+    });
+
+    this.http.get<Professional[]>(environment.apiUrl + '/professional/list/').subscribe(professionals => {
+      this.professionals = professionals;
+      this.form.controls.orders.patchValue(this.professionals[0].id)
+    });
+
+  }
+  
 
   ngAfterViewInit(): void {
+
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(this.setGeoLocation.bind(this));
     }
+
     this.getProfessionalByCity();
-    
+
   }
-
-
- 
-  
 
 
   getProfessionalByCity() {
@@ -72,6 +84,7 @@ export class FormulaireReservationCoupeHommeComponent implements AfterViewInit {
     })
 
   }
+
 
   openDetails(targetModal, professional: ProfessionalLightDTO) {
     this.modalService.open(targetModal, {
@@ -90,8 +103,8 @@ export class FormulaireReservationCoupeHommeComponent implements AfterViewInit {
   registerReservation() {
     this._service.registerAppointment(this.reservation).subscribe(
       data => {
+        console.log(this.form.value);
         console.log("response recieved");
-        this._router.navigate(['/ReservationUser'])
       },
       error => {
         console.log("exception occured");
@@ -121,7 +134,6 @@ export class FormulaireReservationCoupeHommeComponent implements AfterViewInit {
       popupAnchor: [-3, -76],
 
     })
-
 
     var marker = L.marker([latitude, longitude], { icon: myIcon }).addTo(map);
 

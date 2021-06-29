@@ -39,7 +39,7 @@ export class RegistationService {
   }
 
   public registerAppointment(appointement :Reservation):Observable<any>{
-    return this._http.post<any>(environment.apiUrl +'/new', appointement)
+    return this._http.post<any>(environment.apiUrl +'/new/' + this.currentUser.id, appointement)
   }
 
 

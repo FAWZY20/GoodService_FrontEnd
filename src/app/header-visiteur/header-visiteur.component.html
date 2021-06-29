@@ -1,13 +1,13 @@
 <nav class="header_horizontal">
     <div class="container-fluid">
-        <div class="container">
+        <div>
             <div class="row header">
                 <div class="col-lg-2 logo">
                     <a class="navbar-brand" href="#">
                         <img src="../../assets/img/logo.png" alt="" width="90" height="80" class="d-inline-block align-top">
                     </a>
                 </div>
-                <div class="col-lg-7" id="navbarNavDropdown">
+                <div class="col-lg-5" id="navbarNavDropdown">
                     <nav class="navbar navbar-expand-lg">
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul class="navbar-nav">
@@ -24,7 +24,7 @@
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Beaute
+                                Beauté
                               </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                         <a class="dropdown-item" [routerLink]="['/prestation/epilation']">Épilation</a>
@@ -34,10 +34,10 @@
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Menage
+                                Ménage
                               </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" [routerLink]="['/prestation/menage']">Menage</a>
+                                        <a class="dropdown-item" [routerLink]="['/prestation/menage']">Ménage</a>
                                         <a class="dropdown-item" [routerLink]="['/prestation/repasage']">Repassage</a>
                                     </div>
                                 </li>
@@ -55,7 +55,25 @@
                         </div>
                     </nav>
                 </div>
-                <div class="col-lg" id="visiteur">
+                <div class="col-lg-2" id="client">
+                    <div class="header__button">
+                        <div class="header__button_position">
+                            <a href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="../../assets/img/icon-user.webp" width="40" height="40" alt="">
+                            </a>
+                            <div class="dropdown-menu" style="margin-top: 14px;" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#" [routerLink]="['../Dashboard']">Tableau de bord</a>
+                                <a class="dropdown-item" href="#" [routerLink]="['../reservation']">réservations en cour</a>
+                                <a class="dropdown-item" href="#" [routerLink]="['../Historique']">Historique &
+                                    Réservations</a>
+                                <a class="dropdown-item" href="#" [routerLink]="['../profile']">Mon profil</a>
+                                <a class="dropdown-item" href="#" [routerLink]="['../CarteCredit']">Moyen de paiements</a>
+                                <a class="dropdown-item" (click)="logout()">Me déconnecter</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2" id="visiteur">
                     <div class="header__button">
                         <div class="header__button_position">
                             <a style="color: white;" routerLink="signup-professional">
@@ -76,24 +94,6 @@
                                     <p>Devenir client</p>
                                 </div>
                             </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg" id="client">
-                    <div class="header__button">
-                        <div class="header__button_position">
-                            <a href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="../../assets/img/icon-user.webp" width="40" height="40" alt="">
-                            </a>
-                            <div class="dropdown-menu" style="margin-top: 14px;" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#" [routerLink]="['../Dashboard']">Tableau de bord</a>
-                                <a class="dropdown-item" href="#" [routerLink]="['../reservation']">réservations en cour</a>
-                                <a class="dropdown-item" href="#" [routerLink]="['../Historique']">Historique &
-                                    Réservations</a>
-                                <a class="dropdown-item" href="#" [routerLink]="['../profile']">Mon profil</a>
-                                <a class="dropdown-item" href="#" [routerLink]="['../CarteCredit']">Moyen de paiements</a>
-                                <a class="dropdown-item" (click)="logout()">Me déconnecter</a>
-                            </div>
                         </div>
                     </div>
                 </div>

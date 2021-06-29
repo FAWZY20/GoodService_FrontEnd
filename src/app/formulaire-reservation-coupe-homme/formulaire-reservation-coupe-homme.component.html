@@ -9,8 +9,6 @@
                         <div id="map"></div>
                     </div>
                     <form #Registerform="ngForm" (ngSubmit)="registerReservation()">
-                        <input type="hidden" value="22" [(ngModel)]="reservation.client" name="client">
-                        <input type="hidden" value="30" [(ngModel)]="reservation.professional" name="pro ">
                         <div class="info-coiffeur">
                             <p class="info-coiffeur-title">Liste des salons de coiffure à proximités !</p>
                             <div>
@@ -40,8 +38,8 @@
                                                     <i class="fa fa-search">Info</i>
                                                 </button>
                                             </td>
-                                            <td>
-                                                <input type="radio" name="radio">
+                                            <td [formGroup]="form">
+                                                <input formControlName="professionals" type="radio" name="professionals" [value]="professional.id" [(ngModel)]="reservation.professional">
                                             </td>
                                         </tr>
                                     </tbody>
@@ -51,7 +49,7 @@
                         <div>
                             <div class="service">
                                 <div class="service-block">
-                                    <h2 class="title" style="padding-top: 3%;">choisissez votre services !</h2>
+                                    <h2 class="title" style="padding-top: 3%;">choisissez votre service !</h2>
                                     <div class="select">
                                         <select id="standard-select" [(ngModel)]="reservation.prestation" name="prestation">
                                             <option value="Shampoing">Shampoing</option>
@@ -73,13 +71,13 @@
                                     <div>
                                         <div class="form-check">
                                             <div class="prestation-lieu-bloc">
-                                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="{{reservation.client.address}" [(ngModel)]="reservation.address" name="adressClient">
+                                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" [value]="currentUser.adresse" [(ngModel)]="reservation.address" name="adressClient">
                                                 <label class="form-check-label" for="exampleRadios1">
                                                     Chez moi
                                                 </label>
                                             </div>
                                             <div class="prestation-lieu-bloc">
-                                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="{{reservation.proffesional.address}" [(ngModel)]="reservation.address" name="adressPro">
+                                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="Chez le prestataire" [(ngModel)]="reservation.address" name="adressPro">
                                                 <label class="form-check-label" for="exampleRadios2">
                                                     Chez le prestataire
                                                 </label>
@@ -89,7 +87,6 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="hidden" value="Encour" [(ngModel)]="reservation.etat" name="etat">
                         <div class="col form_span from_span-12">
                             <button [disabled]="Registerform.form.invalid" class="btn btn-primary btn-create-account" type="submit" style="margin-bottom: 3%;">Validation</button>
                         </div>
@@ -99,7 +96,7 @@
                     <p class="panier-title text-center h4"><strong>MON PANIER</strong></p>
                     <hr>
                     <div class="etape">
-                        <p>SALON DE COIFFURE</p>
+                        <p>Coiffeur choisis</p>
                         <div class="etape-text">
                             {{reservation.professional}}
                         </div>
@@ -111,13 +108,13 @@
                         </div>
                     </div>
                     <div class="etape">
-                        <p>DISPONIBILITÉS</p>
+                        <p>Disponibilités</p>
                         <div class="etape-text">
                             {{reservation.appointementDate}}
                         </div>
                     </div>
                     <div class="etape">
-                        <p>ADRESSE</p>
+                        <p>Adresse</p>
                         <div class="etape-text">
                             {{reservation.address}}
                         </div>

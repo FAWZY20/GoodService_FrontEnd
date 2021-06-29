@@ -1,0 +1,6 @@
+.banier {
+    display: flex;
+    justify-content: center;
+    align-items: centers;
+    padding-bottom: 5%;
+}

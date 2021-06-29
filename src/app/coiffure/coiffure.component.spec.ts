@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OpenStreetMapComponent } from './open-street-map.component';
+import { CoiffureComponent } from './coiffure.component';
 
-describe('OpenStreetMapComponent', () => {
-  let component: OpenStreetMapComponent;
-  let fixture: ComponentFixture<OpenStreetMapComponent>;
+describe('CoiffureComponent', () => {
+  let component: CoiffureComponent;
+  let fixture: ComponentFixture<CoiffureComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OpenStreetMapComponent ]
+      declarations: [ CoiffureComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OpenStreetMapComponent);
+    fixture = TestBed.createComponent(CoiffureComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
