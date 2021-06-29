@@ -46,6 +46,8 @@ hr {
 }
 
 .info-coiffeur {
+    height: 213px;
+    overflow: scroll;
     margin-top: 3%;
     padding: 20px;
     padding-bottom: 100px;
