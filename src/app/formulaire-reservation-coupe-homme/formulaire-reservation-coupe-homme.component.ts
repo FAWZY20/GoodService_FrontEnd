@@ -52,14 +52,14 @@ export class FormulaireReservationCoupeHommeComponent implements AfterViewInit {
   ) {
     this.currentUser = this.authentificationUser.currentUserValue;
 
-    this.form = this.formBuilder.group({
+ /*   this.form = this.formBuilder.group({
       professionals: ['']
     });
 
     this.http.get<Professional[]>(environment.apiUrl + '/professional/list/').subscribe(professionals => {
       this.professionals = professionals;
       this.form.controls.orders.patchValue(this.professionals[0].id)
-    });
+    });*/
 
   }
 
