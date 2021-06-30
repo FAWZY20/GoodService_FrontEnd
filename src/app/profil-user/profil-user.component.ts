@@ -41,7 +41,7 @@ export class ProfilUserComponent implements OnInit {
 
   getUser() {
 
-    this.http.get<UserLightDTO[]>(environment.apiUrl + '/utilisateur/' + 83).subscribe(dtos => {
+    this.http.get<UserLightDTO[]>(environment.apiUrl + '/utilisateur/' + this.currentUser.id).subscribe(dtos => {
       this.users = dtos;
     }, error => {
       console.error('error occured while getting user reservations', error)
